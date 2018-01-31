@@ -561,6 +561,15 @@ tempete_008_s2.png:	tempete_352x288x30x420x260.yuv
 TMPs += tempete_008_s2.png
 
 spatial-scalability.pdf: spatial-scalability.fig \
+	tempete_000.png \
+	tempete_001.png \
+	tempete_002.png \
+	tempete_003.png \
+	tempete_004.png \
+	tempete_005.png \
+	tempete_006.png \
+	tempete_007.png \
+	tempete_008.png \
 	tempete_000_s1.png tempete_000_s2.png \
 	tempete_001_s1.png tempete_001_s2.png \
 	tempete_002_s1.png tempete_002_s2.png \
