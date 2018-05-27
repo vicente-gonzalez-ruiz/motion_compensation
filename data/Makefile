@@ -1,8 +1,8 @@
 default:	all
 
-include $(HOME)/Makefile_templates/05-tex2pdf/Makefile
-include $(HOME)/Makefile_templates/10-fig2pdf/Makefile
-include $(HOME)/Makefile_templates/20-pdf2svg/Makefile
+include $(HOME)/Makefile_templates/tex2pdf/Makefile
+include $(HOME)/Makefile_templates/fig2pdf/Makefile
+include $(HOME)/Makefile_templates/pdf2svg/Makefile
 
 coastguard_352x288x30x420x300.avi:
 	wget http://www.hpca.ual.es/~vruiz/videos/coastguard_352x288x30x420x300.avi
