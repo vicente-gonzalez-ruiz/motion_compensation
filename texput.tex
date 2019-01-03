@@ -225,7 +225,7 @@
 \item
   $LL^l(m)\leftarrow 0$, or any other precomputed values (for example,
   from a previous ME in neighbor frames).
-  \img{graphics/frame_interpolation_step_2.svg}
+  \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_2.svg}{Example}.
 
 \item
   Divide the subband $LL^l(s_j)$ into blocks of size $B\times B$
@@ -233,8 +233,8 @@
   and $LL^l(s_k)$, calculating a low-resolution
   $LL^l(m)=\{LL^l(\overleftarrow{m}), LL^l(\overrightarrow{m})\}$
   bi-directional motion vector field. 
-  \imgw{1000}{graphics/frame_interpolation_step_3A.svg}
-  \img{graphics/frame_interpolation_step_3A_bis.svg}
+  \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_3A.svg}{Example}.
+  \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_3A_bis.svg}{Example}.
 \item
   While $l>0$:
   
@@ -243,16 +243,16 @@
   \item
     Synthesize $LL^{l-1}(m)$, $LL^{l-1}(s_j)$, $LL^{l-1}(s_i)$
     and $LL^{l-1}(s_k)$, by computing the 1-level DWT$^{-1}$.
-    \imgw{1000}{graphics/frame_interpolation_step_4A.svg}
-    \img{graphics/frame_interpolation_step_4A_bis.svg}
+    \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_4A.svg}{Example}.
+    \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_4A_bis.svg}{Example}
 
   \item
     $LL^{l-1}(M)\leftarrow LL^{l-1}(M)\times 2$.
-    \img{graphics/frame_interpolation_step_4B.svg}
+    \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_4B.svg}{Example}.
   
   \item
     Refine $LL^{l-1}(m)$ using $\pm 1$-spiral-search.
-    \img{graphics/frame_interpolation_step_4C.svg}
+    \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_4C.svg}{Example}.
   
   \item
   $l\leftarrow l-1$. (When $l=0$, the motion vectors field $m$
@@ -260,7 +260,7 @@
   
   \end{enumerate}
   
-  \img{graphics/motion_vectors.svg}
+  \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/motion_vectors.svg}{Example}.
   
 \item
   While $l<A$ (in the first iteration, $l=0$, and $LL^0(M):=M$):
@@ -275,12 +275,12 @@
     $0$). This performs a zoom-in in these frames using $1/2$-subpixel
     accuracy. 
     
-    \imgw{1000}{graphics/frame_interpolation_step_5B.svg}
+    \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_5B.svg}{Example}.
     
   \item
     $m\leftarrow m\times 2$.
     
-    \imgw{210}{graphics/motion_vectors_by_2.svg}
+    \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/motion_vectors_by_2.svg}{Example}.
     
   \item
     $B\leftarrow B\times 2$.
@@ -290,7 +290,7 @@
     pixels and $\pm 1$-spiral-search them into the subbands
     $LL^{-l}(s_i)$ and $LL^{-l}(s_k)$, calculating a $1/2^l$
     sub-pixel accuracy $m$ bi-directional motion vector field. 
-    \imgw{280}{graphics/motion_vectors_definitive.svg}
+    \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/motion_vectors_definitive.svg}{Example}.
     
   \item
     Frame prediction. For each block $b$:
