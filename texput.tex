@@ -36,7 +36,7 @@
   \emph{residue images} as close as possible to the null images.
 \item
   For example, in the MPEG-1 standard, the reference image/s is/are
-  divided in blocks of \(16\times 16\) pixels called \emph{macroblocks}.
+  divided in blocks of $16\times 16$ pixels called \emph{macroblocks}.
 \item
   Each reference block is searched in the predicted image and the best
   match is indicated by mean of a \emph{motion vector}.
@@ -67,7 +67,7 @@
   B-pictures can have any type of macroblocks.
 \end{itemize}
 
-\img{1000}{graphics/macroblocks.svg}
+\imgw{1000}{graphics/macroblocks.svg}
 
 \section{Sub-pixel accuracy}
 
@@ -80,12 +80,12 @@
   For example, in MPEG-1, the motion estimation can have up to 1/2 pixel
   accuracy. A bi-linear interpolator is used:
 \end{itemize}
-\img{400}{graphics/interpolation.svg}
+\imgw{400}{graphics/interpolation.svg}
 
 \section{Matching criteria (similitude between macroblocks)}
 \begin{itemize}
 \item
-  Let \(a\) and \(b\) the macroblocks which we want to compare. Two main
+  Let $a$ and $b$ the macroblocks which we want to compare. Two main
   distortion metrics are commonly used:
 
   \begin{itemize}
@@ -141,7 +141,7 @@
     where the macro-blocks and the search area are sub-sampled. After
     finding the best coincidence, the resolution is increased in a power
     of 2 and the previous match is refined in a search area of
-    \(\pm 1\), until the maximal resolution (even using subpixel
+    $\pm 1$, until the maximal resolution (even using subpixel
     accuracy) is reached.
   \end{itemize}
 
@@ -164,7 +164,7 @@
   GOPs. Here an example:
 \end{itemize}
 
-\img{600}{graphics/GOPs.svg}
+\imgw{600}{graphics/GOPs.svg}
 
 \section{MCTF (Motion Compensated Temporal Filtering)}
 \begin{itemize}
@@ -174,41 +174,41 @@
   and the output is a sequence of residue images.
 \end{itemize}
 
-\img{600}{graphics/GOPs.svg}
+\imgw{600}{graphics/GOPs.svg}
 
 \section{$\pm$ 1-spiral-search ME (Motion Estimation)}
-\imgw{400}{graphics/spiral_search.svg}
+\imgw{600}{graphics/spiral_search.svg}
 
 \section{Linear frame interpolation using block-based motion compensation}
 \label{sec:linear_frame_interpolation}
-\imgw{600}{graphics/frame_interpolation.svg}
+\imgw{1000}{graphics/frame_interpolation.svg}
 
 \subsection{Input}
 \begin{itemize}
 \tightlist
 \item
-  \(R\): square search area, in pixels.
+  $R$: square search area, in pixels.
 \item
-  \(B\): square block size, in pixels.
+  $B$: square block size, in pixels.
 \item
-  \(O\): border size, in pixels.
+  $O$: border size, in pixels.
 \item
-  \(s_i\), \(s_j\) and \(s_k\) three chronologically ordered,
-  equidistant frames, with resolution \(X\times Y\).
+  $s_i$, $s_j$ and $s_k$ three chronologically ordered,
+  equidistant frames, with resolution $X\times Y$.
 \item
-  \(A\): \(\frac{1}{2^A}\) subpixel accuracy.
+  $A$: $\frac{1}{2^A}$ subpixel accuracy.
 \end{itemize}
 
 \subsection{Output}
 \begin{itemize}
 \tightlist
 \item
-  \(\hat{s}_j\): a prediction for frame \(s_j\).
+  $\hat{s}_j$: a prediction for frame $s_j$.
 \item
-  \(m\): a matrix with \(\lceil X/B\rceil \times \lceil Y/B\rceil\)
+  $m$: a matrix with $\lceil X/B\rceil \times \lceil Y/B\rceil$
   bidirectional motion vectors.
 \item
-  \(e\): a matrix with \(\lceil X/B\rceil \times \lceil Y/B\rceil\)
+  $e$: a matrix with $\lceil X/B\rceil \times \lceil Y/B\rceil$
   bidirectional Root Mean Square matching Wrrors (RMSE).
 \end{itemize}
 
@@ -217,83 +217,83 @@
 \tightlist
 
 \item
-  Compute the DWT\(^l\), where \(l=\lfloor\log_2(R)\rfloor-1\) levels,
-  of the predicted frame \(s_j\) and the two reference frames \(s_i\)
-  and \(s_k\).
-  \imgw{150}{graphics/frame_interpolation_step_1.svg}
+  Compute the DWT$^l$, where $l=\lfloor\log_2(R)\rfloor-1$ levels,
+  of the predicted frame $s_j$ and the two reference frames $s_i$
+  and $s_k$.
+  \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_1.svg}{Example}.
 
 \item
-  \(LL^l(m)\leftarrow 0\), or any other precomputed values (for example,
+  $LL^l(m)\leftarrow 0$, or any other precomputed values (for example,
   from a previous ME in neighbor frames).
-  \imgw{150}{graphics/frame_interpolation_step_2.svg}
+  \img{graphics/frame_interpolation_step_2.svg}
 
 \item
-  Divide the subband \(LL^l(s_j)\) into blocks of size \(B\times B\)
-  pixels, and \(\pm 1\)-spiral-search them in the subbands \(LL^l(s_i)\)
-  and \(LL^l(s_k)\), calculating a low-resolution
-  \(LL^l(m)=\{LL^l(\overleftarrow{m}), LL^l(\overrightarrow{m})\}\)
+  Divide the subband $LL^l(s_j)$ into blocks of size $B\times B$
+  pixels, and $\pm 1$-spiral-search them in the subbands $LL^l(s_i)$
+  and $LL^l(s_k)$, calculating a low-resolution
+  $LL^l(m)=\{LL^l(\overleftarrow{m}), LL^l(\overrightarrow{m})\}$
   bi-directional motion vector field. 
-  \imgw{150}{graphics/frame_interpolation_step_3A.svg}
-  \imgw{200}{graphics/frame_interpolation_step_3A_bis.svg}
+  \imgw{1000}{graphics/frame_interpolation_step_3A.svg}
+  \img{graphics/frame_interpolation_step_3A_bis.svg}
 \item
-  While \(l>0\):
+  While $l>0$:
   
   \begin{enumerate}
     
   \item
-    Synthesize \(LL^{l-1}(m)\), \(LL^{l-1}(s_j)\), \(LL^{l-1}(s_i)\)
-    and \(LL^{l-1}(s_k)\), by computing the 1-level DWT\(^{-1}\).
-    \imgw{150}{graphics/frame_interpolation_step_4A.svg}
-    \imgw{200}{graphics/frame_interpolation_step_4A_bis.svg}
+    Synthesize $LL^{l-1}(m)$, $LL^{l-1}(s_j)$, $LL^{l-1}(s_i)$
+    and $LL^{l-1}(s_k)$, by computing the 1-level DWT$^{-1}$.
+    \imgw{1000}{graphics/frame_interpolation_step_4A.svg}
+    \img{graphics/frame_interpolation_step_4A_bis.svg}
 
   \item
-    \(LL^{l-1}(M)\leftarrow LL^{l-1}(M)\times 2\).
-    \imgw{200}{graphics/frame_interpolation_step_4B.svg}
+    $LL^{l-1}(M)\leftarrow LL^{l-1}(M)\times 2$.
+    \img{graphics/frame_interpolation_step_4B.svg}
   
   \item
-    Refine \(LL^{l-1}(m)\) using \(\pm 1\)-spiral-search.
-    \imgw{200}{graphics/frame_interpolation_step_4C.svg"}
+    Refine $LL^{l-1}(m)$ using $\pm 1$-spiral-search.
+    \img{graphics/frame_interpolation_step_4C.svg}
   
   \item
-  \(l\leftarrow l-1\). (When \(l=0\), the motion vectors field \(m\)
+  $l\leftarrow l-1$. (When $l=0$, the motion vectors field $m$
   has the structure:)
   
   \end{enumerate}
   
-  \imgw{200}{graphics/motion_vectors.svg}
+  \img{graphics/motion_vectors.svg}
   
 \item
-  While \(l<A\) (in the first iteration, \(l=0\), and \(LL^0(M):=M\)):
+  While $l<A$ (in the first iteration, $l=0$, and $LL^0(M):=M$):
   
   \begin{enumerate}
   \item
-    \(l\leftarrow l+1\).
+    $l\leftarrow l+1$.
     
   \item
-    Synthesize \(LL^{-l}(s_j)\), \(LL^{-l}(s_i)\) and \(LL^{-l}(s_k)\),
-    computing the 1-level DWT\(^{-1}\) (high-frequency subbands are
-    \(0\)). This performs a zoom-in in these frames using \(1/2\)-subpixel
+    Synthesize $LL^{-l}(s_j)$, $LL^{-l}(s_i)$ and $LL^{-l}(s_k)$,
+    computing the 1-level DWT$^{-1}$ (high-frequency subbands are
+    $0$). This performs a zoom-in in these frames using $1/2$-subpixel
     accuracy. 
     
-    \imgw{200}{graphics/frame_interpolation_step_5B.svg}
+    \imgw{1000}{graphics/frame_interpolation_step_5B.svg}
     
   \item
-    \(m\leftarrow m\times 2\).
+    $m\leftarrow m\times 2$.
     
     \imgw{210}{graphics/motion_vectors_by_2.svg}
     
   \item
-    \(B\leftarrow B\times 2\).
+    $B\leftarrow B\times 2$.
     
   \item
-    Divide the subband \(LL^{-l}(s_j)\) into blocks of \(B\times B\)
-    pixels and \(\pm 1\)-spiral-search them into the subbands
-    \(LL^{-l}(s_i)\) and \(LL^{-l}(s_k)\), calculating a \(1/2^l\)
-    sub-pixel accuracy \(m\) bi-directional motion vector field. 
+    Divide the subband $LL^{-l}(s_j)$ into blocks of $B\times B$
+    pixels and $\pm 1$-spiral-search them into the subbands
+    $LL^{-l}(s_i)$ and $LL^{-l}(s_k)$, calculating a $1/2^l$
+    sub-pixel accuracy $m$ bi-directional motion vector field. 
     \imgw{280}{graphics/motion_vectors_definitive.svg}
     
   \item
-    Frame prediction. For each block \(b\):
+    Frame prediction. For each block $b$:
     
   \item
     Compute
@@ -301,21 +301,21 @@
       \hat{b}\leftarrow \frac{b_i\big(\overleftarrow{e}_{\text{max}}-\overleftarrow{e}(b)\big) + b_k\big(\overrightarrow{e}_{\text{max}}-\overrightarrow{e}(b)\big)}{\big(\overleftarrow{e}_{\text{max}}-\overleftarrow{e}(b)\big) + \big(\overrightarrow{e}_{\text{max}}-\overrightarrow{e}(b)\big)},
     \end{equation}
     
-    where \(\overleftarrow{e}(b)\) is the (minimum) distortion of the
-    best backward matching for block \(b\), \(\overrightarrow{e}(b)\)
+    where $\overleftarrow{e}(b)$ is the (minimum) distortion of the
+    best backward matching for block $b$, $\overrightarrow{e}(b)$
     the (minimum) distortion of the best forward matching for block
-    \(b\),
-    \(\overleftarrow{e}_{\text{max}}=\overrightarrow{e}_{\text{max}}\) are
-    the backward and forward maximum matching distortions, \(b_i\) is
-    the (backward) block found (as the most similar to \(b\)) in frame
-    \(s_i\) and \(b_k\) is the (forward) block found in frame
-    \(s_k\). Notice that, if
-    \(\overleftarrow{e}(b)=\overrightarrow{e}(b)\), then the
+    $b$,
+    $\overleftarrow{e}_{\text{max}}=\overrightarrow{e}_{\text{max}}$ are
+    the backward and forward maximum matching distortions, $b_i$ is
+    the (backward) block found (as the most similar to $b$) in frame
+    $s_i$ and $b_k$ is the (forward) block found in frame
+    $s_k$. Notice that, if
+    $\overleftarrow{e}(b)=\overrightarrow{e}(b)$, then the
     prediction is
     \begin{equation}
       \hat{b} = \frac{b_i + b_k}{2},
     \end{equation}
-    and if \(\overleftarrow{e}(b)=0\),
+    and if $\overleftarrow{e}(b)=0$,
     \begin{equation}
       \hat{b} = b_k,
     \end{equation} and viceversa.
@@ -335,56 +335,56 @@ as reference.
 Compare the performance of the proposed matching strategies (MSE, MAE
 and EE) in the Section \ref{sec:linear_frame_interpolation}, by computing
 the variance of the prediction error between the original frame
-(\(s_j\)) and the prediction frame (\(\hat{s}_j\)).
+($s_j$) and the prediction frame ($\hat{s}_j$).
 
 \subsection{Lab}
 Test different DWT filters in the
 Section \ref{sec:linear_frame_interpolation} and compare their performance.
-Compute the prediction error between the original frame (\(s_j\)) and
-the prediction frame (\(\hat{s}_j\)). Measure the dependency between
-this performance and the distance between frames (\(i\), \(j\), and
-\(k\) indexes).
+Compute the prediction error between the original frame ($s_j$) and
+the prediction frame ($\hat{s}_j$). Measure the dependency between
+this performance and the distance between frames ($i$, $j$, and
+$k$ indexes).
 
 \subsection{Lab}
 Test the use of both the luma and the chroma in
 Section \ref{sec:linear_frame_interpolation}, and measure the performance of
 each option (only luma vs.~all components), by computing the prediction
-error between the original frame (\(s_j\)) and the prediction frame
-(\(\hat{s}_j\)). Measure the dependency of the results with the distance
-between frames (\(i\), \(j\), and \(k\) indexes).
+error between the original frame ($s_j$) and the prediction frame
+($\hat{s}_j$). Measure the dependency of the results with the distance
+between frames ($i$, $j$, and $k$ indexes).
 
 \subsection{Lab}
-Analyze the impact of the \(R\) (search range) parameter in the
+Analyze the impact of the $R$ (search range) parameter in the
 Section \ref{sec:linear_frame_interpolation}. Compute the prediction error
-between the original frame (\(s_j\)) and the prediction frame
-(\(\hat{s}_j\)). Study the impact of initializing the motion vectors
+between the original frame ($s_j$) and the prediction frame
+($\hat{s}_j$). Study the impact of initializing the motion vectors
 (Section \ref{telescopic_search}). Measure the dependency with the
-distance between frames (\(i\), \(j\), and \(k\) indexes).
+distance between frames ($i$, $j$, and $k$ indexes).
 
 \href{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/video_coding/blob/master/search_range.ipynb}{IPython notebook}
 
 \subsection{Lab}
-Analyze the impact of the \(O\) (overlaping) parameter in the
+Analyze the impact of the $O$ (overlaping) parameter in the
 Section \ref{linear_frame_interpolation}, by means of computing the
-prediction error between the original frame (\(s_j\)) and the prediction
-frame (\(\hat{s}_j\)). Measure the dependency with the distance between
-frames (\(i\), \(j\), and \(k\) indexes).
+prediction error between the original frame ($s_j$) and the prediction
+frame ($\hat{s}_j$). Measure the dependency with the distance between
+frames ($i$, $j$, and $k$ indexes).
 
 \subsection{Lab}
-Analyze the impact of the \(B\) (block size) parameter in the
+Analyze the impact of the $B$ (block size) parameter in the
 Section \ref{linear_frame_interpolation}, by computing the prediction
-error between the original frame (\(s_j\)) and the prediction frame
-(\(\hat{s}_j\)). Compute the expected size of the motion fields using
+error between the original frame ($s_j$) and the prediction frame
+($\hat{s}_j$). Compute the expected size of the motion fields using
 their 0-order entropy. Measure the dependency with the distance between
-frames (\(i\), \(j\), and \(k\) indexes).
+frames ($i$, $j$, and $k$ indexes).
 
 \subsection{Lab}
-Analyze the impact of the \(A\) (subpixel accuracy) parameter in the
+Analyze the impact of the $A$ (subpixel accuracy) parameter in the
 Section \ref{linear_frame_interpolation}, by computing the prediction
-error between the original frame (\(s_j\)) and the prediction frame
-(\(\hat{s}_j\)). Compute the expected size of the motion fields using
+error between the original frame ($s_j$) and the prediction frame
+($\hat{s}_j$). Compute the expected size of the motion fields using
 their entropy. Measure the dependency with the distance between frames
-(\(i\), \(j\), and \(k\) indexes).
+($i$, $j$, and $k$ indexes).
 
 \href{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/video_coding/blob/master/subpixel_accuracy.ipynb}{IPython notebook}
 
@@ -458,7 +458,7 @@ for all blocks.
 \item
   Ideal for remote visualization environments.
 \item
-  By definition, \(s^{[0]}:=s\).
+  By definition, $s^{[0]}:=s$.
 \end{itemize}
 
 \subsection{Temporal scalability}
@@ -471,9 +471,9 @@ for all blocks.
     s^{t}=\{s_{2^t i}\}=\{s_{2i}^{t-1}\},
   \end{equation}
 
-  where \(t\) denotes the Temporal Resolution Level (TRL).
+  where $t$ denotes the Temporal Resolution Level (TRL).
 \item
-  Notice that \(s:=s^{0}\).
+  Notice that $s:=s^{0}$.
 \item
   Useful for fast random access.
 \end{itemize}
@@ -484,9 +484,9 @@ for all blocks.
 \item
   Useful for low-resolution devices.
 \item
-  By definition, \(V_i:=V_i^{<0>}\) and \(V_i^{<s>}\) has a
-  \(\frac{Y}{2^s}\times \frac{X}{2^s}\) resolution, where \(X\times Y\)
-  is the resolution of \(V_i\).
+  By definition, $V_i:=V_i^{<0>}$ and $V_i^{<s>}$ has a
+  $\frac{Y}{2^s}\times \frac{X}{2^s}$ resolution, where $X\times Y$
+  is the resolution of $V_i$.
 \end{itemize}
 
 \bibliography{video-compression}
