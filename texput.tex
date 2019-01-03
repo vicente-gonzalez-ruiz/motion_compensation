@@ -22,7 +22,7 @@
   spatial and temporal frequencies (we like more low frequencies).
 \end{enumerate}
 
-\section{Block-based MC (Motion Compensation)
+\section{Block-based MC (Motion Compensation)~\cite{rao1996techniques}}
 \begin{itemize}
 \tightlist
 \item
@@ -132,7 +132,7 @@
     the best compression. Disadvantage: CPU killer.
   \end{itemize}
 
-  \img{800}{graphics/full_search.svg}
+  \imgw{800}{graphics/full_search.svg}
   
   \begin{itemize}
   \tightlist
@@ -177,10 +177,11 @@
 \img{600}{graphics/GOPs.svg}
 
 \section{$\pm$ 1-spiral-search ME (Motion Estimation)}
-\img{400}{graphics/spiral_search.svg}
+\imgw{400}{graphics/spiral_search.svg}
 
 \section{Linear frame interpolation using block-based motion compensation}
-\img{600}{graphics/frame_interpolation.svg}
+\label{sec:linear_frame_interpolation}
+\imgw{600}{graphics/frame_interpolation.svg}
 
 \subsection{Input}
 \begin{itemize}
@@ -219,12 +220,12 @@
   Compute the DWT\(^l\), where \(l=\lfloor\log_2(R)\rfloor-1\) levels,
   of the predicted frame \(s_j\) and the two reference frames \(s_i\)
   and \(s_k\).
-  \img{150}{graphics/frame_interpolation_step_1.svg}
+  \imgw{150}{graphics/frame_interpolation_step_1.svg}
 
 \item
   \(LL^l(m)\leftarrow 0\), or any other precomputed values (for example,
   from a previous ME in neighbor frames).
-  \img{150}{graphics/frame_interpolation_step_2.svg}
+  \imgw{150}{graphics/frame_interpolation_step_2.svg}
 
 \item
   Divide the subband \(LL^l(s_j)\) into blocks of size \(B\times B\)
@@ -232,8 +233,8 @@
   and \(LL^l(s_k)\), calculating a low-resolution
   \(LL^l(m)=\{LL^l(\overleftarrow{m}), LL^l(\overrightarrow{m})\}\)
   bi-directional motion vector field. 
-  \img{150}{graphics/frame_interpolation_step_3A.svg}
-  \img{200}{graphics/frame_interpolation_step_3A_bis.svg}
+  \imgw{150}{graphics/frame_interpolation_step_3A.svg}
+  \imgw{200}{graphics/frame_interpolation_step_3A_bis.svg}
 \item
   While \(l>0\):
   
@@ -242,16 +243,16 @@
   \item
     Synthesize \(LL^{l-1}(m)\), \(LL^{l-1}(s_j)\), \(LL^{l-1}(s_i)\)
     and \(LL^{l-1}(s_k)\), by computing the 1-level DWT\(^{-1}\).
-    \img{150}{graphics/frame_interpolation_step_4A.svg}
-    \img{200}{graphics/frame_interpolation_step_4A_bis.svg}
+    \imgw{150}{graphics/frame_interpolation_step_4A.svg}
+    \imgw{200}{graphics/frame_interpolation_step_4A_bis.svg}
 
   \item
     \(LL^{l-1}(M)\leftarrow LL^{l-1}(M)\times 2\).
-    \img{200}{graphics/frame_interpolation_step_4B.svg}
+    \imgw{200}{graphics/frame_interpolation_step_4B.svg}
   
   \item
     Refine \(LL^{l-1}(m)\) using \(\pm 1\)-spiral-search.
-    \img{200}{graphics/frame_interpolation_step_4C.svg"}
+    \imgw{200}{graphics/frame_interpolation_step_4C.svg"}
   
   \item
   \(l\leftarrow l-1\). (When \(l=0\), the motion vectors field \(m\)
@@ -259,178 +260,117 @@
   
   \end{enumerate}
   
-  \img{200}{graphics/motion_vectors.svg}
+  \imgw{200}{graphics/motion_vectors.svg}
   
 \item
   While \(l<A\) (in the first iteration, \(l=0\), and \(LL^0(M):=M\)):
   
   \begin{enumerate}
-\item
-  \(l\leftarrow l+1\).
-
-\item
-  Synthesize \(LL^{-l}(s_j)\), \(LL^{-l}(s_i)\) and \(LL^{-l}(s_k)\),
-  computing the 1-level DWT\(^{-1}\) (high-frequency subbands are
-  \(0\)). This performs a zoom-in in these frames using \(1/2\)-subpixel
-  accuracy. 
-
-  \img{200}{graphics/frame_interpolation_step_5B.svg}
-
-\item
-  \(m\leftarrow m\times 2\).
-
-  \img{210}{graphics/motion_vectors_by_2.svg}
-  
-\item
-  \(B\leftarrow B\times 2\).
-
-\item
-  Divide the subband \(LL^{-l}(s_j)\) into blocks of \(B\times B\)
-  pixels and \(\pm 1\)-spiral-search them into the subbands
-  \(LL^{-l}(s_i)\) and \(LL^{-l}(s_k)\), calculating a \(1/2^l\)
-  sub-pixel accuracy \(m\) bi-directional motion vector field. 
-  \img{280}{graphics/motion_vectors_definitive.svg}
-  
-\item
-  Frame prediction. For each block \(b\):
-\item
-  Compute \begin{equation}
-   \hat{b}\leftarrow \frac{b_i\big(\overleftarrow{e}_\text{max}-\overleftarrow{e}(b)\big) + b_k\big(\overrightarrow{e}_\text{max}-\overrightarrow{e}(b)\big)}{\big(\overleftarrow{e}_\text{max}-\overleftarrow{e}(b)\big) + \big(\overrightarrow{e}_\text{max}-\overrightarrow{e}(b)\big)},
-      \end{equation} where \(\overleftarrow{e}(b)\) is the (minimum)
-  distortion of the best backward matching for block \(b\),
-  \(\overrightarrow{e}(b)\) the (minimum) distortion of the best forward
-  matching for block \(b\),
-  \(\overleftarrow{e}_\text{max}=\overrightarrow{e}_\text{max}\) are the
-  backward and forward maximum matching distortions, \(b_i\) is the
-  (backward) block found (as the most similar to \(b\)) in frame \(s_i\)
-  and \(b_k\) is the (forward) block found in frame \(s_k\). Notice
-  that, if \(\overleftarrow{e}(b)=\overrightarrow{e}(b)\), then the
-  prediction is \begin{equation}
-   \hat{b} = \frac{b_i + b_k}{2},
-      \end{equation} and if \(\overleftarrow{e}(b)=0\), \begin{equation}
-   \hat{b} = b_k,
-      \end{equation} and viceversa.
+  \item
+    \(l\leftarrow l+1\).
+    
+  \item
+    Synthesize \(LL^{-l}(s_j)\), \(LL^{-l}(s_i)\) and \(LL^{-l}(s_k)\),
+    computing the 1-level DWT\(^{-1}\) (high-frequency subbands are
+    \(0\)). This performs a zoom-in in these frames using \(1/2\)-subpixel
+    accuracy. 
+    
+    \imgw{200}{graphics/frame_interpolation_step_5B.svg}
+    
+  \item
+    \(m\leftarrow m\times 2\).
+    
+    \imgw{210}{graphics/motion_vectors_by_2.svg}
+    
+  \item
+    \(B\leftarrow B\times 2\).
+    
+  \item
+    Divide the subband \(LL^{-l}(s_j)\) into blocks of \(B\times B\)
+    pixels and \(\pm 1\)-spiral-search them into the subbands
+    \(LL^{-l}(s_i)\) and \(LL^{-l}(s_k)\), calculating a \(1/2^l\)
+    sub-pixel accuracy \(m\) bi-directional motion vector field. 
+    \imgw{280}{graphics/motion_vectors_definitive.svg}
+    
+  \item
+    Frame prediction. For each block \(b\):
+    
+  \item
+    Compute
+    \begin{equation}
+      \hat{b}\leftarrow \frac{b_i\big(\overleftarrow{e}_{\text{max}}-\overleftarrow{e}(b)\big) + b_k\big(\overrightarrow{e}_{\text{max}}-\overrightarrow{e}(b)\big)}{\big(\overleftarrow{e}_{\text{max}}-\overleftarrow{e}(b)\big) + \big(\overrightarrow{e}_{\text{max}}-\overrightarrow{e}(b)\big)},
+    \end{equation}
+    
+    where \(\overleftarrow{e}(b)\) is the (minimum) distortion of the
+    best backward matching for block \(b\), \(\overrightarrow{e}(b)\)
+    the (minimum) distortion of the best forward matching for block
+    \(b\),
+    \(\overleftarrow{e}_{\text{max}}=\overrightarrow{e}_{\text{max}}\) are
+    the backward and forward maximum matching distortions, \(b_i\) is
+    the (backward) block found (as the most similar to \(b\)) in frame
+    \(s_i\) and \(b_k\) is the (forward) block found in frame
+    \(s_k\). Notice that, if
+    \(\overleftarrow{e}(b)=\overrightarrow{e}(b)\), then the
+    prediction is
+    \begin{equation}
+      \hat{b} = \frac{b_i + b_k}{2},
+    \end{equation}
+    and if \(\overleftarrow{e}(b)=0\),
+    \begin{equation}
+      \hat{b} = b_k,
+    \end{equation} and viceversa.
+  \end{enumerate}
 \end{enumerate}
 
-    \hypertarget{lab}{%
-\subsection{Lab}\label{lab}}
-
-Implement the Section \ref{linear_frame_interpolation} (work on
-https://github.com/Sistemas-Multimedia/MCDWT/blob/master/transform/mc/block/interpolate.py).
+\subsection{Lab}
+Implement the Section \ref{sec:linear_frame_interpolation} (work on
+\url{https://github.com/Sistemas-Multimedia/MCDWT/blob/master/transform/mc/block/interpolate.py}).
 Use
-https://github.com/Sistemas-Multimedia/MCDWT/blob/master/mcdwt/mc/block/interpolate.py
+\url{https://github.com/Sistemas-Multimedia/MCDWT/blob/master/mcdwt/mc/block/interpolate.py}
 and
-https://github.com/vicente-gonzalez-ruiz/MCTF-video-coding/blob/master/src/motion\_estimate.cpp
+\url{https://github.com/vicente-gonzalez-ruiz/MCTF-video-coding/blob/master/src/motion\_estimate.cpp}
 as reference.
 
-    \hypertarget{lab}{%
-\subsection{Lab}\label{lab}}
-
+\subsection{Lab}
 Compare the performance of the proposed matching strategies (MSE, MAE
-and EE) in the Section \ref{linear_frame_interpolation}, by computing
+and EE) in the Section \ref{sec:linear_frame_interpolation}, by computing
 the variance of the prediction error between the original frame
 (\(s_j\)) and the prediction frame (\(\hat{s}_j\)).
 
-    \hypertarget{lab}{%
-\subsection{Lab}\label{lab}}
-
+\subsection{Lab}
 Test different DWT filters in the
-Section \ref{linear_frame_interpolation} and compare their performance.
+Section \ref{sec:linear_frame_interpolation} and compare their performance.
 Compute the prediction error between the original frame (\(s_j\)) and
 the prediction frame (\(\hat{s}_j\)). Measure the dependency between
 this performance and the distance between frames (\(i\), \(j\), and
 \(k\) indexes).
 
-    \hypertarget{lab}{%
-\subsection{Lab}\label{lab}}
-
+\subsection{Lab}
 Test the use of both the luma and the chroma in
-Section \ref{linear_frame_interpolation}, and measure the performance of
+Section \ref{sec:linear_frame_interpolation}, and measure the performance of
 each option (only luma vs.~all components), by computing the prediction
 error between the original frame (\(s_j\)) and the prediction frame
 (\(\hat{s}_j\)). Measure the dependency of the results with the distance
 between frames (\(i\), \(j\), and \(k\) indexes).
 
-    \hypertarget{lab}{%
-\subsection{Lab}\label{lab}}
-
+\subsection{Lab}
 Analyze the impact of the \(R\) (search range) parameter in the
-Section \ref{linear_frame_interpolation}. Compute the prediction error
+Section \ref{sec:linear_frame_interpolation}. Compute the prediction error
 between the original frame (\(s_j\)) and the prediction frame
 (\(\hat{s}_j\)). Study the impact of initializing the motion vectors
 (Section \ref{telescopic_search}). Measure the dependency with the
 distance between frames (\(i\), \(j\), and \(k\) indexes).
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}29}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
-         \PY{k+kn}{from} \PY{n+nn}{IPython}\PY{n+nn}{.}\PY{n+nn}{display} \PY{k}{import} \PY{n}{display}\PY{p}{,} \PY{n}{Math}\PY{p}{,} \PY{n}{Latex}
-         
-         \PY{n}{entropyHight1}\PY{o}{=}\PY{p}{[}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mf}{18.041095837829808}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mf}{18.041095837829808}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mf}{18.041095837829808}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mf}{18.041095837829808}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{32}\PY{p}{,} \PY{l+m+mf}{18.041095837829808}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{64}\PY{p}{,} \PY{l+m+mf}{18.041095837829808}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{128}\PY{p}{,} \PY{l+m+mf}{18.041095837829808}\PY{p}{)}\PY{p}{]}
-         \PY{n}{entropyHight2}\PY{o}{=}\PY{p}{[}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mf}{9.846029243766116}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mf}{9.846029243766116}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mf}{9.846029243766116}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mf}{9.846029243766116}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{32}\PY{p}{,} \PY{l+m+mf}{9.846029243766116}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{64}\PY{p}{,} \PY{l+m+mf}{9.846029243766116}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{128}\PY{p}{,} \PY{l+m+mf}{9.846029243766116}\PY{p}{)}\PY{p}{]}
-         \PY{n}{entropyHight3}\PY{o}{=}\PY{p}{[}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mf}{5.087059993090022}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mf}{5.087059993090022}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mf}{5.087059993090022}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mf}{5.087059993090022}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{32}\PY{p}{,} \PY{l+m+mf}{5.087059993090022}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{64}\PY{p}{,} \PY{l+m+mf}{5.087059993090022}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{128}\PY{p}{,} \PY{l+m+mf}{5.087059993090022}\PY{p}{)}\PY{p}{]}
-         
-         \PY{n}{display}\PY{p}{(}\PY{n}{Math}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{text}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{Analyze Entropy by changing the parameter Search Range\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
-         \PY{n}{display}\PY{p}{(}\PY{n}{Math}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Search Range}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad High\PYZus{}1}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad High\PYZus{}2}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad High\PYZus{}3}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
-         
-         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n+nb}{len}\PY{p}{(}\PY{n}{entropyHight1}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
-             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}:f\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PYZbs{}
-                   \PY{n+nb}{format}\PY{p}{(}\PY{n}{entropyHight1}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{entropyHight1}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{entropyHight2}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{entropyHight3}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-         
-         \PY{n}{entropyHight1X}\PY{p}{,} \PY{n}{entropyHight1Y} \PY{o}{=} \PY{n+nb}{zip}\PY{p}{(}\PY{o}{*}\PY{n}{entropyHight1}\PY{p}{)}
-         \PY{n}{entropyHight2X}\PY{p}{,} \PY{n}{entropyHight2Y} \PY{o}{=} \PY{n+nb}{zip}\PY{p}{(}\PY{o}{*}\PY{n}{entropyHight2}\PY{p}{)}
-         \PY{n}{entropyHight3X}\PY{p}{,} \PY{n}{entropyHight3Y} \PY{o}{=} \PY{n+nb}{zip}\PY{p}{(}\PY{o}{*}\PY{n}{entropyHight3}\PY{p}{)}
-         
-         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
-         \PY{n}{fig}\PY{p}{,} \PY{n}{s} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
-         \PY{n}{s}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{entropyHight1X}\PY{p}{,} \PY{n}{entropyHight1Y}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Resolution 1}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{marker}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{s}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{entropyHight2X}\PY{p}{,} \PY{n}{entropyHight2Y}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Resolution 2}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{marker}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{s}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{entropyHight3X}\PY{p}{,} \PY{n}{entropyHight3Y}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Resolution 3}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{marker}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{s}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
-         \PY{n}{s}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Search Range}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}   
-         \PY{n}{s}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{S}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}   
-         \PY{n}{s}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Entropy}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}  
-\end{Verbatim}
+\href{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/video_coding/blob/master/search_range.ipynb}{IPython notebook}
 
-
-    $$\text{Analyze Entropy by changing the parameter Search Range}$$
-
-    
-    $$Search Range\quad\quad\quad High_1\quad\quad\quad\quad High_2\quad\quad\quad\quad High_3$$
-
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-2.000000	18.041096	9.846029	5.087060
-4.000000	18.041096	9.846029	5.087060
-8.000000	18.041096	9.846029	5.087060
-16.000000	18.041096	9.846029	5.087060
-32.000000	18.041096	9.846029	5.087060
-64.000000	18.041096	9.846029	5.087060
-128.000000	18.041096	9.846029	5.087060
-
-    \end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}29}]:} Text(0,0.5,'Entropy')
-\end{Verbatim}
-            
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_16_4.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \hypertarget{lab}{%
-\subsection{Lab}\label{lab}}
-
+\subsection{Lab}
 Analyze the impact of the \(O\) (overlaping) parameter in the
 Section \ref{linear_frame_interpolation}, by means of computing the
 prediction error between the original frame (\(s_j\)) and the prediction
 frame (\(\hat{s}_j\)). Measure the dependency with the distance between
 frames (\(i\), \(j\), and \(k\) indexes).
 
-    \hypertarget{lab}{%
-\subsection{Lab}\label{lab}}
-
+\subsection{Lab}
 Analyze the impact of the \(B\) (block size) parameter in the
 Section \ref{linear_frame_interpolation}, by computing the prediction
 error between the original frame (\(s_j\)) and the prediction frame
@@ -438,9 +378,7 @@ error between the original frame (\(s_j\)) and the prediction frame
 their 0-order entropy. Measure the dependency with the distance between
 frames (\(i\), \(j\), and \(k\) indexes).
 
-    \hypertarget{lab}{%
-\subsection{Lab}\label{lab}}
-
+\subsection{Lab}
 Analyze the impact of the \(A\) (subpixel accuracy) parameter in the
 Section \ref{linear_frame_interpolation}, by computing the prediction
 error between the original frame (\(s_j\)) and the prediction frame
@@ -448,82 +386,9 @@ error between the original frame (\(s_j\)) and the prediction frame
 their entropy. Measure the dependency with the distance between frames
 (\(i\), \(j\), and \(k\) indexes).
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-        \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
-        \PY{k+kn}{from} \PY{n+nn}{IPython}\PY{n+nn}{.}\PY{n+nn}{display} \PY{k}{import} \PY{n}{display}\PY{p}{,} \PY{n}{Math}\PY{p}{,} \PY{n}{Latex}
-        
-        \PY{n}{sub0} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{loadtxt}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{subpixel\PYZus{}analyze/motionhigh\PYZus{}entropy\PYZus{}0.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{sub1} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{loadtxt}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{subpixel\PYZus{}analyze/motionhigh\PYZus{}entropy\PYZus{}1.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{sub2} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{loadtxt}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{subpixel\PYZus{}analyze/motionhigh\PYZus{}entropy\PYZus{}2.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{sub3} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{loadtxt}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{subpixel\PYZus{}analyze/motionhigh\PYZus{}entropy\PYZus{}3.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{sub4} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{loadtxt}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{subpixel\PYZus{}analyze/motionhigh\PYZus{}entropy\PYZus{}4.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        
-        \PY{n}{sub1A} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub1}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub2}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub3}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub4}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-        \PY{n}{sub2A} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub1}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub2}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub3}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub4}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-        \PY{n}{sub3A} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub1}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub2}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub3}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub4}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-        
-        \PY{n}{rl} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-        \PY{n}{m0} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-        \PY{n}{h0} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-        \PY{n}{m1} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{sub1}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub1}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub1}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-        \PY{n}{h1} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{sub1}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub1}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub1}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-        \PY{n}{m2} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{sub2}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub2}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub2}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-        \PY{n}{h2} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{sub2}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub2}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub2}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-        \PY{n}{m3} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{sub3}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub3}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub3}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-        \PY{n}{h3} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{sub3}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub3}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub3}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-        \PY{n}{m4} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{sub4}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub4}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub4}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-        \PY{n}{h4} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{sub4}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub4}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub4}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-        
-        
-        \PY{n}{display}\PY{p}{(}\PY{n}{Math}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{text}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{Analyze Entropy by changing the parameter Subpixel Search\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
-        \PY{n}{display}\PY{p}{(}\PY{n}{Math}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Resolution}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad Motion\PYZus{}0}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad Motion\PYZus{}1}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad Motion\PYZus{}2}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad Motion\PYZus{}3}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad Motion\PYZus{}4}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad  High\PYZus{}0}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad High\PYZus{}1}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad High\PYZus{}2}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad High\PYZus{}3}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{quad High\PYZus{}4}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
-        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}:f\PYZcb{}}\PY{l+s+s2}{   }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{   }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{   }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{   }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PYZbs{}
-                  \PY{n+nb}{format}\PY{p}{(}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{sub1}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{sub2}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub3}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub4}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{sub1}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{sub2}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub3}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub4}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-        
-        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}:f\PYZcb{}}\PY{l+s+s2}{   }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{   }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{   }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{   }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PYZbs{}
-                  \PY{n+nb}{format}\PY{p}{(}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{sub1}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{sub2}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub3}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub4}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{sub1}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{sub2}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub3}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub4}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-        
-        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}:f\PYZcb{}}\PY{l+s+s2}{   }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{   }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{   }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{  }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{   }\PY{l+s+si}{\PYZob{}:6f\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PYZbs{}
-                  \PY{n+nb}{format}\PY{p}{(}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{sub1}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{sub2}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub3}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub4}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{sub0}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{sub1}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{sub2}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub3}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{sub4}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-        
-        \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
-        \PY{n}{fig}\PY{p}{,} \PY{n}{s} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
-        \PY{n}{s}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{sub1A}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Resolution 1}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{marker}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{s}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{sub2A}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Resolution 2}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{marker}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{s}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{sub3A}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Resolution 3}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{marker}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{s}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
-        \PY{n}{s}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Subpixel Accuracy}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}   
-        \PY{n}{s}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{A}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}   
-        \PY{n}{s}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Entropy}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}  
-\end{Verbatim}
+\href{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/video_coding/blob/master/subpixel_accuracy.ipynb}{IPython notebook}
 
-
-    $$\text{Analyze Entropy by changing the parameter Subpixel Search}$$
-
-    
-    $$Resolution\quad Motion_0\quad Motion_1\quad Motion_2\quad Motion_3\quad Motion_4\quad\quad  High_0\quad\quad High_1\quad\quad High_2\quad\quad High_3\quad\quad High_4$$
-
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-1.000000   0.099390  0.293879  0.765173  0.455261  0.611766   0.725300  0.731728   0.697266  0.665301   0.656137
-2.000000   0.181104  0.878652  0.988113  1.072572  1.046731   0.786234  0.748624   0.713472  0.692288   0.678808
-3.000000   0.874122  1.307882  1.511335  0.982027  1.024325   0.790956  0.785012   0.759713  0.734755   0.720940
-
-    \end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}1}]:} Text(0,0.5,'Entropy')
-\end{Verbatim}
-            
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_20_4.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \hypertarget{lab}{%
-\subsection{Lab}\label{lab}}
-
+\subsection{Lab}
 Compare the performance of the Section \ref{linear_frame_interpolation}
 when it holds that
 
@@ -533,8 +398,7 @@ when it holds that
 
 for all blocks.
 
-    \#\# MC/DWT hybrid coding alternatives
-
+\section{MC/DWT hybrid coding alternatives}
 \begin{itemize}
 \item
   \textbf{t+2d}: The sequence of images is decorrelated first along the
@@ -554,8 +418,9 @@ for all blocks.
   spatial redundancy is removed (2d). Example: H.264/SVC.
 \end{itemize}
 
-    \#\# Deblocking filtering
+\img{graphics/H264-S-SVC.svg}
 
+\section{Deblocking filtering}
 \begin{itemize}
 \tightlist
 \item
@@ -564,29 +429,31 @@ for all blocks.
   filter in used to create the quantized prediction predictions.
 \end{itemize}
 
+\imgw{600}{graphics/350px-Deblock1.jpg}
+
 \begin{itemize}
 \tightlist
 \item
   The low-pass filter is applied only on the block boundaries.
 \end{itemize}
 
-    \#\# Bit-rate allocation
-
+\section{Bit-rate allocation}
 \begin{itemize}
 \item
   VBR: Under a constant quantization level (constant video quality), the
   number of bits that each compressed image needs depends on the image
   content (Variable Bit-Rate). Example:
+  \img{graphics/closed-loop-1_ir.svg}
+
 \item
   CBR: Using a Constant Bit-Rate strategy, all frames need the same
   space. Example:
+  \img{graphics/CBR.svg"}
 \end{itemize}
 
-    \#\# Video scalability
-
-    \hypertarget{quality-scalability}{%
-\subsubsection{Quality scalability}\label{quality-scalability}}
-
+\section{Video scalability}
+\subsection{Quality scalability}
+\img{graphics/quality-scalability.svg}
 \begin{itemize}
 \item
   Ideal for remote visualization environments.
@@ -594,9 +461,8 @@ for all blocks.
   By definition, \(s^{[0]}:=s\).
 \end{itemize}
 
-    \hypertarget{temporal-scalability}{%
-\subsubsection{Temporal scalability}\label{temporal-scalability}}
-
+\subsection{Temporal scalability}
+\img{graphics/temporal-scalability.svg}
 \begin{itemize}
 \item
   It holds that
@@ -612,9 +478,8 @@ for all blocks.
   Useful for fast random access.
 \end{itemize}
 
-    \hypertarget{spatial-scalability}{%
-\subsubsection{Spatial scalability}\label{spatial-scalability}}
-
+\subsection{Spatial scalability}
+\img{graphics/spatial-scalability.svg}
 \begin{itemize}
 \item
   Useful for low-resolution devices.
@@ -624,9 +489,4 @@ for all blocks.
   is the resolution of \(V_i\).
 \end{itemize}
 
-
-    % Add a bibliography block to the postdoc
-    
-    
-    
-    \end{document}
+\bibliography{video-compression}
