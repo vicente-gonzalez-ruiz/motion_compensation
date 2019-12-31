@@ -1,5 +1,5 @@
-include $(HOME)/Makefile_templates/tex2eps_rule/Makefile
-include $(HOME)/Makefile_templates/fig2eps_rule/Makefile
+include $(HOME)/Makefile_templates/tex2pdf_rule/Makefile
+include $(HOME)/Makefile_templates/fig2pdf_rule/Makefile
 include $(HOME)/Makefile_templates/eps2pdf_rule/Makefile
 include $(HOME)/Makefile_templates/pdf2png_rule/Makefile
 include $(HOME)/Makefile_templates/pdf2svg_rule/Makefile
@@ -13,7 +13,7 @@ all:	$(TMPs)
 FIGs := $(wildcard *.fig)
 
 # Temporal files
-TMPs += $(FIGs:%.fig=%.eps)
+TMPs += $(FIGs:%.fig=%.pdf)
 TMPs += $(FIGs:%.fig=%.svg)
 
 macroblocks.svg:	macroblocks.pdf

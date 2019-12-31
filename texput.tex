@@ -1,25 +1,18 @@
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "<none>"
-%%% End:
-
-\title{Video compression}
-
+\title{Video compression fundamentals}
 \author{Vicente González Ruiz}
-
 \maketitle
 
 \section{Sources of redundancy}
 \begin{enumerate}
 \item
-  \textbf{Spatial redundancy}: Pixels are very similar in its
-  neighborhood or tends to repeat textures. 2.
+  \textbf{Spatial redundancy}: Pixels tend to be similar to their
+  neighbors or tend to repeat textures.
 \item
-  \textbf{Temporal redundancy}: Temporally adjacent images are typically
-  very alike.
+  \textbf{Temporal redundancy}: Temporally adjacent images tend to be
+  similar.
 \item
-  \textbf{Visual redundancy}: Humans hardly perceive high
-  spatial and temporal frequencies (we like more low frequencies).
+  \textbf{Visual redundancy}: HVS is more sensible to the motion of
+  the objects than the texture of these objects.
 \end{enumerate}
 
 \section{Block-based MC (Motion Compensation)~\cite{rao1996techniques}}
@@ -67,7 +60,7 @@
   B-pictures can have any type of macroblocks.
 \end{itemize}
 
-\imgw{1000}{graphics/macroblocks.svg}
+\myfig{graphics/macroblocks}{10cm}{1000}
 
 \section{Sub-pixel accuracy}
 
@@ -80,7 +73,7 @@
   For example, in MPEG-1, the motion estimation can have up to 1/2 pixel
   accuracy. A bi-linear interpolator is used:
 \end{itemize}
-\imgw{400}{graphics/interpolation.svg}
+\myfig{graphics/interpolation}{4cm}{400}
 
 \section{Matching criteria (similitude between macroblocks)}
 \begin{itemize}
@@ -132,7 +125,7 @@
     the best compression. Disadvantage: CPU killer.
   \end{itemize}
 
-  \imgw{800}{graphics/full_search.svg}
+  \myfig{graphics/full_search}{8cm}{800}
   
   \begin{itemize}
   \tightlist
@@ -164,7 +157,7 @@
   GOPs. Here an example:
 \end{itemize}
 
-\imgw{600}{graphics/GOPs.svg}
+\myfig{graphics/GOPs}{6cm}{600}
 
 \section{MCTF (Motion Compensated Temporal Filtering)}
 \begin{itemize}
@@ -174,14 +167,14 @@
   and the output is a sequence of residue images.
 \end{itemize}
 
-\imgw{600}{graphics/GOPs.svg}
+\myfig{graphics/GOPs}{6cm}{600}
 
 \section{$\pm$ 1-spiral-search ME (Motion Estimation)}
-\imgw{600}{graphics/spiral_search.svg}
+\myfig{graphics/spiral_search}{6cm}{600}
 
 \section{Linear frame interpolation using block-based motion compensation}
 \label{sec:linear_frame_interpolation}
-\imgw{1000}{graphics/frame_interpolation.svg}
+\myfig{graphics/frame_interpolation}{10cm}{1000}
 
 \subsection{Input}
 \begin{itemize}
@@ -418,7 +411,7 @@ for all blocks.
   spatial redundancy is removed (2d). Example: H.264/SVC.
 \end{itemize}
 
-\img{graphics/H264-S-SVC.svg}
+\myfig{graphics/H264-S-SVC}{6cm}{600}
 
 \section{Deblocking filtering}
 \begin{itemize}
@@ -429,7 +422,7 @@ for all blocks.
   filter in used to create the quantized prediction predictions.
 \end{itemize}
 
-\imgw{600}{graphics/350px-Deblock1.jpg}
+\myfig{graphics/350px-Deblock1}{6cm}{600}
 
 \begin{itemize}
 \tightlist
@@ -443,17 +436,17 @@ for all blocks.
   VBR: Under a constant quantization level (constant video quality), the
   number of bits that each compressed image needs depends on the image
   content (Variable Bit-Rate). Example:
-  \img{graphics/closed-loop-1_ir.svg}
+  \myfig{graphics/closed-loop-1_ir}{6cm}{600}
 
 \item
   CBR: Using a Constant Bit-Rate strategy, all frames need the same
   space. Example:
-  \img{graphics/CBR.svg"}
+  \myfig{graphics/CBR}{6cm}{600}
 \end{itemize}
 
 \section{Video scalability}
 \subsection{Quality scalability}
-\imgw{1000}{graphics/quality-scalability.svg}
+\myfig{graphics/quality-scalability}{10cm}{1000}
 \begin{itemize}
 \item
   Ideal for remote visualization environments.
@@ -462,7 +455,7 @@ for all blocks.
 \end{itemize}
 
 \subsection{Temporal scalability}
-\imgw{1000}{graphics/temporal-scalability.svg}
+\myfig{graphics/temporal-scalability}{10cm}{1000}
 \begin{itemize}
 \item
   It holds that
@@ -479,7 +472,7 @@ for all blocks.
 \end{itemize}
 
 \subsection{Spatial scalability}
-\imgw{1000}{graphics/spatial-scalability.svg}
+\myfig{graphics/spatial-scalability}{10cm}{1000}
 \begin{itemize}
 \item
   Useful for low-resolution devices.
