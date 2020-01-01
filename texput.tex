@@ -1,19 +1,9 @@
 \title{Video compression fundamentals}
 \author{Vicente González Ruiz}
 \maketitle
+\tableofcontents
 
-\section{Sources of redundancy}
-\begin{enumerate}
-\item
-  \textbf{Spatial redundancy}: Pixels tend to be similar to their
-  neighbors or tend to repeat textures.
-\item
-  \textbf{Temporal redundancy}: Temporally adjacent images tend to be
-  similar.
-\item
-  \textbf{Visual redundancy}: HVS is more sensible to the motion of
-  the objects than the texture of these objects.
-\end{enumerate}
+\section{\mylink{redundancy}{Sources of redundancy}}
 
 \section{Block-based MC (Motion Compensation)~\cite{rao1996techniques}}
 \begin{itemize}
@@ -25,8 +15,9 @@
   MC removes temporal redundancy. A \emph{predicted image} can be
   encoded as the difference between it and another image called
   \emph{prediction image} which is a motion compensated projection of
-  one or more images named \emph{reference images}. ME tries to generate
-  \emph{residue images} as close as possible to the null images.
+  one or more images named \emph{reference images}. ME tries to
+  generate \emph{residue images} as close as possible to the null
+  images.
 \item
   For example, in the MPEG-1 standard, the reference image/s is/are
   divided in blocks of $16\times 16$ pixels called \emph{macroblocks}.
@@ -60,7 +51,7 @@
   B-pictures can have any type of macroblocks.
 \end{itemize}
 
-\myfig{graphics/macroblocks}{10cm}{1000}
+\includegraphics{macroblocks}
 
 \section{Sub-pixel accuracy}
 
@@ -73,7 +64,7 @@
   For example, in MPEG-1, the motion estimation can have up to 1/2 pixel
   accuracy. A bi-linear interpolator is used:
 \end{itemize}
-\myfig{graphics/interpolation}{4cm}{400}
+\includegraphics{interpolation}
 
 \section{Matching criteria (similitude between macroblocks)}
 \begin{itemize}
@@ -125,7 +116,7 @@
     the best compression. Disadvantage: CPU killer.
   \end{itemize}
 
-  \myfig{graphics/full_search}{8cm}{800}
+  \includegraphics{full_search}
   
   \begin{itemize}
   \tightlist
@@ -157,7 +148,7 @@
   GOPs. Here an example:
 \end{itemize}
 
-\myfig{graphics/GOPs}{6cm}{600}
+\includegraphics{GOPs}
 
 \section{MCTF (Motion Compensated Temporal Filtering)}
 \begin{itemize}
@@ -167,14 +158,14 @@
   and the output is a sequence of residue images.
 \end{itemize}
 
-\myfig{graphics/GOPs}{6cm}{600}
+\includegraphics{GOPs}%{6cm}{600}
 
 \section{$\pm$ 1-spiral-search ME (Motion Estimation)}
-\myfig{graphics/spiral_search}{6cm}{600}
+\includegraphics{spiral_search}%{6cm}{600}
 
 \section{Linear frame interpolation using block-based motion compensation}
 \label{sec:linear_frame_interpolation}
-\myfig{graphics/frame_interpolation}{10cm}{1000}
+\includegraphics{frame_interpolation}%{10cm}{1000}
 
 \subsection{Input}
 \begin{itemize}
@@ -411,7 +402,7 @@ for all blocks.
   spatial redundancy is removed (2d). Example: H.264/SVC.
 \end{itemize}
 
-\myfig{graphics/H264-S-SVC}{6cm}{600}
+\includegraphics{H264-S-SVC}%{6cm}{600}
 
 \section{Deblocking filtering}
 \begin{itemize}
@@ -422,7 +413,7 @@ for all blocks.
   filter in used to create the quantized prediction predictions.
 \end{itemize}
 
-\myfig{graphics/350px-Deblock1}{6cm}{600}
+\includegraphics{350px-Deblock1}%{6cm}{600}
 
 \begin{itemize}
 \tightlist
@@ -436,17 +427,17 @@ for all blocks.
   VBR: Under a constant quantization level (constant video quality), the
   number of bits that each compressed image needs depends on the image
   content (Variable Bit-Rate). Example:
-  \myfig{graphics/closed-loop-1_ir}{6cm}{600}
+  \includegraphics{closed-loop-1_ir}%{6cm}{600}
 
 \item
   CBR: Using a Constant Bit-Rate strategy, all frames need the same
   space. Example:
-  \myfig{graphics/CBR}{6cm}{600}
+  \includegraphics{CBR}%{6cm}{600}
 \end{itemize}
 
 \section{Video scalability}
 \subsection{Quality scalability}
-\myfig{graphics/quality-scalability}{10cm}{1000}
+\includegraphics{quality-scalability}%{10cm}{1000}
 \begin{itemize}
 \item
   Ideal for remote visualization environments.
@@ -455,7 +446,7 @@ for all blocks.
 \end{itemize}
 
 \subsection{Temporal scalability}
-\myfig{graphics/temporal-scalability}{10cm}{1000}
+\includegraphics{temporal-scalability}%{10cm}{1000}
 \begin{itemize}
 \item
   It holds that
@@ -472,7 +463,7 @@ for all blocks.
 \end{itemize}
 
 \subsection{Spatial scalability}
-\myfig{graphics/spatial-scalability}{10cm}{1000}
+\includegraphics{spatial-scalability}%{10cm}{1000}
 \begin{itemize}
 \item
   Useful for low-resolution devices.
