@@ -5,6 +5,29 @@
 
 \section{\mylink{redundancy}{Sources of redundancy}}
 
+\section{Hybrid video coding}
+
+\begin{figure}
+  \svg{hybrid_coding}{800}
+  \caption{Hybrid video coding.}
+  \label{fig:hybrid_coding}
+\end{figure}
+
+See the Fig.~\ref{fig:hybrid_coding}.
+
+\begin{itemize}
+\tightlist
+\item
+  Used in all the video compression standards.
+\item
+  Intracoded images are transformed ($\cal T$) and quantized ($\cal
+  Q$).
+\item
+  Intercoded images are also motion compensated ($\cal P$).
+\item
+  The encoder incorporates a decoder to avoid the drift error.
+\end{itemize}
+
 \section{Block-based MC (Motion Compensation)~\cite{rao1996techniques}}
 \begin{itemize}
 \tightlist
@@ -50,8 +73,13 @@
 \item
   B-pictures can have any type of macroblocks.
 \end{itemize}
+See the Fig.~\ref{fig:macroblocks}.
 
-\includegraphics{macroblocks}
+\begin{figure}
+  \svg{macroblocks}{600}
+  \caption{Types of macroblocks.}
+  \label{fig:macroblocks}
+\end{figure}
 
 \section{Sub-pixel accuracy}
 
@@ -61,10 +89,16 @@
   The motion estimation can be carried out using integer pixel accuracy
   or a fractional (sub-) pixel accuracy.
 \item
-  For example, in MPEG-1, the motion estimation can have up to 1/2 pixel
-  accuracy. A bi-linear interpolator is used:
+  For example, in MPEG-1, the motion estimation can have up to 1/2
+  pixel accuracy. A bi-linear interpolator is used (see the
+  Fig.~\ref{fig:interpolation}).
 \end{itemize}
-\includegraphics{interpolation}
+
+\begin{figure}
+  \svg{interpolation}{200}
+  \caption{Pixel interpolation.}
+  \label{fig:interpolation}
+\end{figure}
 
 \section{Matching criteria (similitude between macroblocks)}
 \begin{itemize}
@@ -109,14 +143,16 @@
 \item
   Only performed by the compressor.
 
-  \begin{itemize}
-  \tightlist
-  \item
-    \textbf{Full search}: All the possibilities are checked. Advantage:
-    the best compression. Disadvantage: CPU killer.
-  \end{itemize}
+  \begin{itemize} \tightlist \item \textbf{Full search}: All the
+  possibilities are checked (see the
+  Fig.~\ref{fig:full_search}). Advantage: the best
+  compression. Disadvantage: CPU killer.  \end{itemize}
 
-  \includegraphics{full_search}
+  \begin{figure}
+    \svg{full_search}{500}
+    \caption{The full search scheme.}
+    \label{fig:full_search}
+  \end{figure}
   
   \begin{itemize}
   \tightlist
@@ -145,10 +181,14 @@
 \item
   The temporal redundancy is exploited by blocks of images called GOPs.
   This means that a GOP can be decoded independently of the rest of
-  GOPs. Here an example:
+  GOPs (see the Fig.~\ref{fig:GOPs}).
 \end{itemize}
 
-\includegraphics{GOPs}
+\begin{figure}
+  \svg{GOPs}{500}
+  \caption{A GOP.}
+  \label{fig:GOPs}
+\end{figure}
 
 \section{MCTF (Motion Compensated Temporal Filtering)}
 \begin{itemize}
@@ -158,16 +198,22 @@
   and the output is a sequence of residue images.
 \end{itemize}
 
-\includegraphics{GOPs}%{6cm}{600}
-
 \section{$\pm$ 1-spiral-search ME (Motion Estimation)}
-\includegraphics{spiral_search}%{6cm}{600}
+\begin{figure}[h]
+  \svg{spiral_search}{500}
+  \caption{Spiral search.}
+  \label{fig:spiral_search}
+\end{figure}
 
 \section{Linear frame interpolation using block-based motion compensation}
 \label{sec:linear_frame_interpolation}
-\includegraphics{frame_interpolation}%{10cm}{1000}
+\begin{figure}[h]
+  \svg{frame_interpolation}{900}
+  \caption{Frame interpolation.}
+  \label{fig:frame_interpolation}
+\end{figure}
 
-\subsection{Input}
+\subsection*{Input}
 \begin{itemize}
 \tightlist
 \item
@@ -183,7 +229,7 @@
   $A$: $\frac{1}{2^A}$ subpixel accuracy.
 \end{itemize}
 
-\subsection{Output}
+\subsection*{Output}
 \begin{itemize}
 \tightlist
 \item
@@ -196,7 +242,7 @@
   bidirectional Root Mean Square matching Wrrors (RMSE).
 \end{itemize}
 
-\subsection{Algorithm}
+\subsection*{Algorithm}
 \begin{enumerate}
 \tightlist
 
@@ -306,7 +352,7 @@
   \end{enumerate}
 \end{enumerate}
 
-\subsection{Lab}
+\subsection*{Lab}
 Implement the Section \ref{sec:linear_frame_interpolation} (work on
 \url{https://github.com/Sistemas-Multimedia/MCDWT/blob/master/transform/mc/block/interpolate.py}).
 Use
@@ -315,13 +361,13 @@ and
 \url{https://github.com/vicente-gonzalez-ruiz/MCTF-video-coding/blob/master/src/motion\_estimate.cpp}
 as reference.
 
-\subsection{Lab}
+\subsection*{Lab}
 Compare the performance of the proposed matching strategies (MSE, MAE
 and EE) in the Section \ref{sec:linear_frame_interpolation}, by computing
 the variance of the prediction error between the original frame
 ($s_j$) and the prediction frame ($\hat{s}_j$).
 
-\subsection{Lab}
+\subsection*{Lab}
 Test different DWT filters in the
 Section \ref{sec:linear_frame_interpolation} and compare their performance.
 Compute the prediction error between the original frame ($s_j$) and
@@ -329,7 +375,7 @@ the prediction frame ($\hat{s}_j$). Measure the dependency between
 this performance and the distance between frames ($i$, $j$, and
 $k$ indexes).
 
-\subsection{Lab}
+\subsection*{Lab}
 Test the use of both the luma and the chroma in
 Section \ref{sec:linear_frame_interpolation}, and measure the performance of
 each option (only luma vs.~all components), by computing the prediction
@@ -337,7 +383,7 @@ error between the original frame ($s_j$) and the prediction frame
 ($\hat{s}_j$). Measure the dependency of the results with the distance
 between frames ($i$, $j$, and $k$ indexes).
 
-\subsection{Lab}
+\subsection*{Lab}
 Analyze the impact of the $R$ (search range) parameter in the
 Section \ref{sec:linear_frame_interpolation}. Compute the prediction error
 between the original frame ($s_j$) and the prediction frame
@@ -347,14 +393,14 @@ distance between frames ($i$, $j$, and $k$ indexes).
 
 \href{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/video_coding/blob/master/search_range.ipynb}{IPython notebook}
 
-\subsection{Lab}
+\subsection*{Lab}
 Analyze the impact of the $O$ (overlaping) parameter in the
 Section \ref{linear_frame_interpolation}, by means of computing the
 prediction error between the original frame ($s_j$) and the prediction
 frame ($\hat{s}_j$). Measure the dependency with the distance between
 frames ($i$, $j$, and $k$ indexes).
 
-\subsection{Lab}
+\subsection*{Lab}
 Analyze the impact of the $B$ (block size) parameter in the
 Section \ref{linear_frame_interpolation}, by computing the prediction
 error between the original frame ($s_j$) and the prediction frame
@@ -362,7 +408,7 @@ error between the original frame ($s_j$) and the prediction frame
 their 0-order entropy. Measure the dependency with the distance between
 frames ($i$, $j$, and $k$ indexes).
 
-\subsection{Lab}
+\subsection*{Lab}
 Analyze the impact of the $A$ (subpixel accuracy) parameter in the
 Section \ref{linear_frame_interpolation}, by computing the prediction
 error between the original frame ($s_j$) and the prediction frame
@@ -372,7 +418,7 @@ their entropy. Measure the dependency with the distance between frames
 
 \href{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/video_coding/blob/master/subpixel_accuracy.ipynb}{IPython notebook}
 
-\subsection{Lab}
+\subsection*{Lab}
 Compare the performance of the Section \ref{linear_frame_interpolation}
 when it holds that
 
@@ -398,11 +444,16 @@ for all blocks.
 \item
   \textbf{2d+t+2d}: The fist step creates a Laplacian Pyramid (2d),
   which is invariant to the displacement. Next, each level of the
-  pyramid is decorrelated along the time (t) and finally, the remaining
-  spatial redundancy is removed (2d). Example: H.264/SVC.
+  pyramid is decorrelated along the time (t) and finally, the
+  remaining spatial redundancy is removed (2d). The
+  Fig~\ref{fig:H264-S-SVC} show an example for H.264/SVC.
 \end{itemize}
 
-\includegraphics{H264-S-SVC}%{6cm}{600}
+\begin{figure}
+  \svg{H264-S-SVC}{500}
+  \caption{SVC scheme in H.264.}
+  \label{fig:H264-S-SVC}
+\end{figure}
 
 \section{Deblocking filtering}
 \begin{itemize}
@@ -410,10 +461,15 @@ for all blocks.
 \item
   If any other block-overlaping techniques have not been applied,
   block-based video encoders improve their performance if a deblocking
-  filter in used to create the quantized prediction predictions.
+  filter in used to create the quantized prediction predictions (see
+  the Fig.~\ref{fig:350px-Deblock1}).
 \end{itemize}
 
-\includegraphics{350px-Deblock1}%{6cm}{600}
+\begin{figure}
+  \jpg{350px-Deblock1}{800}
+  \caption{Deblocking filetering effect.}
+  \label{fig:350px-Deblock1}
+\end{figure}
 
 \begin{itemize}
 \tightlist
@@ -424,20 +480,39 @@ for all blocks.
 \section{Bit-rate allocation}
 \begin{itemize}
 \item
-  VBR: Under a constant quantization level (constant video quality), the
-  number of bits that each compressed image needs depends on the image
-  content (Variable Bit-Rate). Example:
-  \includegraphics{closed-loop-1_ir}%{6cm}{600}
-
+  VBR: Under a constant quantization level (constant video quality),
+  the number of bits that each compressed image needs depends on the
+  image content (Variable Bit-Rate). In the
+  Fig.~\ref{fig:closed-loop-1_ir} there is an
+  example.
+  \begin{figure}
+    \svg{closed-loop-1_ir}{500}
+    \caption{Example of variable bit-allocation.}
+    \label{fig:closed-loop-1_ir}
+  \end{figure}
+  
 \item
   CBR: Using a Constant Bit-Rate strategy, all frames need the same
-  space. Example:
-  \includegraphics{CBR}%{6cm}{600}
+  space. In the
+  Fig.~\ref{fig:CBR} there is an
+  example.
+  \begin{figure}
+    \svg{CBR}{500}
+    \caption{Example of constant bit-allocation.}
+    \label{CBR}
+  \end{figure}
 \end{itemize}
 
 \section{Video scalability}
 \subsection{Quality scalability}
-\includegraphics{quality-scalability}%{10cm}{1000}
+
+\begin{figure}
+  \svg{quality-scalability}{1000}
+  \caption{Quality scalability.}
+  \label{fig:quality-scalability}
+\end{figure}
+
+Véase la Fig.~\ref{fig:quality-scalability}.
 \begin{itemize}
 \item
   Ideal for remote visualization environments.
@@ -446,7 +521,14 @@ for all blocks.
 \end{itemize}
 
 \subsection{Temporal scalability}
-\includegraphics{temporal-scalability}%{10cm}{1000}
+\begin{figure}
+  \svg{temporal-scalability}{1000}
+  \caption{Temporal scalability.}
+  \label{fig:temporal-scalability}
+\end{figure}
+
+Véase la Fig.~\ref{fig:temporal-scalability}.
+
 \begin{itemize}
 \item
   It holds that
@@ -466,7 +548,15 @@ for all blocks.
 %\end{document}
 
 \subsection{\href{http://inst.eecs.berkeley.edu/~ee290t/sp04/lectures/videowavelet_UCB1-3.pdf}{Spatial scalability}}
-\includegraphics{spatial-scalability}%{10cm}{1000}
+
+\begin{figure}
+  \svg{spatial-scalability}{1000}
+  \caption{Spatial scalability.}
+  \label{fig:spatial-scalability}
+\end{figure}
+
+Véase la Fig.~\ref{fig:spatial-scalability}.
+
 \begin{itemize}
 \item
   Useful for low-resolution devices.
