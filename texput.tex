@@ -20,10 +20,9 @@ See the Fig.~\ref{fig:hybrid_coding}.
 \item
   Used in all the video compression standards.
 \item
-  Intracoded images are transformed ($\cal T$) and quantized ($\cal
-  Q$).
+  Intracoded images are transformed ($T$) and quantized ($Q$).
 \item
-  Intercoded images are also motion compensated ($\cal P$).
+  Intercoded images are also motion compensated ($P$).
 \item
   The encoder incorporates a decoder to avoid the drift error.
 \end{itemize}
@@ -517,7 +516,7 @@ Véase la Fig.~\ref{fig:quality-scalability}.
 \item
   Ideal for remote visualization environments.
 \item
-  By definition, $s^{[0]}:=s$.
+  By definition, $V^{[0]}:=V$.
 \end{itemize}
 
 \subsection{Temporal scalability}
@@ -534,12 +533,12 @@ Véase la Fig.~\ref{fig:temporal-scalability}.
   It holds that
 
   \begin{equation}
-    s^{t}=\{s_{2^t i}\}=\{s_{2i}^{t-1}\},
+    V^{t}=\{V_{2^t i}\}=\{V_{2i}^{t-1}\},
   \end{equation}
 
   where $t$ denotes the Temporal Resolution Level (TRL).
 \item
-  Notice that $s:=s^{0}$.
+  Notice that $V:=V^{0}$.
 \item
   Useful for fast random access.
 \end{itemize}
