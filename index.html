@@ -26,55 +26,65 @@ class="ecrm-1200">Vicente Gonz</span><span
 class="ecrm-1200">&#x00E1;</span><span 
 class="ecrm-1200">lez Ruiz</span></div><br />
 <div class="date" ><span 
-class="ecrm-1200">January 19, 2021</span></div>
+class="ecrm-1200">December 5, 2022</span></div>
    </div>
    <h3 class="likesectionHead"><a 
  id="x1-1000"></a>Contents</h3>
    <div class="tableofcontents">
-   <span class="sectionToc" >1 <a 
+   &#x00A0;<span class="sectionToc" >1 <a 
 href="#x1-20001" id="QQ2-1-2">Sources of redundancy</a></span>
-<br />   <span class="sectionToc" >2 <a 
-href="#x1-30002" id="QQ2-1-3">Hybrid video coding</a></span>
-<br />   <span class="sectionToc" >3 <a 
-href="#x1-40003" id="QQ2-1-4">Block-based MC &#x0028;Motion Compensation&#x0029;&#x00A0;&#x005B;1&#x005D;</a></span>
-<br />   <span class="sectionToc" >4 <a 
-href="#x1-50004" id="QQ2-1-5">Sub-pixel accuracy</a></span>
-<br />   <span class="sectionToc" >5 <a 
-href="#x1-60005" id="QQ2-1-6">Matching criteria &#x0028;similitude between macroblocks&#x0029;</a></span>
-<br />   <span class="sectionToc" >6 <a 
-href="#x1-70006" id="QQ2-1-7">Searching strategies</a></span>
-<br />   <span class="sectionToc" >7 <a 
-href="#x1-80007" id="QQ2-1-8">The GOP &#x0028;Group Of Pictures&#x0029; concept</a></span>
-<br />   <span class="sectionToc" >8 <a 
-href="#x1-90008" id="QQ2-1-9">MCTF &#x0028;Motion Compensated Temporal Filtering&#x0029;</a></span>
-<br />   <span class="sectionToc" >9 <a 
-href="#x1-100009" id="QQ2-1-10"><!--l. 16--><math 
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >1.1 <a 
+href="#x1-30001.1" id="QQ2-1-3">Intra &#x0028;I&#x0029; video coding</a></span>
+<br />   &#x00A0;<span class="sectionToc" >2 <a 
+href="#x1-40002" id="QQ2-1-5">Hybrid video coding</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >2.1 <a 
+href="#x1-50002.1" id="QQ2-1-7">Motion compensation prediction &#x0028;P&#x0029; video coding</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >2.2 <a 
+href="#x1-60002.2" id="QQ2-1-8">Types of macro-blocks</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >2.3 <a 
+href="#x1-70002.3" id="QQ2-1-10">Macro-block type decision</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >2.4 <a 
+href="#x1-80002.4" id="QQ2-1-11">Codec</a></span>
+<br />   &#x00A0;<span class="sectionToc" >3 <a 
+href="#x1-90003" id="QQ2-1-13">Block-based MC &#x0028;Motion Compensation&#x0029;&#x00A0;&#x005B;1&#x005D;</a></span>
+<br />   &#x00A0;<span class="sectionToc" >4 <a 
+href="#x1-100004" id="QQ2-1-15">Sub-pixel accuracy</a></span>
+<br />   &#x00A0;<span class="sectionToc" >5 <a 
+href="#x1-110005" id="QQ2-1-17">Matching criteria &#x0028;similitude between macroblocks&#x0029;</a></span>
+<br />   &#x00A0;<span class="sectionToc" >6 <a 
+href="#x1-120006" id="QQ2-1-18">Searching strategies</a></span>
+<br />   &#x00A0;<span class="sectionToc" >7 <a 
+href="#x1-130007" id="QQ2-1-20">The GOP &#x0028;Group Of Pictures&#x0029; concept</a></span>
+<br />   &#x00A0;<span class="sectionToc" >8 <a 
+href="#x1-140008" id="QQ2-1-22">MCTF &#x0028;Motion Compensated Temporal Filtering&#x0029;</a></span>
+<br />   &#x00A0;<span class="sectionToc" >9 <a 
+href="#x1-150009" id="QQ2-1-23"><!--l. 24--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mo 
 class="MathClass-bin">&#x00B1;</mo></math>
 1-spiral-search ME &#x0028;Motion Estimation&#x0029;</a></span>
-<br />   <span class="sectionToc" >10 <a 
-href="#x1-1100010" id="QQ2-1-11">Linear frame interpolation using block-based motion compensation</a></span>
-<br />   <span class="sectionToc" >11 <a 
-href="#x1-2400011" id="QQ2-1-24">MC/DWT hybrid coding alternatives</a></span>
-<br />   <span class="sectionToc" >12 <a 
-href="#x1-2500012" id="QQ2-1-25">Deblocking &#xFB01;ltering</a></span>
-<br />   <span class="sectionToc" >13 <a 
-href="#x1-2600013" id="QQ2-1-26">Bit-rate allocation</a></span>
-<br />   <span class="sectionToc" >14 <a 
-href="#x1-2700014" id="QQ2-1-27">Video scalability</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >14.1 <a 
-href="#x1-2800014.1" id="QQ2-1-28">Quality scalability</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >14.2 <a 
-href="#x1-2900014.2" id="QQ2-1-29">Temporal scalability</a></span>
-<br />   &#x00A0;<span class="subsectionToc" >14.3 <a 
-href="#x1-3000014.3" id="QQ2-1-30">Spatial scalability</a></span>
-<br />   <span class="sectionToc" ><a 
-href="#Q1-1-32">References</a></span>
-   </div>
+<br />   &#x00A0;<span class="sectionToc" >10 <a 
+href="#x1-1600010" id="QQ2-1-25">Linear frame interpolation using block-based motion compensation</a></span>
+<br />   &#x00A0;<span class="sectionToc" >11 <a 
+href="#x1-2900011" id="QQ2-1-39">MC/DWT hybrid coding alternatives</a></span>
+<br />   &#x00A0;<span class="sectionToc" >12 <a 
+href="#x1-3000012" id="QQ2-1-41">Deblocking &#xFB01;ltering</a></span>
+<br />   &#x00A0;<span class="sectionToc" >13 <a 
+href="#x1-3100013" id="QQ2-1-43">Bit-rate allocation</a></span>
+<br />   &#x00A0;<span class="sectionToc" >14 <a 
+href="#x1-3200014" id="QQ2-1-46">Video scalability</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >14.1 <a 
+href="#x1-3300014.1" id="QQ2-1-47">Quality scalability</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >14.2 <a 
+href="#x1-3400014.2" id="QQ2-1-49">Temporal scalability</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >14.3 <a 
+href="#x1-3500014.3" id="QQ2-1-51">Spatial scalability</a></span>
+<br />   &#x00A0;<span class="sectionToc" ><a 
+href="#Q1-1-53">References</a></span>
                                                                   
 
                                                                   
+   </div>
 <!--l. 6--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
@@ -82,8 +92,199 @@ href="#Q1-1-32">References</a></span>
 href="https://vicente-gonzalez-ruiz.github.io/redundancy/" >Sources of redundancy</a></h3>
 <!--l. 8--><p class="noindent" >
 </p>
-   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
- id="x1-30002"></a>Hybrid video coding</h3>
+   <h4 class="subsectionHead"><span class="titlemark">1.1   </span> <a 
+ id="x1-30001.1"></a>Intra &#x0028;I&#x0029; video coding</h4>
+<!--l. 10--><p class="noindent" >In the III... &#x0028;or Intra video&#x0029; coding, the <a 
+href="https://sistemas-multimedia.github.io/milestones/07-DCT/" >2D block-DWT</a>, the <a 
+href="https://sistemas-multimedia.github.io/milestones/08-DWT/" >2D DWT</a>, or
+any other spatial transform, is used on sequences of frames &#x0028;images&#x0029;
+to exploit the spatial correlation. This is achieved by simply iterating the
+spatial decorrelation as it is described in the Algorithm&#x00A0;<a 
+href="#x1-3002r1">1<!--tex4ht:ref: alg:III_coding --></a>&#x00A0;<span class="cite">&#x005B;<a 
+href="#Xtaubman2002jpeg2000">2</a>&#x005D;</span>, where
+<!--l. 17--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>V</mi> </math> in the input
+sequence and <!--l. 18--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>S</mi></math>
+controls the number of SRLs &#x0028;Spatial Resolution
+Levels&#x0029;<span class="footnote-mark"><a 
+href="index2.html#fn1x0"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x1-3001f1"></a> .
+The synthesis transform is computed using the Algorithm&#x00A0;<a 
+href="#x1-3009r2">2<!--tex4ht:ref: alg:III_decoding --></a>. In the Fig.&#x00A0;<a 
+href="#x1-3016r1">1<!--tex4ht:ref: fig:III --></a>
+there is an example of the decomposition generated for three frames
+<!--l. 23--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>V</mi> </mrow><mrow 
+><mn>0</mn></mrow></msub 
+></math>,
+<!--l. 23--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>V</mi> </mrow><mrow 
+><mn>1</mn></mrow></msub 
+></math> and
+<!--l. 23--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>V</mi> </mrow><mrow 
+><mn>2</mn></mrow></msub 
+></math>.
+<a 
+ id="x1-3002r1"></a>
+</p><!--l. 25--><p class="indent" >   <span 
+class="ecbx-1000">Algorithm 1</span>: III-coding&#x0028;<!--l. 25--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle mathvariant="bold"><mi 
+>V</mi></mstyle></math>
+/* original video sequence */, <!--l. 25--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>S</mi></math>
+/* Number of extra levels */&#x0029; <!--l. 25--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" > <mo 
+class="MathClass-rel">&#x2192;</mo></math>
+&#x0028;<!--l. 25--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle mathvariant="bold"><mi 
+>O</mi></mstyle></math> /*
+transformed video sequence */&#x0029;<br 
+class="newline" />
+     </p><ol  class="enumerate1" >
+<li 
+  class="enumerate" id="x1-3004x1">
+     <!--l. 28--><p class="noindent" ><!--l. 28--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle mathvariant="bold"><mi 
+>O</mi></mstyle> <mo 
+class="MathClass-rel">=</mo> <mo 
+class="MathClass-open" stretchy="false">&#x007B;</mo><mo 
+class="MathClass-close" stretchy="false">&#x007D;</mo></math>
+     /* empty sequence */.
+     </p></li>
+<li 
+  class="enumerate" id="x1-3006x2">
+     <!--l. 29--><p class="noindent" >for <!--l. 29--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mstyle mathvariant="bold"><mi 
+>V</mi></mstyle></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">&#x2208;</mo><mstyle mathvariant="bold"><mi 
+>V</mi></mstyle></math>:
+                                                                  
+
+                                                                  
+         </p><ol  class="enumerate2" >
+<li 
+  class="enumerate" id="x1-3008x1">
+         <!--l. 31--><p class="noindent" ><!--l. 31--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mstyle mathvariant="bold"><mi 
+>O</mi></mstyle></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">&#x2190;</mo><msup><mrow 
+><mstyle 
+class="text"><mtext  >2D-T</mtext></mstyle></mrow><mrow 
+><mi 
+>S</mi></mrow></msup 
+><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
+><mstyle mathvariant="bold"><mi 
+>V</mi></mstyle></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>
+         /* 2D analysis spatial transform */.</p></li></ol>
+     </li></ol>
+<a 
+ id="x1-3009r2"></a>
+<!--l. 36--><p class="indent" >   <span 
+class="ecbx-1000">Algorithm 2</span>: III-decoding&#x0028;<!--l. 36--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle mathvariant="bold"><mi 
+>O</mi></mstyle></math>
+/* transformed video sequence */, <!--l. 36--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>S</mi></math>
+/* Number of extra levels */&#x0029; <!--l. 36--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" > <mo 
+class="MathClass-rel">&#x2192;</mo></math>
+&#x0028;<!--l. 36--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle mathvariant="bold"><mi 
+>V</mi></mstyle></math> /*
+original video sequence */&#x0029;<br 
+class="newline" />
+     </p><ol  class="enumerate1" >
+<li 
+  class="enumerate" id="x1-3011x1">
+     <!--l. 39--><p class="noindent" ><!--l. 39--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle mathvariant="bold"><mi 
+>V</mi></mstyle> <mo 
+class="MathClass-rel">=</mo> <mo 
+class="MathClass-open" stretchy="false">&#x007B;</mo><mo 
+class="MathClass-close" stretchy="false">&#x007D;</mo></math>
+     /* empty sequence */.
+     </p></li>
+<li 
+  class="enumerate" id="x1-3013x2">
+     <!--l. 40--><p class="noindent" >for <!--l. 40--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mstyle mathvariant="bold"><mi 
+>O</mi></mstyle></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">&#x2208;</mo><mstyle mathvariant="bold"><mi 
+>O</mi></mstyle></math>:
+         </p><ol  class="enumerate2" >
+<li 
+  class="enumerate" id="x1-3015x1">
+         <!--l. 42--><p class="noindent" ><!--l. 42--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mstyle mathvariant="bold"><mi 
+>V</mi></mstyle></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">&#x2190;</mo><msup><mrow 
+><mstyle 
+class="text"><mtext  >2D-T</mtext></mstyle></mrow><mrow 
+><mo 
+class="MathClass-bin">&#x2212;</mo><mi 
+>S</mi></mrow></msup 
+><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
+><mstyle mathvariant="bold"><mi 
+>O</mi></mstyle></mrow><mrow 
+><mi 
+>i</mi></mrow></msub 
+><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>
+         /* 2D synthesis spatial transform */.</p></li></ol>
+     </li></ol>
    <hr class="figure" /><div class="figure" 
 >
                                                                   
@@ -92,47 +293,729 @@ href="https://vicente-gonzalez-ruiz.github.io/redundancy/" >Sources of redundanc
                                                                   
 
                                                                   
-<!--l. 11--><p class="noindent" ><div style="text-align:center;"> <img width=800 src="graphics/hybrid_coding.svg" /> </div>  <a 
- id="x1-3001r1"></a>
+<!--l. 49--><p class="noindent" ><div style="text-align:center;"> <img width=600 src="graphics/forward_MDWT.svg" /> </div>  <a 
+ id="x1-3016r1"></a>
 <a 
- id="x1-3002"></a>
+ id="x1-3017"></a>
 <br />                                                                  </p><div class="caption" 
 ><span class="id">
-Figure&#x00A0;1: </span><span  
-class="content">Hybrid video coding.
-</span></div><!--tex4ht:label?: x1-3001r2 -->
+Figure&#x00A0;1:            </span><span  
+class="content">Decomposition            generated            by            1-levels
+&#x0028;<!--l. 50--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>S</mi> <mo 
+class="MathClass-rel">=</mo> <mn>1</mn></math>&#x0029;
+2D-DWT      and      the      2x2-DCT      &#x0028;block      size      is      equal      to
+<!--l. 50--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>S</mi> <mo 
+class="MathClass-bin">+</mo> <mn>1</mn></math>&#x0029;.</span></div><!--tex4ht:label?: x1-3016r1 -->
                                                                   
 
                                                                   
    </div><hr class="endfigure" />
-<!--l. 16--><p class="indent" >   See the Fig.&#x00A0;<a 
-href="#x1-3001r1">1<!--tex4ht:ref: fig:hybrid_coding --></a>.
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-40002"></a>Hybrid video coding</h3>
+   <hr class="figure" /><div class="figure" 
+>
+                                                                  
+
+                                                                  
+                                                                  
+
+                                                                  
+<!--l. 57--><p class="noindent" ><div style="text-align:center;"> <img width=800 src="hybrid_coding.svg" /> </div>  <a 
+ id="x1-4001r2"></a>
+<a 
+ id="x1-4002"></a>
+<br />                                                                  </p><div class="caption" 
+><span class="id">
+Figure&#x00A0;2: </span><span  
+class="content">Hybrid video coding.
+</span></div><!--tex4ht:label?: x1-4001r2 -->
+                                                                  
+
+                                                                  
+   </div><hr class="endfigure" />
+<!--l. 62--><p class="indent" >   See the Fig.&#x00A0;<a 
+href="#x1-4001r2">2<!--tex4ht:ref: fig:hybrid_coding --></a>.
 </p>
      <ul class="itemize1">
-     <li class="itemize">Used in all the video compression standards.
-     </li>
-     <li class="itemize">Intracoded images are transformed &#x0028;<!--l. 23--><math 
+     <li class="itemize">
+     <!--l. 67--><p class="noindent" >Used in all the video compression standards.
+     </p></li>
+     <li class="itemize">
+     <!--l. 69--><p class="noindent" >Intracoded images are transformed &#x0028;<!--l. 69--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >T</mi></math>&#x0029;
-     and quantized &#x0028;<!--l. 23--><math 
+     and quantized &#x0028;<!--l. 69--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >Q</mi></math>&#x0029;.
-     </li>
-     <li class="itemize">Intercoded images are also motion compensated &#x0028;<!--l. 25--><math 
+     </p></li>
+     <li class="itemize">
+     <!--l. 71--><p class="noindent" >Intercoded images are also motion compensated &#x0028;<!--l. 71--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >P</mi></math>&#x0029;.
-     </li>
-     <li class="itemize">The encoder incorporates a decoder to avoid the drift error.</li></ul>
+     </p></li>
+     <li class="itemize">
+     <!--l. 73--><p class="noindent" >The encoder incorporates a decoder to avoid the drift error.</p></li></ul>
+   <h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a 
+ id="x1-50002.1"></a>Motion compensation prediction &#x0028;P&#x0029; video coding</h4>
+<!--l. 78--><p class="noindent" >III... video coding is fast and good for video edition, but the compression ratios are
+poor because the temporal correlation is not removed. IPP... video coding &#x0028;also called
+inter-coding&#x0029; uses MC &#x0028;Motion Compensation&#x0029; to exploit the temporal correlation
+in frame sequences. IPP... encoders split the sequence into <a 
+href="https://en.wikipedia.org/wiki/Group_of_pictures" >GOPs &#x0028;Groups
+of Frames&#x0029;</a>, where the &#xFB01;rst frame of each GOP is a I-type frame, and the
+rest of frames of the GOP are P-type. P-frames are motion-compensated
+frames and usually the reference frame is the previous one, in the temporal
+order.
+</p><!--l. 89--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">2.2   </span> <a 
+ id="x1-60002.2"></a>Types of macro-blocks</h4>
+<!--l. 90--><p class="noindent" >A P-type frame is created in two steps:
+     </p><ol  class="enumerate1" >
+<li 
+  class="enumerate" id="x1-6002x1">
+     <!--l. 92--><p class="noindent" >The frame is divided into non-overlapping blocks &#x0028;typically of <!--l. 93--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn><mn>6</mn> <mo 
+class="MathClass-bin">&#x00D7;</mo> <mn>1</mn><mn>6</mn></math>
+     pixels&#x0029;, that in this context we will call, macro-blocks.
+     </p></li>
+<li 
+  class="enumerate" id="x1-6004x2">
+     <!--l. 95--><p class="noindent" >A prediction frame is generated using a &#xFB01;eld of motion vectors &#x0028;one vector
+     per matro-block&#x0029; and a reference.
+                                                                  
+
+                                                                  
+     </p></li>
+<li 
+  class="enumerate" id="x1-6006x3">
+     <!--l. 97--><p class="noindent" >The prediction frame is substracted to the predicted frame, generating a
+     prediction-error frame.</p></li></ol>
+<!--l. 100--><p class="noindent" >In general, most of the time this procedure success in temporally decorrelate the frames.
+However, it can also happen that when the reference&#x0028;s&#x0029; frame&#x0028;s&#x0029; is very di&#xFB00;erent from
+the predicted one, the prediction-error frame has a higher entropy than the original
+&#x0028;predicted&#x0029; one.
+</p><!--l. 106--><p class="indent" >   In order to minimize this inconvenient, most video coding standards use the
+following types of macro-blocks:
+     </p><ol  class="enumerate1" >
+<li 
+  class="enumerate" id="x1-6008x1">
+     <!--l. 109--><p class="noindent" >I &#x0028;intra&#x0029;: if the macro-block is not compensated.
+     </p></li>
+<li 
+  class="enumerate" id="x1-6010x2">
+     <!--l. 110--><p class="noindent" >P &#x0028;predicted&#x0029;: if the macro-blocks is compensated.
+     </p></li>
+<li 
+  class="enumerate" id="x1-6012x3">
+     <!--l. 111--><p class="noindent" >B &#x0028;bidirectionally predicted&#x0029;: if the macro-block is compensated using an
+     anterior and a posterior frame.
+     </p></li>
+<li 
+  class="enumerate" id="x1-6014x4">
+     <!--l. 113--><p class="noindent" >S  &#x0028;skipped&#x0029;:  if  the  macro-block  is  substituted  by  reference  one  &#x0028;no
+     substraction is performed&#x0029;.</p></li></ol>
+<!--l. 116--><p class="noindent" >The decision of the type of each macro-block is performed at the compressor, and this
+information is signaled in the code-stream. An visual example of the decision of the
+type of the macro-blocks is shown in the Figure&#x00A0;<a 
+href="#x1-9001r5">5<!--tex4ht:ref: fig:macroblocks --></a>.
+</p>
+   <hr class="figure" /><div class="figure" 
+>
+                                                                  
+
+                                                                  
+                                                                  
+
+                                                                  
+<!--l. 123--><p class="noindent" ><div style="text-align:center;"> <img width=600 src="graphics/macroblocks.svg" /> </div>  <a 
+ id="x1-6015r3"></a>
+<a 
+ id="x1-6016"></a>
+<br />                                                                  </p><div class="caption" 
+><span class="id">
+Figure&#x00A0;3: </span><span  
+class="content">Types of macro-blocks.                                      </span></div><!--tex4ht:label?: x1-6015r2 -->
+                                                                  
+
+                                                                  
+   </div><hr class="endfigure" />
+   <h4 class="subsectionHead"><span class="titlemark">2.3   </span> <a 
+ id="x1-70002.3"></a>Macro-block type decision</h4>
+<!--l. 129--><p class="noindent" >Ideally, the type &#x0028;also called, mode&#x0029; of the macro-blocks is decided considering all the
+posibilities &#x0028;I, P, B, or S&#x0029; and selecting the most bene&#xFB01;cial one from a RD perpective,
+i.e., selecting the alternative that minimizes the RD cost. This RDO is performed at
+the macro-block level.
+</p><!--l. 135--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">2.4   </span> <a 
+ id="x1-80002.4"></a>Codec</h4>
+   <hr class="figure" /><div class="figure" 
+>
+                                                                  
+
+                                                                  
+                                                                  
+
+                                                                  
+<!--l. 138--><p class="noindent" ><div style="text-align:center;"> <img width=1100 src="graphics/codec.svg" /> </div>  <a 
+ id="x1-8001r4"></a>
+<a 
+ id="x1-8002"></a>
+<br />                                                                  </p><div class="caption" 
+><span class="id">
+Figure&#x00A0;4: </span><span  
+class="content">A inter/intra video codec.                                    </span></div><!--tex4ht:label?: x1-8001r2 -->
+                                                                  
+
+                                                                  
+   </div><hr class="endfigure" />
+<!--l. 143--><p class="indent" >   The Figure&#x00A0;<a 
+href="#x1-8001r4">4<!--tex4ht:ref: fig:IPP_codec --></a> describes an inter/intra video codec, that corresponds
+to:
+</p>
+   <table class="equation"><tr><td>
+<!--l. 146--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                         <mstyle 
+   id="x1-8003r1"  class="label" ></mstyle><!--endlabel--><msub><mrow 
+><mo 
+class="MathClass-open" stretchy="false"><mstyle mathvariant="bold">W</mstyle></mo></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mstyle 
+class="text"><mtext  >color-T</mtext></mstyle><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
+><mstyle mathvariant="bold"><mi 
+>V</mi></mstyle></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo><mo 
+class="MathClass-punc">,</mo>
+                                                                  <mstyle 
+   id="x1-8004r0"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">&#x0028;a&#x0029;<a 
+ id="x1-8005r0"></a></td></tr></table>
+   <table class="equation"><tr><td>
+<!--l. 151--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                       <mstyle 
+   id="x1-8006r1"  class="label" ></mstyle><!--endlabel--><msub><mrow 
+><mo 
+class="MathClass-open" stretchy="false"><mstyle mathvariant="bold">W</mstyle></mo></mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <msup><mrow 
+><mi 
+>Z</mi></mrow><mrow 
+><mo 
+class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msup 
+><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mstyle mathvariant="bold"><mi 
+>W</mi></mstyle><mo 
+class="MathClass-punc">,</mo><mi 
+>k</mi> <mo 
+class="MathClass-bin">&#x2212;</mo> <mn>1</mn><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo><mo 
+class="MathClass-punc">,</mo>
+                                                                  <mstyle 
+   id="x1-8007r0"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">&#x0028;b&#x0029;<a 
+ id="x1-8008r0"></a></td></tr></table>
+<!--l. 155--><p class="indent" >   and by de&#xFB01;nition, <!--l. 155--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mi 
+>Z</mi></mrow><mrow 
+><mo 
+class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msup 
+><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mstyle mathvariant="bold"><mi 
+>W</mi></mstyle><mo 
+class="MathClass-punc">,</mo><mo 
+class="MathClass-bin">&#x2212;</mo><mn>1</mn><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo> <mo 
+class="MathClass-rel">=</mo> <mstyle mathvariant="bold"><mn>0</mn></mstyle></math>,
+</p>
+   <table class="equation"><tr><td>
+<!--l. 157--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                  <mstyle 
+   id="x1-8009r1"  class="label" ></mstyle><!--endlabel--><mo 
+class="MathClass-open" stretchy="false"><mover class="overset"><mrow 
+><mstyle mathvariant="bold">M</mstyle></mrow><mrow 
+>&#x0028;k &#x2212; 1&#x0029; &#x2192; k</mrow></mover></mo> <mo 
+class="MathClass-rel">=</mo> <mstyle 
+class="text"><mtext  >ME</mtext></mstyle><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
+><mstyle mathvariant="bold"><mi 
+>W</mi></mstyle></mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-punc">,</mo><msub><mrow 
+><mstyle mathvariant="bold"><mi 
+>W</mi></mstyle></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo><mo 
+class="MathClass-punc">,</mo>
+                                                                  <mstyle 
+   id="x1-8010r0"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">&#x0028;c&#x0029;<a 
+ id="x1-8011r0"></a></td></tr></table>
+<!--l. 161--><p class="indent" >   where ME stands for Motion Estimation, and by de&#xFB01;nition,
+<!--l. 162--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mover class="overset"><mrow 
+><mstyle mathvariant="bold"><mi 
+>M</mi></mstyle></mrow><mrow 
+><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mo 
+class="MathClass-bin">&#x2212;</mo><mn>1</mn><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo> <mo 
+class="MathClass-rel">&#x2192;</mo> <mn>0</mn></mrow></mover> <mo 
+class="MathClass-rel">=</mo> <mstyle mathvariant="bold"><mn>0</mn></mstyle></math>,
+                                                                  
+
+                                                                  
+</p>
+   <table class="equation"><tr><td>
+<!--l. 164--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+             <mstyle 
+   id="x1-8012r1"  class="label" ></mstyle><!--endlabel--><mo 
+class="MathClass-open" stretchy="false"><mover class="overset"><mrow 
+><mstyle mathvariant="bold">M</mstyle></mrow><mrow 
+>&#x0028;k &#x2212; 1&#x0029; &#x2192; k</mrow></mover></mo> <mo 
+class="MathClass-rel">=</mo> <mover class="overset"><mrow 
+><mstyle mathvariant="bold"><mi 
+>M</mi></mstyle></mrow><mrow 
+><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
+>k</mi> <mo 
+class="MathClass-bin">&#x2212;</mo> <mn>1</mn><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo> <mo 
+class="MathClass-rel">&#x2192;</mo> <mi 
+>k</mi></mrow></mover><mstyle 
+class="text"><mtext  >&#x0028;lossless&#x00A0;coding&#x0029;</mtext></mstyle><mo 
+class="MathClass-punc">,</mo>
+                                                                  <mstyle 
+   id="x1-8013r0"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">&#x0028;d&#x0029;<a 
+ id="x1-8014r0"></a></td></tr></table>
+   <table class="equation"><tr><td>
+<!--l. 169--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+            <mstyle 
+   id="x1-8015r1"  class="label" ></mstyle><!--endlabel--><mo 
+class="MathClass-open" stretchy="false"><mover class="overset"><mrow 
+><mstyle mathvariant="bold">M</mstyle></mrow><mrow 
+>&#x0028;k &#x2212; 1&#x0029; &#x2192; k</mrow></mover></mo> <mo 
+class="MathClass-rel">=</mo> <mover class="overset"><mrow 
+><mstyle mathvariant="bold"><mi 
+>M</mi></mstyle></mrow><mrow 
+><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
+>k</mi> <mo 
+class="MathClass-bin">&#x2212;</mo> <mn>1</mn><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo> <mo 
+class="MathClass-rel">&#x2192;</mo> <mi 
+>k</mi></mrow></mover><mstyle 
+class="text"><mtext  >&#x0028;lossless&#x00A0;decoding&#x0029;</mtext></mstyle><mo 
+class="MathClass-punc">,</mo>
+                                                                  <mstyle 
+   id="x1-8016r0"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">&#x0028;e&#x0029;<a 
+ id="x1-8017r0"></a></td></tr></table>
+   <table class="equation"><tr><td>
+<!--l. 174--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                         <mstyle 
+   id="x1-8018r1"  class="label" ></mstyle><!--endlabel--><msub><mrow 
+><mo 
+class="MathClass-open" stretchy="false"><mstyle mathvariant="bold">E</mstyle></mo></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo><msub><mrow 
+> <mstyle mathvariant="bold"><mi 
+>W</mi></mstyle></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">&#x2212;</mo><msub><mrow 
+><mover class="overset"><mrow 
+><mstyle mathvariant="bold"><mi 
+>W</mi></mstyle></mrow><mrow 
+> <mo 
+class="MathClass-bin">&#x2227;</mo></mrow></mover></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+><mo 
+class="MathClass-punc">,</mo>
+                                                                  <mstyle 
+   id="x1-8019r0"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">&#x0028;f&#x0029;<a 
+ id="x1-8020r0"></a></td></tr></table>
+<!--l. 178--><p class="indent" >   where the symbol <!--l. 178--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-bin">&#x2212;</mo></math>
+represents to the pixel-wise substraction,
+</p>
+   <table class="equation"><tr><td>
+                                                                  
+
+                                                                  
+<!--l. 180--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                          <mstyle 
+   id="x1-8021r1"  class="label" ></mstyle><!--endlabel--><mo 
+class="MathClass-open" stretchy="false"><mover class="overset"><mrow 
+><msub><mrow 
+><mstyle mathvariant="bold">E</mstyle></mrow><mrow 
+>k</mrow></msub 
+></mrow><mrow 
+> &#x223C;</mrow></mover></mo> <mo 
+class="MathClass-rel">=</mo> <mstyle 
+class="text"><mtext  >QE</mtext></mstyle><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
+><mstyle mathvariant="bold"><mi 
+>E</mi></mstyle></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo><mo 
+class="MathClass-punc">,</mo>
+                                                                  <mstyle 
+   id="x1-8022r0"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">&#x0028;g&#x0029;<a 
+ id="x1-8023r0"></a></td></tr></table>
+<!--l. 184--><p class="indent" >   where QE<!--l. 184--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mo 
+class="MathClass-bin">&#x22C5;</mo><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>
+represents the lossy compression of the prediction error texture data,
+</p>
+   <table class="equation"><tr><td>
+<!--l. 187--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                       <mstyle 
+   id="x1-8024r1"  class="label" ></mstyle><!--endlabel--><msub><mrow 
+><mo 
+class="MathClass-open" stretchy="false"><mover class="overset"><mrow 
+><mstyle mathvariant="bold">E</mstyle></mrow><mrow 
+> &#x223C;</mrow></mover></mo></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo><msup><mrow 
+> <mstyle 
+class="text"><mtext  >DQ</mtext></mstyle></mrow><mrow 
+><mo 
+class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msup 
+><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
+><mover class="overset"><mrow 
+><mstyle mathvariant="bold"><mi 
+>E</mi></mstyle></mrow><mrow 
+> <mo 
+class="MathClass-rel">&#x223C;</mo></mrow></mover></mrow><mrow 
+>
+<mi 
+>k</mi></mrow></msub 
+><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo><mo 
+class="MathClass-punc">,</mo>
+                                                                  <mstyle 
+   id="x1-8025r0"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">&#x0028;h&#x0029;<a 
+ id="x1-8026r0"></a></td></tr></table>
+<!--l. 191--><p class="indent" >   where DQ<!--l. 191--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+></mrow><mrow 
+><mo 
+class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msup 
+><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mo 
+class="MathClass-bin">&#x22C5;</mo><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>
+represents the decompression of the prediction error texture data,
+</p>
+   <table class="equation"><tr><td>
+<!--l. 194--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                      <mstyle 
+   id="x1-8027r1"  class="label" ></mstyle><!--endlabel--><msub><mrow 
+><mo 
+class="MathClass-open" stretchy="false"><mover class="overset"><mrow 
+><mstyle mathvariant="bold">W</mstyle></mrow><mrow 
+> &#x223C;</mrow></mover></mo></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">&#x2190;</mo><msub><mrow 
+><mover class="overset"><mrow 
+><mstyle mathvariant="bold"><mi 
+>E</mi></mstyle></mrow><mrow 
+> <mo 
+class="MathClass-rel">&#x223C;</mo></mrow></mover></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo><msub><mrow 
+> <mover class="overset"><mrow 
+><mstyle mathvariant="bold"><mi 
+>W</mi></mstyle></mrow><mrow 
+> <mo 
+class="MathClass-bin">&#x2227;</mo></mrow></mover></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+><mo 
+class="MathClass-punc">,</mo>
+                                                                  <mstyle 
+   id="x1-8028r0"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">&#x0028;i&#x0029;<a 
+ id="x1-8029r0"></a></td></tr></table>
+<!--l. 198--><p class="indent" >   and notice that if <!--l. 198--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mover class="overset"><mrow 
+><mstyle mathvariant="bold"><mi 
+>W</mi></mstyle></mrow><mrow 
+> <mo 
+class="MathClass-bin">&#x2227;</mo></mrow></mover></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mstyle mathvariant="bold"><mn>0</mn></mstyle></math>,
+then <!--l. 199--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mover class="overset"><mrow 
+><mstyle mathvariant="bold"><mi 
+>E</mi></mstyle></mrow><mrow 
+> <mo 
+class="MathClass-rel">&#x223C;</mo></mrow></mover></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo><msub><mrow 
+> <mover class="overset"><mrow 
+><mstyle mathvariant="bold"><mi 
+>W</mi></mstyle></mrow><mrow 
+> <mo 
+class="MathClass-rel">&#x223C;</mo></mrow></mover></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+></math>,
+</p>
+   <table class="equation"><tr><td>
+                                                                  
+
+                                                                  
+<!--l. 201--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                 <mstyle 
+   id="x1-8030r1"  class="label" ></mstyle><!--endlabel--><msub><mrow 
+><mo 
+class="MathClass-open" stretchy="false"><mover class="overset"><mrow 
+><mstyle mathvariant="bold">W</mstyle></mrow><mrow 
+> &#x2227;</mrow></mover></mo></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mstyle 
+class="text"><mtext  >P</mtext></mstyle><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
+><mover class="overset"><mrow 
+><mstyle mathvariant="bold"><mi 
+>W</mi></mstyle></mrow><mrow 
+> <mo 
+class="MathClass-rel">&#x223C;</mo></mrow></mover></mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-punc">,</mo><mover class="overset"><mrow 
+><mstyle mathvariant="bold"><mi 
+>M</mi></mstyle></mrow><mrow 
+><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
+>k</mi> <mo 
+class="MathClass-bin">&#x2212;</mo> <mn>1</mn><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo> <mo 
+class="MathClass-rel">&#x2192;</mo> <mi 
+>k</mi></mrow></mover><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo><mo 
+class="MathClass-punc">,</mo>
+                                                                  <mstyle 
+   id="x1-8031r0"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">&#x0028;j&#x0029;<a 
+ id="x1-8032r0"></a></td></tr></table>
+<!--l. 205--><p class="indent" >   where P<!--l. 205--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mo 
+class="MathClass-bin">&#x22C5;</mo><mo 
+class="MathClass-punc">,</mo><mo 
+class="MathClass-bin">&#x22C5;</mo><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>
+is a motion compensated predictor, and
+</p>
+   <table class="equation"><tr><td>
+<!--l. 207--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                    <mstyle 
+   id="x1-8033r1"  class="label" ></mstyle><!--endlabel--><msub><mrow 
+><mo 
+class="MathClass-open" stretchy="false"><mover class="overset"><mrow 
+><mstyle mathvariant="bold">W</mstyle></mrow><mrow 
+> &#x2227;</mrow></mover></mo></mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <msup><mrow 
+><mi 
+>Z</mi></mrow><mrow 
+><mo 
+class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msup 
+><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mover class="overset"><mrow 
+><mstyle mathvariant="bold"><mi 
+>W</mi></mstyle></mrow><mrow 
+> <mo 
+class="MathClass-bin">&#x2227;</mo></mrow></mover><mo 
+class="MathClass-punc">,</mo><mi 
+>k</mi> <mo 
+class="MathClass-bin">&#x2212;</mo> <mn>1</mn><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo><mo 
+class="MathClass-punc">,</mo>
+                                                                  <mstyle 
+   id="x1-8034r0"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">&#x0028;k&#x0029;<a 
+ id="x1-8035r0"></a></td></tr></table>
+<!--l. 211--><p class="indent" >   where by de&#xFB01;nition, <!--l. 211--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mi 
+>Z</mi></mrow><mrow 
+><mo 
+class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msup 
+><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mover class="overset"><mrow 
+><mstyle mathvariant="bold"><mi 
+>W</mi></mstyle></mrow><mrow 
+> <mo 
+class="MathClass-bin">&#x2227;</mo></mrow></mover><mo 
+class="MathClass-punc">,</mo><mo 
+class="MathClass-bin">&#x2212;</mo><mn>1</mn><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo> <mo 
+class="MathClass-rel">=</mo> <mn>0</mn></math>,
+and
+</p>
+   <table class="equation"><tr><td>
+<!--l. 213--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" class="equation">
+                        <mstyle 
+   id="x1-8036r1"  class="label" ></mstyle><!--endlabel--><mo 
+class="MathClass-open" stretchy="false"><mstyle mathvariant="bold">V</mstyle></mo> <mo 
+class="MathClass-rel">=</mo><msup><mrow 
+> <mstyle 
+class="text"><mtext  >color-T</mtext></mstyle></mrow><mrow 
+><mo 
+class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msup 
+><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
+><mstyle mathvariant="bold"><mi 
+>W</mi></mstyle></mrow><mrow 
+>
+<mi 
+>k</mi></mrow></msub 
+><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo><mo 
+class="MathClass-punc">,</mo>
+                                                                  <mstyle 
+   id="x1-8037r0"  class="label" ></mstyle><!--endlabel-->
+</math></td><td class="eq-no">&#x0028;l&#x0029;<a 
+ id="x1-8038r0"></a></td></tr></table>
+<!--l. 217--><p class="indent" >   is the inverse color transform.
+</p><!--l. 219--><p class="indent" >   Notice that if <!--l. 219--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mover class="overset"><mrow 
+><mstyle mathvariant="bold"><mi 
+>W</mi></mstyle></mrow><mrow 
+> <mo 
+class="MathClass-bin">&#x2227;</mo></mrow></mover></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+></math>
+is similar to <!--l. 220--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mstyle mathvariant="bold"><mi 
+>W</mi></mstyle></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+></math>,
+then <!--l. 220--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mstyle mathvariant="bold"><mi 
+>E</mi></mstyle></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+></math>
+will be approximately zero, and therefore, easely compressed. Another interesting
+                                                                  
+
+                                                                  
+aspect to highlight is that the encoder replicates de decoder in order to use the
+reconstructed images as reference and avoid the drift error.
+</p>
    <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
- id="x1-40003"></a>Block-based MC &#x0028;Motion Compensation&#x0029;&#x00A0;<span class="cite">&#x005B;<a 
+ id="x1-90003"></a>Block-based MC &#x0028;Motion Compensation&#x0029;&#x00A0;<span class="cite">&#x005B;<a 
 href="#Xrao1996techniques">1</a>&#x005D;</span></h3>
      <ul class="itemize1">
-     <li class="itemize">Usually, only performed by the encoder &#x0028;compress one. decompress many&#x0029;.
-     </li>
-     <li class="itemize">MC removes temporal redundancy. A <span 
+     <li class="itemize">
+     <!--l. 229--><p class="noindent" >Usually, only performed by the encoder &#x0028;compress one. decompress many&#x0029;.
+     </p></li>
+     <li class="itemize">
+     <!--l. 232--><p class="noindent" >MC removes temporal redundancy. A <span 
 class="ecti-1000">predicted image </span>can be encoded as
      the di&#xFB00;erence between it and another image called <span 
 class="ecti-1000">prediction image </span>which
@@ -142,48 +1025,59 @@ class="ecti-1000">reference</span>
 class="ecti-1000">images</span>. ME tries to generate <span 
 class="ecti-1000">residue images </span>as close as possible to the
      null images.
-     </li>
-     <li class="itemize">For example, in the MPEG-1 standard, the reference image/s is/are divided
-     in blocks of <!--l. 45--><math 
+     </p></li>
+     <li class="itemize">
+     <!--l. 239--><p class="noindent" >For example, in the MPEG-1 standard, the reference image/s is/are divided
+     in blocks of <!--l. 240--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mn>1</mn><mn>6</mn> <mo 
 class="MathClass-bin">&#x00D7;</mo> <mn>1</mn><mn>6</mn></math>
      pixels called <span 
 class="ecti-1000">macroblocks</span>.
-     </li>
-     <li class="itemize">Each reference block is searched in the predicted image and the best match
+     </p></li>
+     <li class="itemize">
+     <!--l. 242--><p class="noindent" >Each reference block is searched in the predicted image and the best match
      is indicated by mean of a <span 
 class="ecti-1000">motion vector</span>.
-     </li>
-     <li class="itemize">Depending on the success of the search and the number of reference images,
+     </p></li>
+     <li class="itemize">
+     <!--l. 245--><p class="noindent" >Depending on the success of the search and the number of reference images,
      the macroblocks are classi&#xFB01;ed into:
+</p>
          <ul class="itemize2">
-         <li class="itemize"><span 
+         <li class="itemize">
+         <!--l. 251--><p class="noindent" ><span 
 class="ecbx-1000">I &#x0028;intra&#x0029;</span>: When the compression of residue block generates more
          bits than the original &#x0028;predicted&#x0029; one.
-         </li>
-         <li class="itemize"><span 
+         </p></li>
+         <li class="itemize">
+         <!--l. 254--><p class="noindent" ><span 
 class="ecbx-1000">P &#x0028;predicted&#x0029;</span>: When it is better to compress the residue block and
          there is only one reference macroblock.
-         </li>
-         <li class="itemize"><span 
+         </p></li>
+         <li class="itemize">
+         <!--l. 257--><p class="noindent" ><span 
 class="ecbx-1000">B  &#x0028;bidirectionally  predicted&#x0029;</span>:  The  same,  but  if  we  have  two
          reference macroblocks.
                                                                   
 
                                                                   
-         </li>
-         <li class="itemize"><span 
+         </p></li>
+         <li class="itemize">
+         <!--l. 260--><p class="noindent" ><span 
 class="ecbx-1000">S &#x0028;skipped&#x0029;</span>: When the energy of the residue block is smaller than
-         a given threshold.</li></ul>
+         a given threshold.</p></li></ul>
      </li>
-     <li class="itemize">I-pictures are composed of I macroblocks, only.
-     </li>
-     <li class="itemize">P-pictures do not have B macrobocks.
-     </li>
-     <li class="itemize">B-pictures can have any type of macroblocks.</li></ul>
-<!--l. 75--><p class="noindent" >See the Fig.&#x00A0;<a 
-href="#x1-4001r2">2<!--tex4ht:ref: fig:macroblocks --></a>.
+     <li class="itemize">
+     <!--l. 264--><p class="noindent" >I-pictures are composed of I macroblocks, only.
+     </p></li>
+     <li class="itemize">
+     <!--l. 266--><p class="noindent" >P-pictures do not have B macrobocks.
+     </p></li>
+     <li class="itemize">
+     <!--l. 268--><p class="noindent" >B-pictures can have any type of macroblocks.</p></li></ul>
+<!--l. 270--><p class="noindent" >See the Fig.&#x00A0;<a 
+href="#x1-9001r5">5<!--tex4ht:ref: fig:macroblocks --></a>.
 </p>
    <hr class="figure" /><div class="figure" 
 >
@@ -193,28 +1087,30 @@ href="#x1-4001r2">2<!--tex4ht:ref: fig:macroblocks --></a>.
                                                                   
 
                                                                   
-<!--l. 78--><p class="noindent" ><div style="text-align:center;"> <img width=600 src="graphics/macroblocks.svg" /> </div>  <a 
- id="x1-4001r2"></a>
+<!--l. 273--><p class="noindent" ><div style="text-align:center;"> <img width=600 src="macroblocks.svg" /> </div>  <a 
+ id="x1-9001r5"></a>
 <a 
- id="x1-4002"></a>
+ id="x1-9002"></a>
 <br />                                                                  </p><div class="caption" 
 ><span class="id">
-Figure&#x00A0;2: </span><span  
+Figure&#x00A0;5: </span><span  
 class="content">Types of macroblocks.
-</span></div><!--tex4ht:label?: x1-4001r3 -->
+</span></div><!--tex4ht:label?: x1-9001r3 -->
                                                                   
 
                                                                   
    </div><hr class="endfigure" />
    <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
- id="x1-50004"></a>Sub-pixel accuracy</h3>
+ id="x1-100004"></a>Sub-pixel accuracy</h3>
      <ul class="itemize1">
-     <li class="itemize">The motion estimation can be carried out using integer pixel accuracy or
+     <li class="itemize">
+     <!--l. 283--><p class="noindent" >The motion estimation can be carried out using integer pixel accuracy or
      a fractional &#x0028;sub-&#x0029; pixel accuracy.
-     </li>
-     <li class="itemize">For example, in MPEG-1, the motion estimation can have up to 1/2 pixel
+     </p></li>
+     <li class="itemize">
+     <!--l. 286--><p class="noindent" >For example, in MPEG-1, the motion estimation can have up to 1/2 pixel
      accuracy. A bi-linear interpolator is used &#x0028;see the Fig.&#x00A0;<a 
-href="#x1-5001r3">3<!--tex4ht:ref: fig:interpolation --></a>&#x0029;.</li></ul>
+href="#x1-10001r6">6<!--tex4ht:ref: fig:interpolation --></a>&#x0029;.</p></li></ul>
    <hr class="figure" /><div class="figure" 
 >
                                                                   
@@ -223,45 +1119,49 @@ href="#x1-5001r3">3<!--tex4ht:ref: fig:interpolation --></a>&#x0029;.</li></ul>
                                                                   
 
                                                                   
-<!--l. 97--><p class="noindent" ><div style="text-align:center;"> <img width=200 src="graphics/interpolation.svg" /> </div>  <a 
- id="x1-5001r3"></a>
+<!--l. 292--><p class="noindent" ><div style="text-align:center;"> <img width=200 src="interpolation.svg" /> </div>  <a 
+ id="x1-10001r6"></a>
 <a 
- id="x1-5002"></a>
+ id="x1-10002"></a>
 <br />                                                                  </p><div class="caption" 
 ><span class="id">
-Figure&#x00A0;3: </span><span  
+Figure&#x00A0;6: </span><span  
 class="content">Pixel interpolation.
-</span></div><!--tex4ht:label?: x1-5001r4 -->
+</span></div><!--tex4ht:label?: x1-10001r4 -->
                                                                   
 
                                                                   
    </div><hr class="endfigure" />
    <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
- id="x1-60005"></a>Matching criteria &#x0028;similitude between macroblocks&#x0029;</h3>
+ id="x1-110005"></a>Matching criteria &#x0028;similitude between macroblocks&#x0029;</h3>
      <ul class="itemize1">
-     <li class="itemize">Let <!--l. 105--><math 
+     <li class="itemize">
+     <!--l. 300--><p class="noindent" >Let <!--l. 300--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >a</mi></math>
-     and <!--l. 105--><math 
+     and <!--l. 300--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >b</mi></math>
      the macroblocks which we want to compare. Two main distortion metrics
      are commonly used:
+</p>
          <ul class="itemize2">
-         <li class="itemize"><span 
+         <li class="itemize">
+         <!--l. 305--><p class="noindent" ><span 
 class="ecbx-1000">MSE &#x0028;Mean Square Error&#x0029;</span>:
-         <table class="equation"><tr><td> <a 
- id="x1-6001r1"></a>
-         <!--l. 112--><math 
+</p>
+         <table class="equation"><tr><td>
+         <!--l. 307--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
-                                <mfrac><mrow 
-><mn>1</mn></mrow> 
+                           <mstyle 
+   id="x1-11001r1"  class="label" ></mstyle><!--endlabel--><mo 
+class="MathClass-open" stretchy="false">    <mfrac><mrow 
+>1</mrow>
 <mrow 
-><mn>1</mn><mn>6</mn> <mo 
-class="MathClass-bin">&#x00D7;</mo> <mn>1</mn><mn>6</mn></mrow></mfrac><munderover accentunder="false" accent="false"><mrow  
+>16 &#x00D7; 16</mrow></mfrac></mo><munderover accentunder="false" accent="false"><mrow  
 ><mo  
 >&#x2211;</mo>
   </mrow><mrow 
@@ -279,7 +1179,7 @@ class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow
 ><mn>1</mn><mn>6</mn></mrow></munderover 
 ><msup><mrow 
 ><mo 
-class="MathClass-open">&#x0028;</mo><msub><mrow 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
 ><mi 
 >a</mi></mrow><mrow 
 >
@@ -294,23 +1194,28 @@ class="MathClass-bin">&#x2212;</mo> <msub><mrow
 >i</mi><mi 
 >j</mi></mrow></msub 
 ><mo 
-class="MathClass-close">&#x0029;</mo></mrow><mrow 
+class="MathClass-close" stretchy="false">&#x0029;</mo></mrow><mrow 
 ><mn>2</mn></mrow></msup 
 >
 </math></td><td class="eq-no">&#x0028;1&#x0029;</td></tr></table>
          </li>
-         <li class="itemize"><span 
+         <li class="itemize">
+         <!--l. 311--><p class="noindent" ><span 
 class="ecbx-1000">MAE &#x0028;Mean Absolute Error&#x0029;</span>:
-         <table class="equation"><tr><td> <a 
- id="x1-6002r2"></a>
-         <!--l. 118--><math 
+</p>
+         <table class="equation"><tr><td>
+                                                                  
+
+                                                                  
+         <!--l. 313--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
-                                 <mfrac><mrow 
-><mn>1</mn></mrow> 
+                            <mstyle 
+   id="x1-11002r2"  class="label" ></mstyle><!--endlabel--><mo 
+class="MathClass-open" stretchy="false">    <mfrac><mrow 
+>1</mrow>
 <mrow 
-><mn>1</mn><mn>6</mn> <mo 
-class="MathClass-bin">&#x00D7;</mo> <mn>1</mn><mn>6</mn></mrow></mfrac><munderover accentunder="false" accent="false"><mrow  
+>16 &#x00D7; 16</mrow></mfrac></mo><munderover accentunder="false" accent="false"><mrow  
 ><mo  
 >&#x2211;</mo>
   </mrow><mrow 
@@ -345,27 +1250,29 @@ class="MathClass-bin">&#x2212;</mo> <msub><mrow
 class="MathClass-rel">&#x007C;</mo>
 </math></td><td class="eq-no">&#x0028;2&#x0029;</td></tr></table>
          </li></ul>
-                                                                  
-
-                                                                  
      </li>
-     <li class="itemize">These similitude measures are used only by MPEG compressors. Therefore, any
+     <li class="itemize">
+     <!--l. 318--><p class="noindent" >These similitude measures are used only by MPEG compressors. Therefore, any
      other one with similar e&#xFB00;ects &#x0028;such as the error variance or the error entropy&#x0029;
      could be used also.
-     </li>
-     <li class="itemize">Other less common distortion metrics that can work are:
+     </p></li>
+     <li class="itemize">
+     <!--l. 322--><p class="noindent" >Other less common distortion metrics that can work are:
+</p>
          <ul class="itemize2">
-         <li class="itemize"><span 
+         <li class="itemize">
+         <!--l. 326--><p class="noindent" ><span 
 class="ecbx-1000">EE &#x0028;Error </span><a 
 href="https://en.wikipedia.org/wiki/Entropy_(information_theory)" ><span 
 class="ecbx-1000">Entropy</span></a>:
-         <table class="equation"><tr><td> <a 
- id="x1-6003r3"></a>
-         <!--l. 134--><math 
+</p>
+         <table class="equation"><tr><td>
+         <!--l. 329--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
-                <mo 
-class="MathClass-bin">&#x2212;</mo>  <mfrac><mrow 
+                <mstyle 
+   id="x1-11003r3"  class="label" ></mstyle><!--endlabel--><mo 
+class="MathClass-open" stretchy="false">&#x2212;</mo>  <mfrac><mrow 
 ><mn>1</mn></mrow>
 <mrow 
 ><mn>1</mn><mn>6</mn> <mo 
@@ -386,11 +1293,11 @@ class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow
 class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
 ><mn>1</mn><mn>6</mn></mrow></munderover 
 ><msub><mrow 
-><mi class="qopname"> log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--></mrow><mrow 
+><mi class="qopname"> log</mi><mo> &#x2061;<!--FUNCTION APPLICATION--> </mo><!--nolimits--></mrow><mrow 
 >
 <mn>2</mn></mrow></msub 
 ><mo 
-class="MathClass-open">&#x0028;</mo><msub><mrow 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
 ><mi 
 >a</mi></mrow><mrow 
 ><mi 
@@ -404,9 +1311,9 @@ class="MathClass-bin">&#x2212;</mo> <msub><mrow
 >i</mi><mi 
 >j</mi></mrow></msub 
 ><mo 
-class="MathClass-close">&#x0029;</mo><mi 
+class="MathClass-close" stretchy="false">&#x0029;</mo><mi 
 >p</mi><mo 
-class="MathClass-open">&#x0028;</mo><msub><mrow 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
 ><mi 
 >a</mi></mrow><mrow 
 ><mi 
@@ -420,60 +1327,69 @@ class="MathClass-bin">&#x2212;</mo> <msub><mrow
 >i</mi><mi 
 >j</mi></mrow></msub 
 ><mo 
-class="MathClass-close">&#x0029;</mo>
+class="MathClass-close" stretchy="false">&#x0029;</mo>
 </math></td><td class="eq-no">&#x0028;3&#x0029;</td></tr></table>
          </li></ul>
      </li></ul>
-<!--l. 140--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
- id="x1-70006"></a>Searching strategies</h3>
-     <ul class="itemize1">
-     <li class="itemize">Only performed by the compressor.
-         <ul class="itemize2">
-         <li class="itemize"><span 
-class="ecbx-1000">Full  search</span>:  All  the  possibilities  are  checked  &#x0028;see  the  Fig.&#x00A0;<a 
-href="#x1-7001r4">4<!--tex4ht:ref: fig:full_search --></a>&#x0029;.
-         Advantage: the best compression. Disadvantage: CPU killer.</li></ul>
-     <hr class="figure" /><div class="figure" 
-><div style="text-align:center;"> <img width=500 src="graphics/full_search.svg" /> </div>   <a 
- id="x1-7001r4"></a>
-<a 
- id="x1-7002"></a>
-<br />                                                                  <div class="caption" 
-><span class="id">
-Figure&#x00A0;4: </span><span  
-class="content">The full search scheme.
-</span></div><!--tex4ht:label?: x1-7001r6 -->
                                                                   
 
                                                                   
+<!--l. 335--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
+ id="x1-120006"></a>Searching strategies</h3>
+     <ul class="itemize1">
+     <li class="itemize">
+     <!--l. 338--><p class="noindent" >Only performed by the compressor.
+</p>
+         <ul class="itemize2">
+         <li class="itemize">
+         <!--l. 340--><p class="noindent" ><span 
+class="ecbx-1000">Full  search</span>:  All  the  possibilities  are  checked  &#x0028;see  the  Fig.&#x00A0;<a 
+href="#x1-12001r7">7<!--tex4ht:ref: fig:full_search --></a>&#x0029;.
+         Advantage: the best compression. Disadvantage: CPU killer.</p></li></ul>
+     <hr class="figure" /><div class="figure" 
+><div style="text-align:center;"> <img width=500 src="full_search.svg" /> </div>   <a 
+ id="x1-12001r7"></a>
+<a 
+ id="x1-12002"></a>
+<br />                                                                  <div class="caption" 
+><span class="id">
+Figure&#x00A0;7: </span><span  
+class="content">The full search scheme.
+</span></div><!--tex4ht:label?: x1-12001r6 -->
      </div><hr class="endfigure" />
          <ul class="itemize2">
-         <li class="itemize">** Logaritmic search**: It is a version of the full search algorithm
+         <li class="itemize">
+         <!--l. 354--><p class="noindent" >** Logaritmic search**: It is a version of the full search algorithm
          where the macro-blocks and the search area are sub-sampled. After
          &#xFB01;nding the best coincidence, the resolution is increased in a power of 2
-         and the previous match is re&#xFB01;ned in a search area of <!--l. 163--><math 
+         and the previous match is re&#xFB01;ned in a search area of <!--l. 358--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" > <mo 
 class="MathClass-bin">&#x00B1;</mo> <mn>1</mn></math>,
-         until the maximal resolution &#x0028;even using subpixel accuracy&#x0029; is reached.</li></ul>
+         until the maximal resolution &#x0028;even using subpixel accuracy&#x0029; is reached.</p></li></ul>
          <ul class="itemize2">
-         <li class="itemize"><span 
+         <li class="itemize">
+         <!--l. 365--><p class="noindent" ><span 
 class="ecbx-1000">Telescopic search</span>: Any of the previously described techniques can
          be speeded up if the searching area is reduced. This can be done
          supposing that the motion vector of the same macro-block in two
-         consecutive images is similar.</li></ul>
+         consecutive images is similar.</p></li></ul>
      </li></ul>
-<!--l. 177--><p class="noindent" >
+                                                                  
+
+                                                                  
+<!--l. 372--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
- id="x1-80007"></a>The GOP &#x0028;Group Of Pictures&#x0029; concept</h3>
+ id="x1-130007"></a>The GOP &#x0028;Group Of Pictures&#x0029; concept</h3>
      <ul class="itemize1">
-     <li class="itemize">The temporal redundancy is exploited by blocks of images called GOPs.
+     <li class="itemize">
+     <!--l. 376--><p class="noindent" >The temporal redundancy is exploited by blocks of images called GOPs.
      This means that a GOP can be decoded independently of the rest of GOPs
      &#x0028;see the Fig.&#x00A0;<a 
-href="#x1-8001r5">5<!--tex4ht:ref: fig:GOPs --></a>&#x0029;.</li></ul>
+href="#x1-13001r8">8<!--tex4ht:ref: fig:GOPs --></a>&#x0029;.</p></li></ul>
    <hr class="figure" /><div class="figure" 
 >
                                                                   
@@ -482,28 +1398,29 @@ href="#x1-8001r5">5<!--tex4ht:ref: fig:GOPs --></a>&#x0029;.</li></ul>
                                                                   
 
                                                                   
-<!--l. 187--><p class="noindent" ><div style="text-align:center;"> <img width=500 src="graphics/GOPs.svg" /> </div>  <a 
- id="x1-8001r5"></a>
+<!--l. 382--><p class="noindent" ><div style="text-align:center;"> <img width=500 src="GOPs.svg" /> </div>  <a 
+ id="x1-13001r8"></a>
 <a 
- id="x1-8002"></a>
+ id="x1-13002"></a>
 <br />                                                                  </p><div class="caption" 
 ><span class="id">
-Figure&#x00A0;5: </span><span  
+Figure&#x00A0;8: </span><span  
 class="content">A GOP.
-</span></div><!--tex4ht:label?: x1-8001r7 -->
+</span></div><!--tex4ht:label?: x1-13001r7 -->
                                                                   
 
                                                                   
    </div><hr class="endfigure" />
    <h3 class="sectionHead"><span class="titlemark">8   </span> <a 
- id="x1-90008"></a>MCTF &#x0028;Motion Compensated Temporal Filtering&#x0029;</h3>
+ id="x1-140008"></a>MCTF &#x0028;Motion Compensated Temporal Filtering&#x0029;</h3>
      <ul class="itemize1">
-     <li class="itemize">This is a DWT where the input samples are the original video images and
-     the output is a sequence of residue images.</li></ul>
-<!--l. 200--><p class="noindent" >
+     <li class="itemize">
+     <!--l. 391--><p class="noindent" >This is a DWT where the input samples are the original video images and
+     the output is a sequence of residue images.</p></li></ul>
+<!--l. 395--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">9   </span> <a 
- id="x1-100009"></a><!--l. 200--><math 
+ id="x1-150009"></a><!--l. 395--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mo 
 class="MathClass-bin">&#x00B1;</mo></math>
@@ -516,21 +1433,21 @@ class="MathClass-bin">&#x00B1;</mo></math>
                                                                   
 
                                                                   
-<!--l. 202--><p class="noindent" ><div style="text-align:center;"> <img width=500 src="graphics/spiral_search.svg" /> </div>  <a 
- id="x1-10001r6"></a>
+<!--l. 397--><p class="noindent" ><div style="text-align:center;"> <img width=500 src="spiral_search.svg" /> </div>  <a 
+ id="x1-15001r9"></a>
 <a 
- id="x1-10002"></a>
+ id="x1-15002"></a>
 <br />                                                                  </p><div class="caption" 
 ><span class="id">
-Figure&#x00A0;6: </span><span  
+Figure&#x00A0;9: </span><span  
 class="content">Spiral search.
-</span></div><!--tex4ht:label?: x1-10001r9 -->
+</span></div><!--tex4ht:label?: x1-15001r9 -->
                                                                   
 
                                                                   
    </div><hr class="endfigure" />
    <h3 class="sectionHead"><span class="titlemark">10   </span> <a 
- id="x1-1100010"></a>Linear frame interpolation using block-based motion compensation</h3>
+ id="x1-1600010"></a>Linear frame interpolation using block-based motion compensation</h3>
    <hr class="figure" /><div class="figure" 
 >
                                                                   
@@ -539,41 +1456,45 @@ class="content">Spiral search.
                                                                   
 
                                                                   
-<!--l. 210--><p class="noindent" ><div style="text-align:center;"> <img width=900 src="graphics/frame_interpolation.svg" /> </div>  <a 
- id="x1-11001r7"></a>
+<!--l. 405--><p class="noindent" ><div style="text-align:center;"> <img width=900 src="frame_interpolation.svg" /> </div>  <a 
+ id="x1-16001r10"></a>
 <a 
- id="x1-11002"></a>
+ id="x1-16002"></a>
 <br />                                                                  </p><div class="caption" 
 ><span class="id">
-Figure&#x00A0;7: </span><span  
+Figure&#x00A0;10: </span><span  
 class="content">Frame interpolation.
-</span></div><!--tex4ht:label?: x1-11001r10 -->
+</span></div><!--tex4ht:label?: x1-16001r10 -->
                                                                   
 
                                                                   
    </div><hr class="endfigure" />
    <h4 class="likesubsectionHead"><a 
- id="x1-1200010"></a>Input</h4>
+ id="x1-1700010"></a>Input</h4>
      <ul class="itemize1">
-     <li class="itemize"><!--l. 219--><math 
+     <li class="itemize">
+     <!--l. 414--><p class="noindent" ><!--l. 414--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >R</mi></math>:
      square search area, in pixels.
-     </li>
-     <li class="itemize"><!--l. 221--><math 
+     </p></li>
+     <li class="itemize">
+     <!--l. 416--><p class="noindent" ><!--l. 416--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >B</mi></math>:
      square block size, in pixels.
-     </li>
-     <li class="itemize"><!--l. 223--><math 
+     </p></li>
+     <li class="itemize">
+     <!--l. 418--><p class="noindent" ><!--l. 418--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >O</mi></math>:
      border size, in pixels.
-     </li>
-     <li class="itemize"><!--l. 225--><math 
+     </p></li>
+     <li class="itemize">
+     <!--l. 420--><p class="noindent" ><!--l. 420--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -581,7 +1502,7 @@ display="inline" ><msub><mrow
 ><mi 
 >i</mi></mrow></msub 
 ></math>,
-     <!--l. 225--><math 
+     <!--l. 420--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -589,7 +1510,7 @@ display="inline" ><msub><mrow
 ><mi 
 >j</mi></mrow></msub 
 ></math>
-     and <!--l. 225--><math 
+     and <!--l. 420--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -597,18 +1518,19 @@ display="inline" ><msub><mrow
 ><mi 
 >k</mi></mrow></msub 
 ></math>
-     three chronologically ordered, equidistant frames, with resolution <!--l. 226--><math 
+     three chronologically ordered, equidistant frames, with resolution <!--l. 421--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >X</mi> <mo 
 class="MathClass-bin">&#x00D7;</mo> <mi 
 >Y</mi> </math>.
-     </li>
-     <li class="itemize"><!--l. 228--><math 
+     </p></li>
+     <li class="itemize">
+     <!--l. 423--><p class="noindent" ><!--l. 423--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >A</mi></math>:
-     <!--l. 228--><math 
+     <!--l. 423--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" > <mfrac><mrow 
 ><mn>1</mn></mrow>
@@ -618,13 +1540,14 @@ display="inline" > <mfrac><mrow
 ><mi 
 >A</mi></mrow></msup 
 ></mrow></mfrac></math>
-     subpixel accuracy.</li></ul>
-<!--l. 231--><p class="noindent" >
+     subpixel accuracy.</p></li></ul>
+<!--l. 426--><p class="noindent" >
 </p>
    <h4 class="likesubsectionHead"><a 
- id="x1-1300010"></a>Output</h4>
+ id="x1-1800010"></a>Output</h4>
      <ul class="itemize1">
-     <li class="itemize"><!--l. 235--><math 
+     <li class="itemize">
+     <!--l. 430--><p class="noindent" ><!--l. 430--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -632,7 +1555,7 @@ display="inline" ><msub><mrow
 ><mi 
 >j</mi></mrow></msub 
 ></math>:
-     a prediction for frame <!--l. 235--><math 
+     a prediction for frame <!--l. 430--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -640,78 +1563,81 @@ display="inline" ><msub><mrow
 ><mi 
 >j</mi></mrow></msub 
 ></math>.
-     </li>
-     <li class="itemize"><!--l. 237--><math 
+     </p></li>
+     <li class="itemize">
+     <!--l. 432--><p class="noindent" ><!--l. 432--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >m</mi></math>:
-     a matrix with <!--l. 237--><math 
+     a matrix with <!--l. 432--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mo 
-class="MathClass-open">&#x2308;</mo><mi 
+class="MathClass-open" stretchy="false">&#x2308;</mo><mi 
 >X</mi><mo 
 class="MathClass-bin">&#x2215;</mo><mi 
 >B</mi><mo 
-class="MathClass-close">&#x2309;</mo><mo 
+class="MathClass-close" stretchy="false">&#x2309;</mo><mo 
 class="MathClass-bin">&#x00D7;</mo><mo 
-class="MathClass-open">&#x2308;</mo><mi 
+class="MathClass-open" stretchy="false">&#x2308;</mo><mi 
 >Y</mi><mo 
 class="MathClass-bin">&#x2215;</mo><mi 
 >B</mi><mo 
-class="MathClass-close">&#x2309;</mo></math>
+class="MathClass-close" stretchy="false">&#x2309;</mo></math>
      bidirectional motion vectors.
-     </li>
-     <li class="itemize"><!--l. 240--><math 
- xmlns="http://www.w3.org/1998/Math/MathML"  
-display="inline" ><mi 
->e</mi></math>:
-     a matrix with <!--l. 240--><math 
- xmlns="http://www.w3.org/1998/Math/MathML"  
-display="inline" ><mo 
-class="MathClass-open">&#x2308;</mo><mi 
->X</mi><mo 
-class="MathClass-bin">&#x2215;</mo><mi 
->B</mi><mo 
-class="MathClass-close">&#x2309;</mo><mo 
-class="MathClass-bin">&#x00D7;</mo><mo 
-class="MathClass-open">&#x2308;</mo><mi 
->Y</mi><mo 
-class="MathClass-bin">&#x2215;</mo><mi 
->B</mi><mo 
-class="MathClass-close">&#x2309;</mo></math>
-     bidirectional Root Mean Square matching Wrrors &#x0028;RMSE&#x0029;.</li></ul>
                                                                   
 
                                                                   
-<!--l. 244--><p class="noindent" >
+     </p></li>
+     <li class="itemize">
+     <!--l. 435--><p class="noindent" ><!--l. 435--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>e</mi></math>:
+     a matrix with <!--l. 435--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-open" stretchy="false">&#x2308;</mo><mi 
+>X</mi><mo 
+class="MathClass-bin">&#x2215;</mo><mi 
+>B</mi><mo 
+class="MathClass-close" stretchy="false">&#x2309;</mo><mo 
+class="MathClass-bin">&#x00D7;</mo><mo 
+class="MathClass-open" stretchy="false">&#x2308;</mo><mi 
+>Y</mi><mo 
+class="MathClass-bin">&#x2215;</mo><mi 
+>B</mi><mo 
+class="MathClass-close" stretchy="false">&#x2309;</mo></math>
+     bidirectional Root Mean Square matching Wrrors &#x0028;RMSE&#x0029;.</p></li></ul>
+<!--l. 439--><p class="noindent" >
 </p>
    <h4 class="likesubsectionHead"><a 
- id="x1-1400010"></a>Algorithm</h4>
-<!--l. 245--><p class="noindent" >
+ id="x1-1900010"></a>Algorithm</h4>
+<!--l. 440--><p class="noindent" >
      </p><ol  class="enumerate1" >
-     <li 
-  class="enumerate" id="x1-14002x1">Compute the DWT<!--l. 249--><math 
+<li 
+  class="enumerate" id="x1-19002x1">
+     <!--l. 444--><p class="noindent" >Compute the DWT<!--l. 444--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msup><mrow 
 ></mrow><mrow 
 ><mi 
 >l</mi></mrow></msup 
 ></math>,
-     where <!--l. 249--><math 
+     where <!--l. 444--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >l</mi> <mo 
 class="MathClass-rel">=</mo> <mo 
-class="MathClass-open">&#x230A;</mo><msub><mrow 
-><mi class="qopname">log</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--></mrow><mrow 
+class="MathClass-open" stretchy="false">&#x230A;</mo><msub><mrow 
+><mi class="qopname">log</mi><mo> &#x2061;<!--FUNCTION APPLICATION--> </mo><!--nolimits--></mrow><mrow 
 ><mn>2</mn></mrow></msub 
 ><mo 
-class="MathClass-open">&#x0028;</mo><mi 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
 >R</mi><mo 
-class="MathClass-close">&#x0029;</mo><mo 
-class="MathClass-close">&#x230B;</mo><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo><mo 
+class="MathClass-close" stretchy="false">&#x230B;</mo><mo 
 class="MathClass-bin">&#x2212;</mo> <mn>1</mn></math>
-     levels, of the predicted frame <!--l. 250--><math 
+     levels, of the predicted frame <!--l. 445--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -719,7 +1645,7 @@ display="inline" ><msub><mrow
 ><mi 
 >j</mi></mrow></msub 
 ></math>
-     and the two reference frames <!--l. 250--><math 
+     and the two reference frames <!--l. 445--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -727,7 +1653,7 @@ display="inline" ><msub><mrow
 ><mi 
 >i</mi></mrow></msub 
 ></math>
-     and <!--l. 251--><math 
+     and <!--l. 446--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -737,9 +1663,10 @@ display="inline" ><msub><mrow
 ></math>.
      <a 
 href="https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_1.svg" >Example</a>.
-     </li>
-     <li 
-  class="enumerate" id="x1-14004x2"><!--l. 255--><math 
+     </p></li>
+<li 
+  class="enumerate" id="x1-19004x2">
+     <!--l. 450--><p class="noindent" ><!--l. 450--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -748,16 +1675,17 @@ display="inline" ><mi
 ><mi 
 >l</mi></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><mi 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
 >m</mi><mo 
-class="MathClass-close">&#x0029;</mo> <mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo> <mo 
 class="MathClass-rel">&#x2190;</mo> <mn>0</mn></math>,
      or any other precomputed values &#x0028;for example, from a previous ME in
      neighbor frames&#x0029;. <a 
 href="https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_2.svg" >Example</a>.
-     </li>
-     <li 
-  class="enumerate" id="x1-14006x3">Divide the subband <!--l. 260--><math 
+     </p></li>
+<li 
+  class="enumerate" id="x1-19006x3">
+     <!--l. 455--><p class="noindent" >Divide the subband <!--l. 455--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -766,24 +1694,24 @@ display="inline" ><mi
 ><mi 
 >l</mi></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><msub><mrow 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
 ><mi 
 >s</mi></mrow><mrow 
 ><mi 
 >j</mi></mrow></msub 
 ><mo 
-class="MathClass-close">&#x0029;</mo></math>
-     into blocks of size <!--l. 260--><math 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>
+     into blocks of size <!--l. 455--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >B</mi> <mo 
 class="MathClass-bin">&#x00D7;</mo> <mi 
 >B</mi></math>
-     pixels, and <!--l. 261--><math 
+     pixels, and <!--l. 456--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" > <mo 
 class="MathClass-bin">&#x00B1;</mo> <mn>1</mn></math>-spiral-search
-     them in the subbands <!--l. 261--><math 
+     them in the subbands <!--l. 456--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -792,14 +1720,14 @@ display="inline" ><mi
 ><mi 
 >l</mi></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><msub><mrow 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
 ><mi 
 >s</mi></mrow><mrow 
 ><mi 
 >i</mi></mrow></msub 
 ><mo 
-class="MathClass-close">&#x0029;</mo></math>
-     and <!--l. 262--><math 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>
+     and <!--l. 457--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -808,14 +1736,14 @@ display="inline" ><mi
 ><mi 
 >l</mi></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><msub><mrow 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
 ><mi 
 >s</mi></mrow><mrow 
 ><mi 
 >k</mi></mrow></msub 
 ><mo 
-class="MathClass-close">&#x0029;</mo></math>,
-     calculating a low-resolution <!--l. 263--><math 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>,
+     calculating a low-resolution <!--l. 458--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -824,22 +1752,22 @@ display="inline" ><mi
 ><mi 
 >l</mi></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><mi 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
 >m</mi><mo 
-class="MathClass-close">&#x0029;</mo> <mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo> <mo 
 class="MathClass-rel">=</mo> <mo 
-class="MathClass-open">&#x007B;</mo><mi 
+class="MathClass-open" stretchy="false">&#x007B;</mo><mi 
 >L</mi><msup><mrow 
 ><mi 
 >L</mi></mrow><mrow 
 ><mi 
 >l</mi></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><mover class="overleftarrow"><mrow 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mover class="overleftarrow"><mrow 
 ><mi 
 >m</mi></mrow><mi 
-class="MathClass-op">&#x20D6;</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo></mover><mo 
-class="MathClass-close">&#x0029;</mo><mo 
+class="MathClass-op">&#x20D6;</mi><mo> &#x2061;<!--FUNCTION APPLICATION--></mo></mover><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo><mo 
 class="MathClass-punc">,</mo><mi 
 >L</mi><msup><mrow 
 ><mi 
@@ -847,26 +1775,31 @@ class="MathClass-punc">,</mo><mi
 ><mi 
 >l</mi></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><mover class="overrightarrow"><mrow 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mover class="overrightarrow"><mrow 
 ><mi 
 >m</mi></mrow><mi 
-class="MathClass-op">&#x20D7;</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo></mover><mo 
-class="MathClass-close">&#x0029;</mo><mo 
-class="MathClass-close">&#x007D;</mo></math>
+class="MathClass-op">&#x20D7;</mi><mo> &#x2061;<!--FUNCTION APPLICATION--></mo></mover><mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo><mo 
+class="MathClass-close" stretchy="false">&#x007D;</mo></math>
      bi-directional motion vector &#xFB01;eld. <a 
 href="https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_3A.svg" >Example</a>. <a 
 href="https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_3A_bis.svg" >Example</a>.
-     </li>
-     <li 
-  class="enumerate" id="x1-14008x4">While <!--l. 268--><math 
+     </p></li>
+<li 
+  class="enumerate" id="x1-19008x4">
+     <!--l. 463--><p class="noindent" >While <!--l. 463--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >l</mi> <mo 
 class="MathClass-rel">&#x003E;</mo> <mn>0</mn></math>:
-     <!--l. 270--><p class="noindent" >
+     </p><!--l. 465--><p class="noindent" >
          </p><ol  class="enumerate2" >
-         <li 
-  class="enumerate" id="x1-14010x1">Synthesize <!--l. 273--><math 
+<li 
+  class="enumerate" id="x1-19010x1">
+                                                                  
+
+                                                                  
+         <!--l. 468--><p class="noindent" >Synthesize <!--l. 468--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -876,10 +1809,10 @@ display="inline" ><mi
 >l</mi><mo 
 class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><mi 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
 >m</mi><mo 
-class="MathClass-close">&#x0029;</mo></math>,
-         <!--l. 273--><math 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>,
+         <!--l. 468--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -889,14 +1822,14 @@ display="inline" ><mi
 >l</mi><mo 
 class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><msub><mrow 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
 ><mi 
 >s</mi></mrow><mrow 
 ><mi 
 >j</mi></mrow></msub 
 ><mo 
-class="MathClass-close">&#x0029;</mo></math>,
-         <!--l. 273--><math 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>,
+         <!--l. 468--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -906,14 +1839,14 @@ display="inline" ><mi
 >l</mi><mo 
 class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><msub><mrow 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
 ><mi 
 >s</mi></mrow><mrow 
 ><mi 
 >i</mi></mrow></msub 
 ><mo 
-class="MathClass-close">&#x0029;</mo></math>
-         and <!--l. 274--><math 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>
+         and <!--l. 469--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -923,14 +1856,14 @@ display="inline" ><mi
 >l</mi><mo 
 class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><msub><mrow 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
 ><mi 
 >s</mi></mrow><mrow 
 ><mi 
 >k</mi></mrow></msub 
 ><mo 
-class="MathClass-close">&#x0029;</mo></math>,
-         by computing the 1-level DWT<!--l. 274--><math 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>,
+         by computing the 1-level DWT<!--l. 469--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msup><mrow 
 ></mrow><mrow 
@@ -940,9 +1873,10 @@ class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msup
          <a 
 href="https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_4A.svg" >Example</a>. <a 
 href="https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_4A_bis.svg" >Example</a>
-         </li>
-         <li 
-  class="enumerate" id="x1-14012x2"><!--l. 279--><math 
+         </p></li>
+<li 
+  class="enumerate" id="x1-19012x2">
+         <!--l. 474--><p class="noindent" ><!--l. 474--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -952,9 +1886,9 @@ display="inline" ><mi
 >l</mi><mo 
 class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><mi 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
 >M</mi><mo 
-class="MathClass-close">&#x0029;</mo> <mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo> <mo 
 class="MathClass-rel">&#x2190;</mo> <mi 
 >L</mi><msup><mrow 
 ><mi 
@@ -963,15 +1897,16 @@ class="MathClass-rel">&#x2190;</mo> <mi
 >l</mi><mo 
 class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><mi 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
 >M</mi><mo 
-class="MathClass-close">&#x0029;</mo> <mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo> <mo 
 class="MathClass-bin">&#x00D7;</mo> <mn>2</mn></math>.
          <a 
 href="https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_4B.svg" >Example</a>.
-         </li>
-         <li 
-  class="enumerate" id="x1-14014x3">Re&#xFB01;ne <!--l. 283--><math 
+         </p></li>
+<li 
+  class="enumerate" id="x1-19014x3">
+         <!--l. 478--><p class="noindent" >Re&#xFB01;ne <!--l. 478--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -981,54 +1916,54 @@ display="inline" ><mi
 >l</mi><mo 
 class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><mi 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
 >m</mi><mo 
-class="MathClass-close">&#x0029;</mo></math>
-         using <!--l. 283--><math 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>
+         using <!--l. 478--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" > <mo 
 class="MathClass-bin">&#x00B1;</mo> <mn>1</mn></math>-spiral-search.
          <a 
 href="https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_4C.svg" >Example</a>.
-         </li>
-         <li 
-  class="enumerate" id="x1-14016x4"><!--l. 287--><math 
+         </p></li>
+<li 
+  class="enumerate" id="x1-19016x4">
+         <!--l. 482--><p class="noindent" ><!--l. 482--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >l</mi> <mo 
 class="MathClass-rel">&#x2190;</mo> <mi 
 >l</mi> <mo 
 class="MathClass-bin">&#x2212;</mo> <mn>1</mn></math>.
-         &#x0028;When <!--l. 287--><math 
+         &#x0028;When <!--l. 482--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >l</mi> <mo 
 class="MathClass-rel">=</mo> <mn>0</mn></math>,
-         the motion vectors &#xFB01;eld <!--l. 287--><math 
+         the motion vectors &#xFB01;eld <!--l. 482--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >m</mi></math>
-                                                                  
-
-                                                                  
          has the structure:&#x0029;
+</p>
          </li></ol>
-     <!--l. 292--><p class="noindent" ><a 
+     <!--l. 487--><p class="noindent" ><a 
 href="https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/motion_vectors.svg" >Example</a>.
      </p></li>
-     <li 
-  class="enumerate" id="x1-14018x5">While <!--l. 295--><math 
+<li 
+  class="enumerate" id="x1-19018x5">
+     <!--l. 490--><p class="noindent" >While <!--l. 490--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >l</mi> <mo 
 class="MathClass-rel">&#x003C;</mo> <mi 
 >A</mi></math> &#x0028;in the
-     &#xFB01;rst iteration, <!--l. 295--><math 
+     &#xFB01;rst iteration, <!--l. 490--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >l</mi> <mo 
 class="MathClass-rel">=</mo> <mn>0</mn></math>,
-     and <!--l. 295--><math 
+     and <!--l. 490--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -1036,25 +1971,27 @@ display="inline" ><mi
 >L</mi></mrow><mrow 
 ><mn>0</mn></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><mi 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
 >M</mi><mo 
-class="MathClass-close">&#x0029;</mo> <mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo> <mo 
 class="MathClass-punc">:</mo><mo 
 class="MathClass-rel">=</mo> <mi 
 >M</mi></math>&#x0029;:
-     <!--l. 297--><p class="noindent" >
+     </p><!--l. 492--><p class="noindent" >
          </p><ol  class="enumerate2" >
-         <li 
-  class="enumerate" id="x1-14020x1"><!--l. 299--><math 
+<li 
+  class="enumerate" id="x1-19020x1">
+         <!--l. 494--><p class="noindent" ><!--l. 494--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >l</mi> <mo 
 class="MathClass-rel">&#x2190;</mo> <mi 
 >l</mi> <mo 
 class="MathClass-bin">+</mo> <mn>1</mn></math>.
-         </li>
-         <li 
-  class="enumerate" id="x1-14022x2">Synthesize <!--l. 302--><math 
+         </p></li>
+<li 
+  class="enumerate" id="x1-19022x2">
+         <!--l. 497--><p class="noindent" >Synthesize <!--l. 497--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -1064,14 +2001,14 @@ display="inline" ><mi
 class="MathClass-bin">&#x2212;</mo><mi 
 >l</mi></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><msub><mrow 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
 ><mi 
 >s</mi></mrow><mrow 
 ><mi 
 >j</mi></mrow></msub 
 ><mo 
-class="MathClass-close">&#x0029;</mo></math>,
-         <!--l. 302--><math 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>,
+         <!--l. 497--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -1081,14 +2018,17 @@ display="inline" ><mi
 class="MathClass-bin">&#x2212;</mo><mi 
 >l</mi></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><msub><mrow 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
 ><mi 
 >s</mi></mrow><mrow 
 ><mi 
 >i</mi></mrow></msub 
 ><mo 
-class="MathClass-close">&#x0029;</mo></math>
-         and <!--l. 302--><math 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>
+                                                                  
+
+                                                                  
+         and <!--l. 497--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -1098,53 +2038,56 @@ display="inline" ><mi
 class="MathClass-bin">&#x2212;</mo><mi 
 >l</mi></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><msub><mrow 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
 ><mi 
 >s</mi></mrow><mrow 
 ><mi 
 >k</mi></mrow></msub 
 ><mo 
-class="MathClass-close">&#x0029;</mo></math>,
-         computing the 1-level DWT<!--l. 303--><math 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>,
+         computing the 1-level DWT<!--l. 498--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msup><mrow 
 ></mrow><mrow 
 ><mo 
 class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msup 
 ></math>
-         &#x0028;high-frequency subbands are <!--l. 304--><math 
+         &#x0028;high-frequency subbands are <!--l. 499--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mn>0</mn></math>&#x0029;.
-         This performs a zoom-in in these frames using <!--l. 304--><math 
+         This performs a zoom-in in these frames using <!--l. 499--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mn>1</mn><mo 
 class="MathClass-bin">&#x2215;</mo><mn>2</mn></math>-subpixel
          accuracy.
-         <!--l. 307--><p class="noindent" ><a 
+         </p><!--l. 502--><p class="noindent" ><a 
 href="https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_5B.svg" >Example</a>.
          </p></li>
-         <li 
-  class="enumerate" id="x1-14024x3"><!--l. 310--><math 
+<li 
+  class="enumerate" id="x1-19024x3">
+         <!--l. 505--><p class="noindent" ><!--l. 505--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >m</mi> <mo 
 class="MathClass-rel">&#x2190;</mo> <mi 
 >m</mi> <mo 
 class="MathClass-bin">&#x00D7;</mo> <mn>2</mn></math>.
-         <!--l. 312--><p class="noindent" ><a 
+         </p><!--l. 507--><p class="noindent" ><a 
 href="https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/motion_vectors_by_2.svg" >Example</a>.
          </p></li>
-         <li 
-  class="enumerate" id="x1-14026x4"><!--l. 315--><math 
+<li 
+  class="enumerate" id="x1-19026x4">
+         <!--l. 510--><p class="noindent" ><!--l. 510--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >B</mi> <mo 
 class="MathClass-rel">&#x2190;</mo> <mi 
 >B</mi> <mo 
 class="MathClass-bin">&#x00D7;</mo> <mn>2</mn></math>.
-         </li>
-         <li 
-  class="enumerate" id="x1-14028x5">Divide the subband <!--l. 318--><math 
+         </p></li>
+<li 
+  class="enumerate" id="x1-19028x5">
+         <!--l. 513--><p class="noindent" >Divide the subband <!--l. 513--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -1154,24 +2097,24 @@ display="inline" ><mi
 class="MathClass-bin">&#x2212;</mo><mi 
 >l</mi></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><msub><mrow 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
 ><mi 
 >s</mi></mrow><mrow 
 ><mi 
 >j</mi></mrow></msub 
 ><mo 
-class="MathClass-close">&#x0029;</mo></math>
-         into blocks of <!--l. 318--><math 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>
+         into blocks of <!--l. 513--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >B</mi> <mo 
 class="MathClass-bin">&#x00D7;</mo> <mi 
 >B</mi></math>
-         pixels and <!--l. 319--><math 
+         pixels and <!--l. 514--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" > <mo 
 class="MathClass-bin">&#x00B1;</mo> <mn>1</mn></math>-spiral-search
-         them into the subbands <!--l. 320--><math 
+         them into the subbands <!--l. 515--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -1181,14 +2124,14 @@ display="inline" ><mi
 class="MathClass-bin">&#x2212;</mo><mi 
 >l</mi></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><msub><mrow 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
 ><mi 
 >s</mi></mrow><mrow 
 ><mi 
 >i</mi></mrow></msub 
 ><mo 
-class="MathClass-close">&#x0029;</mo></math>
-         and <!--l. 320--><math 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>
+         and <!--l. 515--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >L</mi><msup><mrow 
@@ -1198,14 +2141,14 @@ display="inline" ><mi
 class="MathClass-bin">&#x2212;</mo><mi 
 >l</mi></mrow></msup 
 ><mo 
-class="MathClass-open">&#x0028;</mo><msub><mrow 
+class="MathClass-open" stretchy="false">&#x0028;</mo><msub><mrow 
 ><mi 
 >s</mi></mrow><mrow 
 ><mi 
 >k</mi></mrow></msub 
 ><mo 
-class="MathClass-close">&#x0029;</mo></math>,
-         calculating a <!--l. 320--><math 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>,
+         calculating a <!--l. 515--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mn>1</mn><mo 
 class="MathClass-bin">&#x2215;</mo><msup><mrow 
@@ -1213,32 +2156,34 @@ class="MathClass-bin">&#x2215;</mo><msup><mrow
 ><mi 
 >l</mi></mrow></msup 
 ></math>
-         sub-pixel accuracy <!--l. 321--><math 
+         sub-pixel accuracy <!--l. 516--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >m</mi></math>
          bi-directional motion vector &#xFB01;eld. <a 
 href="https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/motion_vectors_definitive.svg" >Example</a>.
-         </li>
-         <li 
-  class="enumerate" id="x1-14030x6">Frame prediction. For each block <!--l. 325--><math 
+         </p></li>
+<li 
+  class="enumerate" id="x1-19030x6">
+         <!--l. 520--><p class="noindent" >Frame prediction. For each block <!--l. 520--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >b</mi></math>:
-         </li>
-         <li 
-  class="enumerate" id="x1-14032x7">Compute <table class="equation"><tr><td> <a 
- id="x1-14033r4"></a>
+         </p></li>
+<li 
+  class="enumerate" id="x1-19032x7">
+         <!--l. 523--><p class="noindent" >Compute </p><table class="equation"><tr><td>
                                                                   
 
                                                                   
-         <!--l. 329--><math 
+         <!--l. 524--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
-                         <mover 
+                         <mstyle 
+   id="x1-19033r4"  class="label" ></mstyle><!--endlabel--><mo 
+class="MathClass-open" stretchy="false"><mover 
 accent="true"><mrow 
-><mi 
->b</mi></mrow><mo accent="true">&#x005E;</mo></mover> <mo 
+>b</mrow><mo accent="true">&#x005E;</mo></mover></mo> <mo 
 class="MathClass-rel">&#x2190;</mo> <mfrac><mrow 
 ><msub><mrow 
 ><mi 
@@ -1249,17 +2194,17 @@ class="MathClass-rel">&#x2190;</mo> <mfrac><mrow
 ><mover class="overleftarrow"><mrow 
 ><mi 
 >e</mi></mrow><mi 
-class="MathClass-op">&#x20D6;</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo></mover></mrow><mrow 
+class="MathClass-op">&#x20D6;</mi><mo> &#x2061;<!--FUNCTION APPLICATION--></mo></mover></mrow><mrow 
 ><mstyle 
 class="text"><mtext  >max</mtext></mstyle></mrow></msub 
 > <mo 
 class="MathClass-bin">&#x2212;</mo><mover class="overleftarrow"><mrow 
 ><mi 
 >e</mi></mrow><mi 
-class="MathClass-op">&#x20D6;</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo></mover><mo 
-class="MathClass-open">&#x0028;</mo><mi 
+class="MathClass-op">&#x20D6;</mi><mo> &#x2061;<!--FUNCTION APPLICATION--></mo></mover><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
 >b</mi><mo 
-class="MathClass-close">&#x0029;</mo><mstyle mathsize="1.19em"><mrow><mo fence="true" form="prefix"> )</mo><mrow></mrow><mo fence="true" form="postfix"></mo></mrow></mstyle> <mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo><mstyle mathsize="1.19em"><mrow><mo fence="true" form="prefix"> )</mo><mrow></mrow><mo fence="true" form="postfix"></mo></mrow></mstyle> <mo 
 class="MathClass-bin">+</mo> <msub><mrow 
 ><mi 
 >b</mi></mrow><mrow 
@@ -1269,85 +2214,85 @@ class="MathClass-bin">+</mo> <msub><mrow
 ><mover class="overrightarrow"><mrow 
 ><mi 
 >e</mi></mrow><mi 
-class="MathClass-op">&#x20D7;</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo></mover></mrow><mrow 
+class="MathClass-op">&#x20D7;</mi><mo> &#x2061;<!--FUNCTION APPLICATION--></mo></mover></mrow><mrow 
 ><mstyle 
 class="text"><mtext  >max</mtext></mstyle></mrow></msub 
 > <mo 
 class="MathClass-bin">&#x2212;</mo><mover class="overrightarrow"><mrow 
 ><mi 
 >e</mi></mrow><mi 
-class="MathClass-op">&#x20D7;</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo></mover><mo 
-class="MathClass-open">&#x0028;</mo><mi 
+class="MathClass-op">&#x20D7;</mi><mo> &#x2061;<!--FUNCTION APPLICATION--></mo></mover><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
 >b</mi><mo 
-class="MathClass-close">&#x0029;</mo><mstyle mathsize="1.19em"><mrow><mo fence="true" form="prefix"> )</mo><mrow></mrow><mo fence="true" form="postfix"></mo></mrow></mstyle></mrow> 
+class="MathClass-close" stretchy="false">&#x0029;</mo><mstyle mathsize="1.19em"><mrow><mo fence="true" form="prefix"> )</mo><mrow></mrow><mo fence="true" form="postfix"></mo></mrow></mstyle></mrow> 
    <mrow 
 ><mstyle mathsize="1.19em"><mrow><mo fence="true" form="prefix"> (</mo><mrow></mrow><mo fence="true" form="postfix"></mo></mrow></mstyle><msub><mrow 
 ><mover class="overleftarrow"><mrow 
 ><mi 
 >e</mi></mrow><mi 
-class="MathClass-op">&#x20D6;</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo></mover></mrow><mrow 
+class="MathClass-op">&#x20D6;</mi><mo> &#x2061;<!--FUNCTION APPLICATION--></mo></mover></mrow><mrow 
 ><mstyle 
 class="text"><mtext  >max</mtext></mstyle></mrow></msub 
 > <mo 
 class="MathClass-bin">&#x2212;</mo><mover class="overleftarrow"><mrow 
 ><mi 
 >e</mi></mrow><mi 
-class="MathClass-op">&#x20D6;</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo></mover><mo 
-class="MathClass-open">&#x0028;</mo><mi 
+class="MathClass-op">&#x20D6;</mi><mo> &#x2061;<!--FUNCTION APPLICATION--></mo></mover><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
 >b</mi><mo 
-class="MathClass-close">&#x0029;</mo><mstyle mathsize="1.19em"><mrow><mo fence="true" form="prefix"> )</mo><mrow></mrow><mo fence="true" form="postfix"></mo></mrow></mstyle> <mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo><mstyle mathsize="1.19em"><mrow><mo fence="true" form="prefix"> )</mo><mrow></mrow><mo fence="true" form="postfix"></mo></mrow></mstyle> <mo 
 class="MathClass-bin">+</mo> <mstyle mathsize="1.19em"><mrow><mo fence="true" form="prefix"> (</mo><mrow></mrow><mo fence="true" form="postfix"></mo></mrow></mstyle><msub><mrow 
 ><mover class="overrightarrow"><mrow 
 ><mi 
 >e</mi></mrow><mi 
-class="MathClass-op">&#x20D7;</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo></mover></mrow><mrow 
+class="MathClass-op">&#x20D7;</mi><mo> &#x2061;<!--FUNCTION APPLICATION--></mo></mover></mrow><mrow 
 ><mstyle 
 class="text"><mtext  >max</mtext></mstyle></mrow></msub 
 > <mo 
 class="MathClass-bin">&#x2212;</mo><mover class="overrightarrow"><mrow 
 ><mi 
 >e</mi></mrow><mi 
-class="MathClass-op">&#x20D7;</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo></mover><mo 
-class="MathClass-open">&#x0028;</mo><mi 
+class="MathClass-op">&#x20D7;</mi><mo> &#x2061;<!--FUNCTION APPLICATION--></mo></mover><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
 >b</mi><mo 
-class="MathClass-close">&#x0029;</mo><mstyle mathsize="1.19em"><mrow><mo fence="true" form="prefix"> )</mo><mrow></mrow><mo fence="true" form="postfix"></mo></mrow></mstyle></mrow></mfrac>   <mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo><mstyle mathsize="1.19em"><mrow><mo fence="true" form="prefix"> )</mo><mrow></mrow><mo fence="true" form="postfix"></mo></mrow></mstyle></mrow></mfrac>   <mo 
 class="MathClass-punc">,</mo>
 </math></td><td class="eq-no">&#x0028;4&#x0029;</td></tr></table>
-         <!--l. 333--><p class="noindent" >where <!--l. 333--><math 
+         <!--l. 528--><p class="noindent" >where <!--l. 528--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mover class="overleftarrow"><mrow 
 ><mi 
 >e</mi></mrow><mi 
-class="MathClass-op">&#x20D6;</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo></mover><mo 
-class="MathClass-open">&#x0028;</mo><mi 
+class="MathClass-op">&#x20D6;</mi><mo> &#x2061;<!--FUNCTION APPLICATION--></mo></mover><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
 >b</mi><mo 
-class="MathClass-close">&#x0029;</mo></math>
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>
          is the &#x0028;minimum&#x0029; distortion of the best backward matching for block
-         <!--l. 334--><math 
+         <!--l. 529--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >b</mi></math>,
-         <!--l. 334--><math 
+         <!--l. 529--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mover class="overrightarrow"><mrow 
 ><mi 
 >e</mi></mrow><mi 
-class="MathClass-op">&#x20D7;</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo></mover><mo 
-class="MathClass-open">&#x0028;</mo><mi 
+class="MathClass-op">&#x20D7;</mi><mo> &#x2061;<!--FUNCTION APPLICATION--></mo></mover><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
 >b</mi><mo 
-class="MathClass-close">&#x0029;</mo></math>
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>
          the &#x0028;minimum&#x0029; distortion of the best forward matching for block
-         <!--l. 336--><math 
+         <!--l. 531--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >b</mi></math>,
-         <!--l. 337--><math 
+         <!--l. 532--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mover class="overleftarrow"><mrow 
 ><mi 
 >e</mi></mrow><mi 
-class="MathClass-op">&#x20D6;</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo></mover></mrow><mrow 
+class="MathClass-op">&#x20D6;</mi><mo> &#x2061;<!--FUNCTION APPLICATION--></mo></mover></mrow><mrow 
 ><mstyle 
 class="text"><mtext  >max</mtext></mstyle></mrow></msub 
 > <mo 
@@ -1355,12 +2300,12 @@ class="MathClass-rel">=</mo><msub><mrow
 > <mover class="overrightarrow"><mrow 
 ><mi 
 >e</mi></mrow><mi 
-class="MathClass-op">&#x20D7;</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo></mover></mrow><mrow 
+class="MathClass-op">&#x20D7;</mi><mo> &#x2061;<!--FUNCTION APPLICATION--></mo></mover></mrow><mrow 
 ><mstyle 
 class="text"><mtext  >max</mtext></mstyle></mrow></msub 
 ></math>
          are the backward and forward maximum matching distortions,
-         <!--l. 338--><math 
+         <!--l. 533--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1369,11 +2314,11 @@ display="inline" ><msub><mrow
 >i</mi></mrow></msub 
 ></math>
          is the &#x0028;backward&#x0029; block found &#x0028;as the most similar to
-         <!--l. 339--><math 
+         <!--l. 534--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >b</mi></math>&#x0029; in
-         frame <!--l. 340--><math 
+         frame <!--l. 535--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1381,7 +2326,7 @@ display="inline" ><msub><mrow
 ><mi 
 >i</mi></mrow></msub 
 ></math>
-         and <!--l. 340--><math 
+         and <!--l. 535--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1390,7 +2335,7 @@ display="inline" ><msub><mrow
 >k</mi></mrow></msub 
 ></math>
          is the &#x0028;forward&#x0029; block found in frame
-         <!--l. 341--><math 
+         <!--l. 536--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1398,31 +2343,31 @@ display="inline" ><msub><mrow
 ><mi 
 >k</mi></mrow></msub 
 ></math>. Notice
-         that, if <!--l. 342--><math 
+         that, if <!--l. 537--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mover class="overleftarrow"><mrow 
 ><mi 
 >e</mi></mrow><mi 
-class="MathClass-op">&#x20D6;</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo></mover><mo 
-class="MathClass-open">&#x0028;</mo><mi 
+class="MathClass-op">&#x20D6;</mi><mo> &#x2061;<!--FUNCTION APPLICATION--></mo></mover><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
 >b</mi><mo 
-class="MathClass-close">&#x0029;</mo> <mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo> <mo 
 class="MathClass-rel">=</mo> <mover class="overrightarrow"><mrow 
 ><mi 
 >e</mi></mrow><mi 
-class="MathClass-op">&#x20D7;</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo></mover><mo 
-class="MathClass-open">&#x0028;</mo><mi 
+class="MathClass-op">&#x20D7;</mi><mo> &#x2061;<!--FUNCTION APPLICATION--></mo></mover><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
 >b</mi><mo 
-class="MathClass-close">&#x0029;</mo></math>,
-         then the prediction is </p><table class="equation"><tr><td> <a 
- id="x1-14034r5"></a>
-         <!--l. 344--><math 
+class="MathClass-close" stretchy="false">&#x0029;</mo></math>,
+         then the prediction is </p><table class="equation"><tr><td>
+         <!--l. 539--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
-                                           <mover 
+                                           <mstyle 
+   id="x1-19034r5"  class="label" ></mstyle><!--endlabel--><mo 
+class="MathClass-open" stretchy="false"><mover 
 accent="true"><mrow 
-><mi 
->b</mi></mrow><mo accent="true">&#x005E;</mo></mover> <mo 
+>b</mrow><mo accent="true">&#x005E;</mo></mover></mo> <mo 
 class="MathClass-rel">=</mo> <mfrac><mrow 
 ><msub><mrow 
 ><mi 
@@ -1440,28 +2385,28 @@ class="MathClass-bin">+</mo> <msub><mrow
 ><mn>2</mn></mrow></mfrac>    <mo 
 class="MathClass-punc">,</mo>
 </math></td><td class="eq-no">&#x0028;5&#x0029;</td></tr></table>
-         <!--l. 347--><p class="noindent" >and if <!--l. 347--><math 
+         <!--l. 542--><p class="noindent" >and if <!--l. 542--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mover class="overleftarrow"><mrow 
 ><mi 
 >e</mi></mrow><mi 
-class="MathClass-op">&#x20D6;</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--></mo></mover><mo 
-class="MathClass-open">&#x0028;</mo><mi 
+class="MathClass-op">&#x20D6;</mi><mo> &#x2061;<!--FUNCTION APPLICATION--></mo></mover><mo 
+class="MathClass-open" stretchy="false">&#x0028;</mo><mi 
 >b</mi><mo 
-class="MathClass-close">&#x0029;</mo> <mo 
+class="MathClass-close" stretchy="false">&#x0029;</mo> <mo 
 class="MathClass-rel">=</mo> <mn>0</mn></math>,
-         </p><table class="equation"><tr><td> <a 
- id="x1-14035r6"></a>
+         </p><table class="equation"><tr><td>
                                                                   
 
                                                                   
-         <!--l. 348--><math 
+         <!--l. 543--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
-                                              <mover 
+                                              <mstyle 
+   id="x1-19035r6"  class="label" ></mstyle><!--endlabel--><mo 
+class="MathClass-open" stretchy="false"><mover 
 accent="true"><mrow 
-><mi 
->b</mi></mrow><mo accent="true">&#x005E;</mo></mover> <mo 
+>b</mrow><mo accent="true">&#x005E;</mo></mover></mo> <mo 
 class="MathClass-rel">=</mo> <msub><mrow 
 ><mi 
 >b</mi></mrow><mrow 
@@ -1470,14 +2415,14 @@ class="MathClass-rel">=</mo> <msub><mrow
 ><mo 
 class="MathClass-punc">,</mo>
 </math></td><td class="eq-no">&#x0028;6&#x0029;</td></tr></table>
-         <!--l. 350--><p class="noindent" >and viceversa.</p></li></ol>
+         <!--l. 545--><p class="noindent" >and viceversa.</p></li></ol>
      </li></ol>
-<!--l. 354--><p class="noindent" >
+<!--l. 549--><p class="noindent" >
 </p>
    <h4 class="likesubsectionHead"><a 
- id="x1-1500010"></a>Lab</h4>
-<!--l. 355--><p class="noindent" >Implement  the  Section  <a 
-href="#x1-1100010">10<!--tex4ht:ref: sec:linear_frame_interpolation --></a>  &#x0028;work  on
+ id="x1-2000010"></a>Lab</h4>
+<!--l. 550--><p class="noindent" >Implement  the  Section  <a 
+href="#x1-1600010">10<!--tex4ht:ref: sec:linear_frame_interpolation --></a>  &#x0028;work  on
 <a 
 href="https://github.com/Sistemas-Multimedia/MCDWT/blob/master/transform/mc/block/interpolate.py" class="url" ><span 
 class="ectt-1000">https://github.com/Sistemas-Multimedia/MCDWT/blob/master/transform/mc/block/interpolate.py</span></a>&#x0029;.
@@ -1488,14 +2433,14 @@ class="ectt-1000">https://github.com/Sistemas-Multimedia/MCDWT/blob/master/mcdwt
 href="https://github.com/vicente-gonzalez-ruiz/MCTF-video-coding/blob/master/src/motion\_estimate.cpp" class="url" ><span 
 class="ectt-1000">https://github.com/vicente-gonzalez-ruiz/MCTF-video-coding/blob/master/src/motion&#x005C;_estimate.cpp</span></a>
 as reference.
-</p><!--l. 363--><p class="noindent" >
+</p><!--l. 558--><p class="noindent" >
 </p>
    <h4 class="likesubsectionHead"><a 
- id="x1-1600010"></a>Lab</h4>
-<!--l. 364--><p class="noindent" >Compare the performance of the proposed matching strategies &#x0028;MSE, MAE and EE&#x0029; in the
+ id="x1-2100010"></a>Lab</h4>
+<!--l. 559--><p class="noindent" >Compare the performance of the proposed matching strategies &#x0028;MSE, MAE and EE&#x0029; in the
 Section <a 
-href="#x1-1100010">10<!--tex4ht:ref: sec:linear_frame_interpolation --></a>, by computing the variance of the prediction error between the original frame
-&#x0028;<!--l. 367--><math 
+href="#x1-1600010">10<!--tex4ht:ref: sec:linear_frame_interpolation --></a>, by computing the variance of the prediction error between the original frame
+&#x0028;<!--l. 562--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1503,7 +2448,7 @@ display="inline" ><msub><mrow
 ><mi 
 >j</mi></mrow></msub 
 ></math>&#x0029; and the
-prediction frame &#x0028;<!--l. 367--><math 
+prediction frame &#x0028;<!--l. 562--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1511,14 +2456,14 @@ display="inline" ><msub><mrow
 ><mi 
 >j</mi></mrow></msub 
 ></math>&#x0029;.
-</p><!--l. 369--><p class="noindent" >
+</p><!--l. 564--><p class="noindent" >
 </p>
    <h4 class="likesubsectionHead"><a 
- id="x1-1700010"></a>Lab</h4>
-<!--l. 370--><p class="noindent" >Test di&#xFB00;erent DWT &#xFB01;lters in the Section <a 
-href="#x1-1100010">10<!--tex4ht:ref: sec:linear_frame_interpolation --></a> and compare their
+ id="x1-2200010"></a>Lab</h4>
+<!--l. 565--><p class="noindent" >Test di&#xFB00;erent DWT &#xFB01;lters in the Section <a 
+href="#x1-1600010">10<!--tex4ht:ref: sec:linear_frame_interpolation --></a> and compare their
 performance. Compute the prediction error between the original frame
-&#x0028;<!--l. 372--><math 
+&#x0028;<!--l. 567--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1526,7 +2471,7 @@ display="inline" ><msub><mrow
 ><mi 
 >j</mi></mrow></msub 
 ></math>&#x0029; and the
-prediction frame &#x0028;<!--l. 373--><math 
+prediction frame &#x0028;<!--l. 568--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1535,15 +2480,15 @@ display="inline" ><msub><mrow
 >j</mi></mrow></msub 
 ></math>&#x0029;.
 Measure the dependency between this performance and the distance between frames
-&#x0028;<!--l. 374--><math 
+&#x0028;<!--l. 569--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >i</mi></math>,
-<!--l. 374--><math 
+<!--l. 569--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >j</mi></math>, and
-<!--l. 375--><math 
+<!--l. 570--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >k</mi></math>
@@ -1551,15 +2496,15 @@ indexes&#x0029;.
                                                                   
 
                                                                   
-</p><!--l. 377--><p class="noindent" >
+</p><!--l. 572--><p class="noindent" >
 </p>
    <h4 class="likesubsectionHead"><a 
- id="x1-1800010"></a>Lab</h4>
-<!--l. 378--><p class="noindent" >Test the use of both the luma and the chroma in Section <a 
-href="#x1-1100010">10<!--tex4ht:ref: sec:linear_frame_interpolation --></a>, and
+ id="x1-2300010"></a>Lab</h4>
+<!--l. 573--><p class="noindent" >Test the use of both the luma and the chroma in Section <a 
+href="#x1-1600010">10<!--tex4ht:ref: sec:linear_frame_interpolation --></a>, and
 measure the performance of each option &#x0028;only luma vs.&#x00A0;all components&#x0029;,
 by computing the prediction error between the original frame
-&#x0028;<!--l. 381--><math 
+&#x0028;<!--l. 576--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1567,7 +2512,7 @@ display="inline" ><msub><mrow
 ><mi 
 >j</mi></mrow></msub 
 ></math>&#x0029; and the
-prediction frame &#x0028;<!--l. 382--><math 
+prediction frame &#x0028;<!--l. 577--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1576,30 +2521,30 @@ display="inline" ><msub><mrow
 >j</mi></mrow></msub 
 ></math>&#x0029;.
 Measure the dependency of the results with the distance between frames
-&#x0028;<!--l. 383--><math 
+&#x0028;<!--l. 578--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >i</mi></math>,
-<!--l. 383--><math 
+<!--l. 578--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >j</mi></math>, and
-<!--l. 383--><math 
+<!--l. 578--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >k</mi></math>
 indexes&#x0029;.
-</p><!--l. 385--><p class="noindent" >
+</p><!--l. 580--><p class="noindent" >
 </p>
    <h4 class="likesubsectionHead"><a 
- id="x1-1900010"></a>Lab</h4>
-<!--l. 386--><p class="noindent" >Analyze the impact of the <!--l. 386--><math 
+ id="x1-2400010"></a>Lab</h4>
+<!--l. 581--><p class="noindent" >Analyze the impact of the <!--l. 581--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >R</mi></math>
 &#x0028;search range&#x0029; parameter in the Section <a 
-href="#x1-1100010">10<!--tex4ht:ref: sec:linear_frame_interpolation --></a>. Compute the prediction error between the original
-frame &#x0028;<!--l. 388--><math 
+href="#x1-1600010">10<!--tex4ht:ref: sec:linear_frame_interpolation --></a>. Compute the prediction error between the original
+frame &#x0028;<!--l. 583--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1607,7 +2552,7 @@ display="inline" ><msub><mrow
 ><mi 
 >j</mi></mrow></msub 
 ></math>&#x0029; and the
-prediction frame &#x0028;<!--l. 389--><math 
+prediction frame &#x0028;<!--l. 584--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1618,33 +2563,33 @@ display="inline" ><msub><mrow
 Study the impact of initializing the motion vectors &#x0028;Section
 <span 
 class="ecbx-1000">??</span>&#x0029;. Measure the dependency with the distance between frames
-&#x0028;<!--l. 391--><math 
+&#x0028;<!--l. 586--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >i</mi></math>,
-<!--l. 391--><math 
+<!--l. 586--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >j</mi></math>, and
-<!--l. 391--><math 
+<!--l. 586--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >k</mi></math>
 indexes&#x0029;.
-</p><!--l. 393--><p class="indent" >   <a 
+</p><!--l. 588--><p class="indent" >   <a 
 href="https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/video_coding/blob/master/search_range.ipynb" >IPython notebook</a>
-</p><!--l. 395--><p class="noindent" >
+</p><!--l. 590--><p class="noindent" >
 </p>
    <h4 class="likesubsectionHead"><a 
- id="x1-2000010"></a>Lab</h4>
-<!--l. 396--><p class="noindent" >Analyze the impact of the <!--l. 396--><math 
+ id="x1-2500010"></a>Lab</h4>
+<!--l. 591--><p class="noindent" >Analyze the impact of the <!--l. 591--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >O</mi></math>
 &#x0028;overlaping&#x0029; parameter in the Section <span 
 class="ecbx-1000">??</span>, by means of
 computing the prediction error between the original frame
-&#x0028;<!--l. 398--><math 
+&#x0028;<!--l. 593--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1652,7 +2597,7 @@ display="inline" ><msub><mrow
 ><mi 
 >j</mi></mrow></msub 
 ></math>&#x0029; and the
-prediction frame &#x0028;<!--l. 399--><math 
+prediction frame &#x0028;<!--l. 594--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1661,15 +2606,15 @@ display="inline" ><msub><mrow
 >j</mi></mrow></msub 
 ></math>&#x0029;.
 Measure the dependency with the distance between frames
-&#x0028;<!--l. 400--><math 
+&#x0028;<!--l. 595--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >i</mi></math>,
-<!--l. 400--><math 
+<!--l. 595--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >j</mi></math>, and
-<!--l. 400--><math 
+<!--l. 595--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >k</mi></math>
@@ -1677,17 +2622,17 @@ indexes&#x0029;.
                                                                   
 
                                                                   
-</p><!--l. 402--><p class="noindent" >
+</p><!--l. 597--><p class="noindent" >
 </p>
    <h4 class="likesubsectionHead"><a 
- id="x1-2100010"></a>Lab</h4>
-<!--l. 403--><p class="noindent" >Analyze the impact of the <!--l. 403--><math 
+ id="x1-2600010"></a>Lab</h4>
+<!--l. 598--><p class="noindent" >Analyze the impact of the <!--l. 598--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >B</mi></math>
 &#x0028;block size&#x0029; parameter in the Section <span 
 class="ecbx-1000">??</span>, by computing the prediction error between the original
-frame &#x0028;<!--l. 405--><math 
+frame &#x0028;<!--l. 600--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1695,7 +2640,7 @@ display="inline" ><msub><mrow
 ><mi 
 >j</mi></mrow></msub 
 ></math>&#x0029; and the
-prediction frame &#x0028;<!--l. 406--><math 
+prediction frame &#x0028;<!--l. 601--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1705,30 +2650,30 @@ display="inline" ><msub><mrow
 ></math>&#x0029;.
 Compute the expected size of the motion &#xFB01;elds using their 0-order
 entropy. Measure the dependency with the distance between frames
-&#x0028;<!--l. 408--><math 
+&#x0028;<!--l. 603--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >i</mi></math>,
-<!--l. 408--><math 
+<!--l. 603--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >j</mi></math>, and
-<!--l. 408--><math 
+<!--l. 603--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >k</mi></math>
 indexes&#x0029;.
-</p><!--l. 410--><p class="noindent" >
+</p><!--l. 605--><p class="noindent" >
 </p>
    <h4 class="likesubsectionHead"><a 
- id="x1-2200010"></a>Lab</h4>
-<!--l. 411--><p class="noindent" >Analyze the impact of the <!--l. 411--><math 
+ id="x1-2700010"></a>Lab</h4>
+<!--l. 606--><p class="noindent" >Analyze the impact of the <!--l. 606--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >A</mi></math>
 &#x0028;subpixel accuracy&#x0029; parameter in the Section <span 
 class="ecbx-1000">??</span>, by computing the prediction error between the
-original frame &#x0028;<!--l. 413--><math 
+original frame &#x0028;<!--l. 608--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1736,7 +2681,7 @@ display="inline" ><msub><mrow
 ><mi 
 >j</mi></mrow></msub 
 ></math>&#x0029; and
-the prediction frame &#x0028;<!--l. 414--><math 
+the prediction frame &#x0028;<!--l. 609--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -1746,40 +2691,40 @@ display="inline" ><msub><mrow
 ></math>&#x0029;.
 Compute the expected size of the motion &#xFB01;elds using their entropy.
 Measure the dependency with the distance between frames
-&#x0028;<!--l. 416--><math 
+&#x0028;<!--l. 611--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >i</mi></math>,
-<!--l. 416--><math 
+<!--l. 611--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >j</mi></math>, and
-<!--l. 416--><math 
+<!--l. 611--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >k</mi></math>
 indexes&#x0029;.
-</p><!--l. 418--><p class="indent" >   <a 
+</p><!--l. 613--><p class="indent" >   <a 
 href="https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/video_coding/blob/master/subpixel_accuracy.ipynb" >IPython notebook</a>
-</p><!--l. 420--><p class="noindent" >
+</p><!--l. 615--><p class="noindent" >
 </p>
    <h4 class="likesubsectionHead"><a 
- id="x1-2300010"></a>Lab</h4>
-<!--l. 421--><p class="noindent" >Compare the performance of the Section <span 
+ id="x1-2800010"></a>Lab</h4>
+<!--l. 616--><p class="noindent" >Compare the performance of the Section <span 
 class="ecbx-1000">??</span> when it holds that
 </p>
-   <table class="equation"><tr><td> <a 
- id="x1-23001r7"></a>
+   <table class="equation"><tr><td>
                                                                   
 
                                                                   
-<!--l. 424--><math 
+<!--l. 619--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
-                           <mover 
+                           <mstyle 
+   id="x1-28001r7"  class="label" ></mstyle><!--endlabel--><mo 
+class="MathClass-open" stretchy="false"><mover 
 accent="true"><mrow 
-><mi 
->b</mi></mrow><mo accent="true">&#x005E;</mo></mover> <mo 
+>b</mrow><mo accent="true">&#x005E;</mo></mover></mo> <mo 
 class="MathClass-rel">=</mo> <mfrac><mrow 
 ><msub><mrow 
 ><mi 
@@ -1797,30 +2742,33 @@ class="MathClass-bin">+</mo> <msub><mrow
 ><mn>2</mn></mrow></mfrac>    <mo 
 class="MathClass-punc">,</mo>
 </math></td><td class="eq-no">&#x0028;7&#x0029;</td></tr></table>
-<!--l. 428--><p class="indent" >   for all blocks.
-</p><!--l. 430--><p class="noindent" >
+<!--l. 623--><p class="indent" >   for all blocks.
+</p><!--l. 625--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">11   </span> <a 
- id="x1-2400011"></a>MC/DWT hybrid coding alternatives</h3>
+ id="x1-2900011"></a>MC/DWT hybrid coding alternatives</h3>
      <ul class="itemize1">
-     <li class="itemize"><span 
+     <li class="itemize">
+     <!--l. 628--><p class="noindent" ><span 
 class="ecbx-1000">t+2d</span>: The sequence of images is decorrelated &#xFB01;rst along the time &#x0028;t&#x0029; and
      the residue images are compressed, exploiting the remaining spatial &#x0028;2d&#x0029;
      redundancy. Examples: MPEG* and H.26* codecs &#x0028;except H.264/SVC&#x0029;.
-     </li>
-     <li class="itemize"><span 
+     </p></li>
+     <li class="itemize">
+     <!--l. 633--><p class="noindent" ><span 
 class="ecbx-1000">2d+t</span>: The spatial &#x0028;2d&#x0029; redudancy is explited &#xFB01;rst &#x0028;using typically the
      DWT&#x0029; and after that, the coe&#xFB03;cients are decorrelated along the time &#x0028;t&#x0029;.
      For now, this has only been an experimental setup because most DWT
      transformed domains are not invariant to the displacement, and therefore,
      ME/MC can not be directly applied.
-     </li>
-     <li class="itemize"><span 
+     </p></li>
+     <li class="itemize">
+     <!--l. 639--><p class="noindent" ><span 
 class="ecbx-1000">2d+t+2d</span>:  The  &#xFB01;st  step  creates  a  Laplacian  Pyramid  &#x0028;2d&#x0029;,  which
      is  invariant  to  the  displacement.  Next,  each  level  of  the  pyramid
      is  decorrelated  along  the  time  &#x0028;t&#x0029;  and  &#xFB01;nally,  the  remaining  spatial
      redundancy is removed &#x0028;2d&#x0029;. The Fig&#x00A0;<a 
-href="#x1-24001r8">8<!--tex4ht:ref: fig:H264-S-SVC --></a> show an example for H.264/SVC.</li></ul>
+href="#x1-29001r11">11<!--tex4ht:ref: fig:H264-S-SVC --></a> show an example for H.264/SVC.</p></li></ul>
    <hr class="figure" /><div class="figure" 
 >
                                                                   
@@ -1829,26 +2777,27 @@ href="#x1-24001r8">8<!--tex4ht:ref: fig:H264-S-SVC --></a> show an example for H
                                                                   
 
                                                                   
-<!--l. 452--><p class="noindent" ><div style="text-align:center;"> <img width=500 src="graphics/H264-S-SVC.svg" /> </div>  <a 
- id="x1-24001r8"></a>
+<!--l. 647--><p class="noindent" ><div style="text-align:center;"> <img width=500 src="H264-S-SVC.svg" /> </div>  <a 
+ id="x1-29001r11"></a>
 <a 
- id="x1-24002"></a>
+ id="x1-29002"></a>
 <br />                                                                  </p><div class="caption" 
 ><span class="id">
-Figure&#x00A0;8: </span><span  
+Figure&#x00A0;11: </span><span  
 class="content">SVC scheme in H.264.
-</span></div><!--tex4ht:label?: x1-24001r11 -->
+</span></div><!--tex4ht:label?: x1-29001r11 -->
                                                                   
 
                                                                   
    </div><hr class="endfigure" />
    <h3 class="sectionHead"><span class="titlemark">12   </span> <a 
- id="x1-2500012"></a>Deblocking &#xFB01;ltering</h3>
+ id="x1-3000012"></a>Deblocking &#xFB01;ltering</h3>
      <ul class="itemize1">
-     <li class="itemize">If   any   other   block-overlaping   techniques   have   not   been   applied,
+     <li class="itemize">
+     <!--l. 656--><p class="noindent" >If   any   other   block-overlaping   techniques   have   not   been   applied,
      block-based video encoders improve their performance if a deblocking &#xFB01;lter
      in used to create the quantized prediction predictions &#x0028;see the Fig.&#x00A0;<a 
-href="#x1-25001r9">9<!--tex4ht:ref: fig:350px-Deblock1 --></a>&#x0029;.</li></ul>
+href="#x1-30001r12">12<!--tex4ht:ref: fig:350px-Deblock1 --></a>&#x0029;.</p></li></ul>
    <hr class="figure" /><div class="figure" 
 >
                                                                   
@@ -1857,101 +2806,106 @@ href="#x1-25001r9">9<!--tex4ht:ref: fig:350px-Deblock1 --></a>&#x0029;.</li></ul
                                                                   
 
                                                                   
-<!--l. 468--><p class="noindent" ><div style="text-align:center;"> <img src="graphics/350px-Deblock1.jpg" /> </div>  800 <a 
- id="x1-25001r9"></a>
+<!--l. 663--><p class="noindent" ><div style="text-align:center;"> <img src="graphics/350px-Deblock1.jpg" /> </div>  800 <a 
+ id="x1-30001r12"></a>
 <a 
- id="x1-25002"></a>
-<br />                                                                  </p><div class="caption" 
-><span class="id">
-Figure&#x00A0;9: </span><span  
-class="content">Deblocking &#xFB01;letering e&#xFB00;ect.
-</span></div><!--tex4ht:label?: x1-25001r12 -->
-                                                                  
-
-                                                                  
-   </div><hr class="endfigure" />
-     <ul class="itemize1">
-     <li class="itemize">The low-pass &#xFB01;lter is applied only on the block boundaries.</li></ul>
-   <h3 class="sectionHead"><span class="titlemark">13   </span> <a 
- id="x1-2600013"></a>Bit-rate allocation</h3>
-     <ul class="itemize1">
-     <li class="itemize">VBR: Under a constant quantization level &#x0028;constant video quality&#x0029;, the
-     number of bits that each compressed image needs depends on the image
-     content &#x0028;Variable Bit-Rate&#x0029;. In the Fig.&#x00A0;<a 
-href="#x1-26001r10">10<!--tex4ht:ref: fig:closed-loop-1_ir --></a> there is an example. <hr class="figure" /><div class="figure" 
-><div style="text-align:center;"> <img width=500 src="graphics/closed-loop-1_ir.svg" /> </div>   <a 
- id="x1-26001r10"></a>
-<a 
- id="x1-26002"></a>
-<br />                                                                  <div class="caption" 
-><span class="id">
-Figure&#x00A0;10: </span><span  
-class="content">Example of variable bit-allocation.
-</span></div><!--tex4ht:label?: x1-26001r13 -->
-     </div><hr class="endfigure" />
-     </li>
-     <li class="itemize">CBR: Using a Constant Bit-Rate strategy, all frames need the same space.
-     In the Fig.&#x00A0;<span 
-class="ecbx-1000">??</span> there is an example. <hr class="figure" /><div class="figure" 
-><div style="text-align:center;"> <img width=500 src="graphics/CBR.svg" /> </div>   <a 
- id="x1-26003r11"></a>
-<a 
- id="x1-26004"></a>
-<br />                                                                  <div class="caption" 
-><span class="id">
-Figure&#x00A0;11: </span><span  
-class="content">Example of constant bit-allocation.
-</span></div><!--tex4ht:label?: x1-26003r13 -->
-     </div><hr class="endfigure" />
-     </li></ul>
-<!--l. 505--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">14   </span> <a 
- id="x1-2700014"></a>Video scalability</h3>
-<!--l. 506--><p class="noindent" >
-</p>
-   <h4 class="subsectionHead"><span class="titlemark">14.1   </span> <a 
- id="x1-2800014.1"></a>Quality scalability</h4>
-   <hr class="figure" /><div class="figure" 
->
-                                                                  
-
-                                                                  
-                                                                  
-
-                                                                  
-<!--l. 509--><p class="noindent" ><div style="text-align:center;"> <img width=1000 src="graphics/quality-scalability.svg" /> </div>  <a 
- id="x1-28001r12"></a>
-<a 
- id="x1-28002"></a>
+ id="x1-30002"></a>
 <br />                                                                  </p><div class="caption" 
 ><span class="id">
 Figure&#x00A0;12: </span><span  
-class="content">Quality scalability.
-</span></div><!--tex4ht:label?: x1-28001r14 -->
+class="content">Deblocking &#xFB01;letering e&#xFB00;ect.
+</span></div><!--tex4ht:label?: x1-30001r12 -->
                                                                   
 
                                                                   
    </div><hr class="endfigure" />
-<!--l. 514--><p class="indent" >   V&#x00E9;ase la Fig.&#x00A0;<a 
-href="#x1-28001r12">12<!--tex4ht:ref: fig:quality-scalability --></a>. </p>
      <ul class="itemize1">
-     <li class="itemize">Ideal for remote visualization environments.
+     <li class="itemize">
+     <!--l. 671--><p class="noindent" >The low-pass &#xFB01;lter is applied only on the block boundaries.</p></li></ul>
+   <h3 class="sectionHead"><span class="titlemark">13   </span> <a 
+ id="x1-3100013"></a>Bit-rate allocation</h3>
+     <ul class="itemize1">
+     <li class="itemize">
+     <!--l. 677--><p class="noindent" >VBR: Under a constant quantization level &#x0028;constant video quality&#x0029;, the
+     number of bits that each compressed image needs depends on the image
+     content &#x0028;Variable Bit-Rate&#x0029;. In the Fig.&#x00A0;<a 
+href="#x1-31001r13">13<!--tex4ht:ref: fig:closed-loop-1_ir --></a> there is an example. </p><hr class="figure" /><div class="figure" 
+><div style="text-align:center;"> <img width=500 src="closed-loop-1_ir.svg" /> </div>   <a 
+ id="x1-31001r13"></a>
+<a 
+ id="x1-31002"></a>
+<br />                                                                  <div class="caption" 
+><span class="id">
+Figure&#x00A0;13: </span><span  
+class="content">Example of variable bit-allocation.
+</span></div><!--tex4ht:label?: x1-31001r13 -->
+     </div><hr class="endfigure" />
      </li>
-     <li class="itemize">By de&#xFB01;nition, <!--l. 519--><math 
+     <li class="itemize">
+     <!--l. 689--><p class="noindent" >CBR: Using a Constant Bit-Rate strategy, all frames need the same space.
+     In the Fig.&#x00A0;<span 
+class="ecbx-1000">??</span> there is an example. </p><hr class="figure" /><div class="figure" 
+><div style="text-align:center;"> <img width=500 src="CBR.svg" /> </div>   <a 
+ id="x1-31003r14"></a>
+<a 
+ id="x1-31004"></a>
+<br />                                                                  <div class="caption" 
+><span class="id">
+Figure&#x00A0;14: </span><span  
+class="content">Example of constant bit-allocation.
+</span></div><!--tex4ht:label?: x1-31003r13 -->
+     </div><hr class="endfigure" />
+     </li></ul>
+<!--l. 700--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">14   </span> <a 
+ id="x1-3200014"></a>Video scalability</h3>
+<!--l. 701--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">14.1   </span> <a 
+ id="x1-3300014.1"></a>Quality scalability</h4>
+   <hr class="figure" /><div class="figure" 
+>
+                                                                  
+
+                                                                  
+                                                                  
+
+                                                                  
+<!--l. 704--><p class="noindent" ><div style="text-align:center;"> <img width=1000 src="quality-scalability.svg" /> </div>  <a 
+ id="x1-33001r15"></a>
+<a 
+ id="x1-33002"></a>
+<br />                                                                  </p><div class="caption" 
+><span class="id">
+Figure&#x00A0;15: </span><span  
+class="content">Quality scalability.
+</span></div><!--tex4ht:label?: x1-33001r14 -->
+                                                                  
+
+                                                                  
+   </div><hr class="endfigure" />
+<!--l. 709--><p class="indent" >   V&#x00E9;ase la Fig.&#x00A0;<a 
+href="#x1-33001r15">15<!--tex4ht:ref: fig:quality-scalability --></a>. </p>
+     <ul class="itemize1">
+     <li class="itemize">
+     <!--l. 712--><p class="noindent" >Ideal for remote visualization environments.
+     </p></li>
+     <li class="itemize">
+     <!--l. 714--><p class="noindent" >By de&#xFB01;nition, <!--l. 714--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msup><mrow 
 ><mi 
 >V</mi> </mrow><mrow 
 ><mo 
-class="MathClass-open">&#x005B;</mo><mn>0</mn><mo 
-class="MathClass-close">&#x005D;</mo></mrow></msup 
+class="MathClass-open" stretchy="false">&#x005B;</mo><mn>0</mn><mo 
+class="MathClass-close" stretchy="false">&#x005D;</mo></mrow></msup 
 > <mo 
 class="MathClass-punc">:</mo><mo 
 class="MathClass-rel">=</mo> <mi 
->V</mi> </math>.</li></ul>
+>V</mi> </math>.</p></li></ul>
    <h4 class="subsectionHead"><span class="titlemark">14.2   </span> <a 
- id="x1-2900014.2"></a>Temporal scalability</h4>
+ id="x1-3400014.2"></a>Temporal scalability</h4>
    <hr class="figure" /><div class="figure" 
 >
                                                                   
@@ -1960,37 +2914,39 @@ class="MathClass-rel">=</mo> <mi
                                                                   
 
                                                                   
-<!--l. 524--><p class="noindent" ><div style="text-align:center;"> <img width=1000 src="graphics/temporal-scalability.svg" /> </div>  <a 
- id="x1-29001r13"></a>
+<!--l. 719--><p class="noindent" ><div style="text-align:center;"> <img width=1000 src="temporal-scalability.svg" /> </div>  <a 
+ id="x1-34001r16"></a>
 <a 
- id="x1-29002"></a>
+ id="x1-34002"></a>
 <br />                                                                  </p><div class="caption" 
 ><span class="id">
-Figure&#x00A0;13: </span><span  
+Figure&#x00A0;16: </span><span  
 class="content">Temporal scalability.
-</span></div><!--tex4ht:label?: x1-29001r14 -->
+</span></div><!--tex4ht:label?: x1-34001r14 -->
                                                                   
 
                                                                   
    </div><hr class="endfigure" />
-<!--l. 529--><p class="indent" >   V&#x00E9;ase la Fig.&#x00A0;<a 
-href="#x1-29001r13">13<!--tex4ht:ref: fig:temporal-scalability --></a>.
+<!--l. 724--><p class="indent" >   V&#x00E9;ase la Fig.&#x00A0;<a 
+href="#x1-34001r16">16<!--tex4ht:ref: fig:temporal-scalability --></a>.
 </p>
      <ul class="itemize1">
-     <li class="itemize">It holds that
-     <table class="equation"><tr><td> <a 
- id="x1-29003r8"></a>
-     <!--l. 535--><math 
+     <li class="itemize">
+     <!--l. 728--><p class="noindent" >It holds that
+</p>
+     <table class="equation"><tr><td>
+     <!--l. 730--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="block" class="equation">
-                                   <msup><mrow 
-><mi 
->V</mi> </mrow><mrow 
+                                   <mstyle 
+   id="x1-34003r8"  class="label" ></mstyle><!--endlabel--><msup><mrow 
+><mo 
+class="MathClass-open" stretchy="false">V</mo> </mrow><mrow 
 ><mi 
 >t</mi></mrow></msup 
 > <mo 
 class="MathClass-rel">=</mo> <mo 
-class="MathClass-open">&#x007B;</mo><msub><mrow 
+class="MathClass-open" stretchy="false">&#x007B;</mo><msub><mrow 
 ><mi 
 >V</mi> </mrow><mrow 
 ><msup><mrow 
@@ -2001,9 +2957,9 @@ class="MathClass-open">&#x007B;</mo><msub><mrow
 ><mi 
 >i</mi></mrow></msub 
 ><mo 
-class="MathClass-close">&#x007D;</mo> <mo 
+class="MathClass-close" stretchy="false">&#x007D;</mo> <mo 
 class="MathClass-rel">=</mo> <mo 
-class="MathClass-open">&#x007B;</mo><msubsup><mrow 
+class="MathClass-open" stretchy="false">&#x007B;</mo><msubsup><mrow 
 ><mi 
 >V</mi> </mrow><mrow 
 ><mn>2</mn><mi 
@@ -2012,16 +2968,17 @@ class="MathClass-open">&#x007B;</mo><msubsup><mrow
 >t</mi><mo 
 class="MathClass-bin">&#x2212;</mo><mn>1</mn></mrow></msubsup 
 ><mo 
-class="MathClass-close">&#x007D;</mo><mo 
+class="MathClass-close" stretchy="false">&#x007D;</mo><mo 
 class="MathClass-punc">,</mo>
 </math></td><td class="eq-no">&#x0028;8&#x0029;</td></tr></table>
-     <!--l. 539--><p class="noindent" >where <!--l. 539--><math 
+     <!--l. 734--><p class="noindent" >where <!--l. 734--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >t</mi></math>
      denotes the Temporal Resolution Level &#x0028;TRL&#x0029;.
      </p></li>
-     <li class="itemize">Notice that <!--l. 541--><math 
+     <li class="itemize">
+     <!--l. 736--><p class="noindent" >Notice that <!--l. 736--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >V</mi> <mo 
@@ -2031,10 +2988,11 @@ class="MathClass-rel">=</mo> <msup><mrow
 >V</mi> </mrow><mrow 
 ><mn>0</mn></mrow></msup 
 ></math>.
-     </li>
-     <li class="itemize">Useful for fast random access.</li></ul>
+     </p></li>
+     <li class="itemize">
+     <!--l. 738--><p class="noindent" >Useful for fast random access.</p></li></ul>
    <h4 class="subsectionHead"><span class="titlemark">14.3   </span> <a 
- id="x1-3000014.3"></a><a 
+ id="x1-3500014.3"></a><a 
 href="http://inst.eecs.berkeley.edu/~ee290t/sp04/lectures/videowavelet_UCB1-3.pdf" >Spatial scalability</a></h4>
    <hr class="figure" /><div class="figure" 
 >
@@ -2044,26 +3002,28 @@ href="http://inst.eecs.berkeley.edu/~ee290t/sp04/lectures/videowavelet_UCB1-3.pd
                                                                   
 
                                                                   
-<!--l. 552--><p class="noindent" ><div style="text-align:center;"> <img width=1000 src="graphics/spatial-scalability.svg" /> </div>  <a 
- id="x1-30001r14"></a>
+<!--l. 747--><p class="noindent" ><div style="text-align:center;"> <img width=1000 src="spatial-scalability.svg" /> </div>  <a 
+ id="x1-35001r17"></a>
 <a 
- id="x1-30002"></a>
+ id="x1-35002"></a>
 <br />                                                                  </p><div class="caption" 
 ><span class="id">
-Figure&#x00A0;14: </span><span  
+Figure&#x00A0;17: </span><span  
 class="content">Spatial scalability.
-</span></div><!--tex4ht:label?: x1-30001r14 -->
+</span></div><!--tex4ht:label?: x1-35001r14 -->
                                                                   
 
                                                                   
    </div><hr class="endfigure" />
-<!--l. 557--><p class="indent" >   V&#x00E9;ase la Fig.&#x00A0;<a 
-href="#x1-30001r14">14<!--tex4ht:ref: fig:spatial-scalability --></a>.
+<!--l. 752--><p class="indent" >   V&#x00E9;ase la Fig.&#x00A0;<a 
+href="#x1-35001r17">17<!--tex4ht:ref: fig:spatial-scalability --></a>.
 </p>
      <ul class="itemize1">
-     <li class="itemize">Useful for low-resolution devices.
-     </li>
-     <li class="itemize">By de&#xFB01;nition, <!--l. 563--><math 
+     <li class="itemize">
+     <!--l. 756--><p class="noindent" >Useful for low-resolution devices.
+     </p></li>
+     <li class="itemize">
+     <!--l. 758--><p class="noindent" >By de&#xFB01;nition, <!--l. 758--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -2081,7 +3041,7 @@ class="MathClass-rel">=</mo> <msubsup><mrow
 class="MathClass-rel">&#x003C;</mo><mn>0</mn><mo 
 class="MathClass-rel">&#x003E;</mo></mrow></msubsup 
 ></math>
-     and <!--l. 563--><math 
+     and <!--l. 758--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msubsup><mrow 
 ><mi 
@@ -2093,7 +3053,7 @@ class="MathClass-rel">&#x003C;</mo><mi
 >s</mi><mo 
 class="MathClass-rel">&#x003E;</mo></mrow></msubsup 
 ></math>
-     has a <!--l. 564--><math 
+     has a <!--l. 759--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" > <mfrac><mrow 
 ><mi 
@@ -2113,24 +3073,21 @@ class="MathClass-bin">&#x00D7;</mo><mfrac><mrow
 ><mi 
 >s</mi></mrow></msup 
 ></mrow></mfrac></math>
-     resolution, where <!--l. 564--><math 
+     resolution, where <!--l. 759--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >X</mi> <mo 
 class="MathClass-bin">&#x00D7;</mo> <mi 
 >Y</mi> </math>
-     is the resolution of <!--l. 565--><math 
+     is the resolution of <!--l. 760--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
 >V</mi> </mrow><mrow 
 ><mi 
 >i</mi></mrow></msub 
-></math>.</li></ul>
-   <h3 class="likesectionHead"><a 
- id="x1-3100014.3"></a>References</h3>
-<!--l. 1--><p class="noindent" >
-   </p><div class="thebibliography">
+></math>.</p></li></ul>
+   <div class="thebibliography">
    <p class="bibitem" ><span class="biblabel">
  &#x005B;1&#x005D;<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
  id="Xrao1996techniques"></a>Kamisetty&#x00A0;Ramamohan Rao and Jae&#x00A0;Jeong Hwang.   <a 
@@ -2139,10 +3096,18 @@ class="ecti-1000">Techniques and</span>
    <span 
 class="ecti-1000">standards for image, video, and audio coding</span></a>, volume&#x00A0;70. Prentice Hall New
    Jersey, 1996.
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ &#x005B;2&#x005D;<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="Xtaubman2002jpeg2000"></a>D.S. Taubman and W.M. Marcellin.   <a 
+href="https://last.hit.bme.hu/download/firtha/video/JPEG2000/David%20S.%20Taubman,%20%20Michael%20W.%20Marcellin%20%20(auth.)%20JPEG2000%20Image%20Compression%20Fundamentals,%20Standards%20and%20Practice%20%202002.pdf" ><span 
+class="ecti-1000">JPEG2000. Image Compression</span>
+   <span 
+class="ecti-1000">Fundamentals, Standards and Practice</span></a>. Kluwer Academic Publishers, 2002.
 </p>
    </div>
 <a 
- id="Q1-1-32"></a>
+ id="Q1-1-53"></a>
     
 </body></html> 
 
