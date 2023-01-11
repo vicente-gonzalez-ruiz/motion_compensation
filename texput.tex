@@ -1,11 +1,10 @@
-\title{Video Compression}
+\title{Hybrid Video Coding}
 \author{Vicente González Ruiz}
 \maketitle
 \tableofcontents
 
-\section{\mylink{redundancy}{Sources of redundancy}}
-
 \section{Hybrid video coding}
+%{{{ 
 
 \begin{figure}
   \svg{graphics/hybrid_coding}{800}
@@ -27,64 +26,7 @@ See the Fig.~\ref{fig:hybrid_coding}.
   The encoder incorporates a decoder to avoid the drift error.
 \end{itemize}
 
-
-\subsection{Motion compensation prediction (P) video coding}
-III... video coding is fast and good for video edition, but the
-compression ratios are poor because the temporal correlation is not
-removed. IPP... video coding (also called inter-coding) uses MC
-(Motion Compensation) to exploit the temporal correlation in frame
-sequences. IPP... encoders split the sequence into
-\href{https://en.wikipedia.org/wiki/Group_of_pictures}{GOPs (Groups of
-  Frames)}, where the first frame of each GOP is a I-type frame, and
-the rest of frames of the GOP are P-type. P-frames are
-motion-compensated frames and usually the reference frame is the
-previous one, in the temporal order.
-
-\subsection{Types of macro-blocks}
-A P-type frame is created in two steps:
-\begin{enumerate}
-\item The frame is divided into non-overlapping blocks (typically of
-  $16\times 16$ pixels), that in this context we will call,
-  macro-blocks.
-\item A prediction frame is generated using a field of motion vectors
-  (one vector per matro-block) and a reference.
-\item The prediction frame is substracted to the predicted frame,
-  generating a prediction-error frame.
-\end{enumerate}
-In general, most of the time this procedure success in temporally
-decorrelate the frames. However, it can also happen that when the
-reference(s) frame(s) is very different from the predicted one, the
-prediction-error frame has a higher entropy than the original
-(predicted) one.
-
-In order to minimize this inconvenient, most video coding standards
-use the following types of macro-blocks:
-\begin{enumerate}
-\item I (intra): if the macro-block is not compensated.
-\item P (predicted): if the macro-blocks is compensated.
-\item B (bidirectionally predicted): if the macro-block is compensated
-  using an anterior and a posterior frame.
-\item S (skipped): if the macro-block is substituted by reference one
-  (no substraction is performed).
-\end{enumerate}
-The decision of the type of each macro-block is performed at the
-compressor, and this information is signaled in the code-stream. An
-visual example of the decision of the type of the macro-blocks is
-shown in the Figure~\ref{fig:macroblocks}.
-
-\begin{figure}
-  \centering
-  \myfig{graphics/macroblocks}{6cm}{600}
-  \caption{Types of macro-blocks.}
-  \label{fig:macroblocks}
-\end{figure}
-
-\subsection{Macro-block type decision}
-Ideally, the type (also called, mode) of the macro-blocks is decided
-considering all the posibilities (I, P, B, or S) and selecting the
-most beneficial one from a RD perpective, i.e., selecting the
-alternative that minimizes the RD cost. This RDO is performed at the
-macro-block level.
+% }}}
 
 \subsection{Codec}
 \begin{figure}
@@ -278,152 +220,6 @@ encoder replicates de decoder in order to use the reconstructed images
 as reference and avoid the drift error.
 
 
-\section{Block-based MC (Motion Compensation)~\cite{rao1996techniques}}
-\begin{itemize}
-\tightlist
-\item
-  Usually, only performed by the encoder (compress one. decompress
-  many).
-\item
-  MC removes temporal redundancy. A \emph{predicted image} can be
-  encoded as the difference between it and another image called
-  \emph{prediction image} which is a motion compensated projection of
-  one or more images named \emph{reference images}. ME tries to
-  generate \emph{residue images} as close as possible to the null
-  images.
-\item
-  For example, in the MPEG-1 standard, the reference image/s is/are
-  divided in blocks of $16\times 16$ pixels called \emph{macroblocks}.
-\item
-  Each reference block is searched in the predicted image and the best
-  match is indicated by mean of a \emph{motion vector}.
-\item
-  Depending on the success of the search and the number of reference
-  images, the macroblocks are classified into:
-
-  \begin{itemize}
-  \tightlist
-  \item
-    \textbf{I (intra)}: When the compression of residue block generates
-    more bits than the original (predicted) one.
-  \item
-    \textbf{P (predicted)}: When it is better to compress the residue
-    block and there is only one reference macroblock.
-  \item
-    \textbf{B (bidirectionally predicted)}: The same, but if we have two
-    reference macroblocks.
-  \item
-    \textbf{S (skipped)}: When the energy of the residue block is
-    smaller than a given threshold.
-  \end{itemize}
-\item
-  I-pictures are composed of I macroblocks, only.
-\item
-  P-pictures do not have B macrobocks.
-\item
-  B-pictures can have any type of macroblocks.
-\end{itemize}
-See the Fig.~\ref{fig:macroblocks}.
-
-\begin{figure}
-  \svg{graphics/macroblocks}{600}
-  \caption{Types of macroblocks.}
-  \label{fig:macroblocks}
-\end{figure}
-
-\section{Sub-pixel accuracy}
-
-\begin{itemize}
-\tightlist
-\item
-  The motion estimation can be carried out using integer pixel accuracy
-  or a fractional (sub-) pixel accuracy.
-\item
-  For example, in MPEG-1, the motion estimation can have up to 1/2
-  pixel accuracy. A bi-linear interpolator is used (see the
-  Fig.~\ref{fig:interpolation}).
-\end{itemize}
-
-\begin{figure}
-  \svg{graphics/interpolation}{200}
-  \caption{Pixel interpolation.}
-  \label{fig:interpolation}
-\end{figure}
-
-\section{Matching criteria (similitude between macroblocks)}
-\begin{itemize}
-\item
-  Let $a$ and $b$ the macroblocks which we want to compare. Two main
-  distortion metrics are commonly used:
-
-  \begin{itemize}
-  \item
-    \textbf{MSE (Mean Square Error)}:
-
-    \begin{equation}
-      \frac{1}{16\times 16}\sum_{i=1}^{16}\sum_{j=1}^{16}(a_{ij}-b_{ij})^2
-    \end{equation}
-  \item
-    \textbf{MAE (Mean Absolute Error)}:
-
-    \begin{equation}
-      \frac{1}{16\times 16}\sum_{i=1}^{16}\sum_{j=1}^{16}|a_{ij}-b_{ij}|
-    \end{equation}
-  \end{itemize}
-\item
-  These similitude measures are used only by MPEG compressors.
-  Therefore, any other one with similar effects (such as the error
-  variance or the error entropy) could be used also.
-\item
-  Other less common distortion metrics that can work are:
-
-  \begin{itemize}
-  \item
-    \textbf{EE (Error
-    \href{https://en.wikipedia.org/wiki/Entropy_(information_theory)}{Entropy}}:
-
-    \begin{equation}
-      -\frac{1}{16\times 16}\sum_{i=1}^{16}\sum_{j=1}^{16}\log_2(a_{ij}-b_{ij})p(a_{ij}-b_{ij})
-    \end{equation}
-  \end{itemize}
-\end{itemize}
-
-\section{Searching strategies}
-\begin{itemize}
-\item
-  Only performed by the compressor.
-
-  \begin{itemize} \tightlist \item \textbf{Full search}: All the
-  possibilities are checked (see the
-  Fig.~\ref{fig:full_search}). Advantage: the best
-  compression. Disadvantage: CPU killer.  \end{itemize}
-
-  \begin{figure}
-    \svg{graphics/full_search}{500}
-    \caption{The full search scheme.}
-    \label{fig:full_search}
-  \end{figure}
-  
-  \begin{itemize}
-  \tightlist
-  \item
-    ** Logaritmic search**: It is a version of the full search algorithm
-    where the macro-blocks and the search area are sub-sampled. After
-    finding the best coincidence, the resolution is increased in a power
-    of 2 and the previous match is refined in a search area of
-    $\pm 1$, until the maximal resolution (even using subpixel
-    accuracy) is reached.
-  \end{itemize}
-
-  \begin{itemize}
-  \tightlist
-  \item
-    \textbf{Telescopic search}: Any of the previously described
-    techniques can be speeded up if the searching area is reduced. This
-    can be done supposing that the motion vector of the same macro-block
-    in two consecutive images is similar.
-  \end{itemize}
-\end{itemize}
 
 \section{The GOP (Group Of Pictures) concept}
 \begin{itemize}
