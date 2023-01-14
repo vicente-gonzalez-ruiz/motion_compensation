@@ -1,2 +1,2 @@
-# Hybrid Video Coding
-[Click me](https://vicente-gonzalez-ruiz.github.io/hybrid_video_coding/).
+# Motion Compensation
+[Click me](https://vicente-gonzalez-ruiz.github.io/motion_compensation/).
