@@ -45,6 +45,93 @@ example of the decision of the type of the macro-blocks is shown in
 the Figure~\ref{fig:macroblocks}.
 
 %}}}
+
+\section{I-type frames, P-type frames and B-type frames}
+%{{{
+
+Frames can be:
+
+\begin{enumerate}
+\item I-type (or simly a I-frame), if only uses I-type blocks.
+\item P-type frame (P-frame), that can use I, P, and S-type blocks.
+\item B-type frame (B-frame), if I, P, S and B-type blocks can be
+  used.
+\end{enumerate}
+
+\section{Intra coding (III...)}
+
+In the intra coding mode, all frames are encoded as independent
+images (no MC has been used at all, and therefore, all blocks in the
+frames are I-type). Intra-coded frames are also called keyframes.
+
+Advantages:
+\begin{itemize}
+\item [+] Minimal pipeline delay.
+\item [+] Minimal buffering.
+\item [+] No error propagation.
+\item [+] Maximum temporal scalability.
+\end{itemize}
+
+Disadvantages:
+\begin{enumerate}
+\item [-] Low compression ratios.
+\end{enumerate}
+
+Mainly used in video edition.
+
+\section{Low-delay coding (IPP...)}
+
+In the low-delay coding mode, only the first frame is intra-coded and
+the rest, prediction-coded using unidirectional motion
+compensation.
+% In a P-frame, blocks can be (depending on RDO) of:
+% \begin{enumerate}
+% \item I-type, if the block is intra-coded.
+% \item P-type, if the block is predicted using a block that belong to a previous frame.
+% \item S-type, if the residue of the prediction is so small that it is considered as zero.
+%\end{enumerate}
+
+Advantages:
+\begin{itemize}
+\item [+] Low pipeline delay (one frame-time).
+\item [+] Usually, only one frame buffering.
+\item [+] Medium-high compression ratios.
+\end{itemize}
+
+Disadvantages:
+\begin{enumerate}
+\item [-] Error propagation sequentially, until the next GOF.
+\item [-] Low temporal scalability.
+\end{enumerate}
+
+Mainly used in video surveillance.
+
+\section{``Random''-access mode (IBPB...)}
+\label{sec:random}
+
+In the random-access mode it is allowed to use B-type frames.
+%, some or all the residue frames can be P or
+%B-type. In a B-type frame, blocks can be (depending on RDO) of B-type,
+%which means that at leas two blocks, one of them in a past frame and
+%other in a future frame, are used as reference blocks during the
+%motion compensation.
+Notice that. by definition, the low-delay coding mode is also a
+random-access mode.
+
+Advantages:
+\begin{itemize}
+\item [+] The highest compression ratio.
+\end{itemize}
+
+Disadvantages:
+\begin{enumerate}
+\item [-] High pipeline delay (up to GOF-time).
+\item [-] Error propagation (depending on the block-type decisions),
+  until the next GOF.
+\item [-] Low temporal scalability.
+\end{enumerate}
+%}}}
+
 \section{Hybrid video coding}
 %{{{ 
 
