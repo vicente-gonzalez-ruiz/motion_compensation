@@ -23,311 +23,43 @@
    </div>
    <h3 class='likesectionHead' id='contents'><a id='x1-1000'></a>Contents</h3>
    <div class='tableofcontents'>
-    <span class='sectionToc'>1 <a href='#decision-mode-and-rdo' id='QQ2-1-2'>Decision mode and RDO</a></span>
-<br />    <span class='sectionToc'>2 <a href='#itype-frames-ptype-frames-and-btype-frames' id='QQ2-1-4'>I-type frames, P-type frames and B-type frames</a></span>
-<br />    <span class='sectionToc'>3 <a href='#intra-coding-iii' id='QQ2-1-5'>Intra coding (III...)</a></span>
-<br />    <span class='sectionToc'>4 <a href='#lowdelay-coding-ipp' id='QQ2-1-6'>Low-delay coding (IPP...)</a></span>
-<br />    <span class='sectionToc'>5 <a href='#randomaccess-mode-ibpb' id='QQ2-1-7'>“Random”-access mode (IBPB...)</a></span>
-<br />    <span class='sectionToc'>6 <a href='#hybrid-video-coding' id='QQ2-1-9'>Hybrid video coding</a></span>
-<br />     <span class='subsectionToc'>6.1 <a href='#codec' id='QQ2-1-11'>Codec</a></span>
-<br />     <span class='subsectionToc'>6.2 <a href='#a-block-diagram-of-the-step-codec' id='QQ2-1-13'>A block diagram of the step codec</a></span>
-<br />    <span class='sectionToc'>7 <a href='#the-gop-group-of-pictures-concept' id='QQ2-1-15'>The GOP (Group Of Pictures) concept</a></span>
-<br />    <span class='sectionToc'>8 <a href='#hybrid-coding-alternatives' id='QQ2-1-17'>Hybrid coding alternatives</a></span>
-<br />    <span class='sectionToc'>9 <a href='#deblocking-filtering' id='QQ2-1-19'>Deblocking filtering</a></span>
-<br />    <span class='sectionToc'>10 <a href='#bitrate-allocation' id='QQ2-1-21'>Bit-rate allocation</a></span>
-<br />    <span class='sectionToc'>11 <a href='#coding-in-the-transform-domain' id='QQ2-1-24'>Coding in the Transform Domain</a></span>
-<br />     <span class='subsectionToc'>11.1 <a href='#the-ipp-decorrelation-pattern' id='QQ2-1-25'>The IPP... decorrelation pattern</a></span>
-<br />     <span class='subsectionToc'>11.2 <a href='#a-block-diagram-of-the-step-codec1' id='QQ2-1-26'>A block diagram of the step codec</a></span>
-<br />     <span class='subsectionToc'>11.3 <a href='#spatial-multiresolution' id='QQ2-1-28'>Spatial multiresolution</a></span>
-<br />     <span class='subsectionToc'>11.4 <a href='#sq-layers-progression-next-milestone' id='QQ2-1-31'>SQ (layers) progression (next milestone?)</a></span>
-<br />    <span class='sectionToc'>12 <a href='#linear-frame-interpolation-using-blockbased-motion-compensation' id='QQ2-1-32'>Linear frame interpolation using block-based motion compensation</a></span>
-<br />    <span class='sectionToc'>13 <a href='#a-problem' id='QQ2-1-37'>A problem</a></span>
-<br />    <span class='sectionToc'>14 <a href='#references' id='QQ2-1-39'>References</a></span>
+    <span class='sectionToc'>1 <a href='#motion-mompensation-mc' id='QQ2-1-2'>Motion Mompensation (MC)</a></span>
+<br />    <span class='sectionToc'>2 <a href='#hybrid-coding-alternatives' id='QQ2-1-3'>Hybrid coding alternatives</a></span>
+<br />    <span class='sectionToc'>3 <a href='#decision-mode-and-rdo' id='QQ2-1-5'>Decision mode and RDO</a></span>
+<br />    <span class='sectionToc'>4 <a href='#itype-frames-ptype-frames-and-btype-frames' id='QQ2-1-7'>I-type frames, P-type frames and B-type frames</a></span>
+<br />    <span class='sectionToc'>5 <a href='#intra-coding-iii' id='QQ2-1-8'>Intra coding (III...)</a></span>
+<br />    <span class='sectionToc'>6 <a href='#lowdelay-coding-ipp' id='QQ2-1-9'>Low-delay coding (IPP...)</a></span>
+<br />    <span class='sectionToc'>7 <a href='#randomaccess-mode-ibpb' id='QQ2-1-10'>“Random”-access mode (IBPB...)</a></span>
+<br />    <span class='sectionToc'>8 <a href='#hybrid-video-coding' id='QQ2-1-12'>Hybrid video coding</a></span>
+<br />     <span class='subsectionToc'>8.1 <a href='#codec' id='QQ2-1-14'>Codec</a></span>
+<br />     <span class='subsectionToc'>8.2 <a href='#a-block-diagram-of-the-step-codec' id='QQ2-1-16'>A block diagram of the step codec</a></span>
+<br />    <span class='sectionToc'>9 <a href='#the-gop-group-of-pictures-concept' id='QQ2-1-18'>The GOP (Group Of Pictures) concept</a></span>
+<br />    <span class='sectionToc'>10 <a href='#deblocking-filtering' id='QQ2-1-20'>Deblocking filtering</a></span>
+<br />    <span class='sectionToc'>11 <a href='#bitrate-allocation' id='QQ2-1-22'>Bit-rate allocation</a></span>
+<br />    <span class='sectionToc'>12 <a href='#coding-in-the-transform-domain' id='QQ2-1-25'>Coding in the Transform Domain</a></span>
+<br />     <span class='subsectionToc'>12.1 <a href='#the-ipp-decorrelation-pattern' id='QQ2-1-26'>The IPP... decorrelation pattern</a></span>
+<br />     <span class='subsectionToc'>12.2 <a href='#a-block-diagram-of-the-step-codec1' id='QQ2-1-27'>A block diagram of the step codec</a></span>
+<br />     <span class='subsectionToc'>12.3 <a href='#spatial-multiresolution' id='QQ2-1-29'>Spatial multiresolution</a></span>
+<br />     <span class='subsectionToc'>12.4 <a href='#sq-layers-progression' id='QQ2-1-32'>SQ (layers) progression</a></span>
+<br />    <span class='sectionToc'>13 <a href='#linear-frame-interpolation-using-blockbased-motion-compensation' id='QQ2-1-33'>Linear frame interpolation using block-based motion compensation</a></span>
+<br />    <span class='sectionToc'>14 <a href='#a-problem' id='QQ2-1-38'>A problem</a></span>
+<br />    <span class='sectionToc'>15 <a href='#references' id='QQ2-1-40'>References</a></span>
    </div>
                                                                   
 
                                                                   
 <!-- l. 9 --><p class='noindent'>
 </p>
-   <h3 class='sectionHead' id='decision-mode-and-rdo'><span class='titlemark'>1   </span> <a id='x1-20001'></a>Decision mode and RDO</h3>
-<!-- l. 12 --><p class='noindent'>Most video coding standards operate at the block level. For each block,
-the decision mode (run only by the compressor) determines the “type of
-block”:
-</p><!-- l. 16 --><p class='indent'>
-     </p><ol class='enumerate1'>
-<li class='enumerate' id='x1-2002x1'><span class='ecbx-1000'>I-type (intra)</span>, when the block is encoded without considering any other
-     external  reference  information.  In  this  case,  no  resudue  is  generated),
-     and a I-type block represents only texture. RDO selects this mode when
-     the compression of residue block generates more bits than the original
-     (predicted) one.
-     </li>
-<li class='enumerate' id='x1-2004x2'><span class='ecbx-1000'>P-type (predicted)</span>, if there is one reference (block) for the (predicted)
-     block, which belongs to a previous frame. Now we encode a block with
-     residual texture and a motion vector per block. P-type blocks require less
-     data than I-type blocks (this is guaranteed by the RDO).
-     </li>
-<li class='enumerate' id='x1-2006x3'><span class='ecbx-1000'>B-type (bidirectionally-predicted)</span>, if there are two or more references
-     for the block, anterior (past) and posterior (future). By definition (RDO),
-     it is more RD-advantageous to use B-type blocks compared to P-type
-     blocks,  because  the  entropy  of  the  residual  texture  decreases  (even
-     considering that now we need one motion vector per reference).
-     </li>
-<li class='enumerate' id='x1-2008x4'><span class='ecbx-1000'>S-type (skipped)</span>, if the residue is so small that it is more beneficial to
-     consider that it is zero. Consequently, the block is a copy of the reference.</li></ol>
-   <figure class='figure'> 
-
-                                                                  
-
-                                                                  
-                                                                  
-
-                                                                  
-<!-- l. 40 --><p class='noindent' id='-types-of-macroblocks-'><div style='text-align:center;'> <img src='graphics/macroblocks.svg' /> </div>  <a id='x1-2009r1'></a>
-<a id='x1-2010'></a>
+   <h3 class='sectionHead' id='motion-mompensation-mc'><span class='titlemark'>1   </span> <a id='x1-20001'></a>Motion Mompensation (MC)</h3>
+<!-- l. 11 --><p class='noindent'>MC is the process of generating the residue frames through substracting to the
+predicted (anchor) frame a prediction frame generated with one or more motion field
+to project one or more reference frames.
+</p><!-- l. 16 --><p class='indent'>   Most of video coding standards use block-based MC techniques.
+</p><!-- l. 20 --><p class='indent'>   If blocks can be deformed when they are projected (to create the prediction
+frame) we are using a mesh-based MC.
+</p><!-- l. 23 --><p class='noindent'>
 </p>
-<figcaption class='caption'><span class='id'>Figure 1: </span><span class='content'>Types of macro-blocks                                       </span></figcaption><!-- tex4ht:label?: x1-2009r1  -->
-.
-                                                                  
-
-                                                                  
-   </figure>
-<!-- l. 45 --><p class='indent'>   The type of the blocks is signaled in the code-stream. An visual example of the
-decision of the type of the macro-blocks is shown in the Figure <a href='#x1-2009r1'>1<!-- tex4ht:ref: fig:macroblocks  --></a>.
-</p>
-   <h3 class='sectionHead' id='itype-frames-ptype-frames-and-btype-frames'><span class='titlemark'>2   </span> <a id='x1-30002'></a>I-type frames, P-type frames and B-type frames</h3>
-<!-- l. 54 --><p class='noindent'>Frames can be:
-</p><!-- l. 56 --><p class='indent'>
-     </p><ol class='enumerate1'>
-<li class='enumerate' id='x1-3002x1'>I-type (or simly a I-frame), if only uses I-type blocks.
-     </li>
-<li class='enumerate' id='x1-3004x2'>P-type frame (P-frame), that can use I, P, and S-type blocks.
-     </li>
-<li class='enumerate' id='x1-3006x3'>B-type frame (B-frame), if I, P, S and B-type blocks can be used.</li></ol>
-<!-- l. 63 --><p class='noindent'>
-</p>
-   <h3 class='sectionHead' id='intra-coding-iii'><span class='titlemark'>3   </span> <a id='x1-40003'></a>Intra coding (III...)</h3>
-<!-- l. 65 --><p class='noindent'>In the intra coding mode, all frames are encoded as independent images (no MC has
-been used at all, and therefore, all blocks in the frames are I-type). Intra-coded
-frames are also called keyframes.
-</p><!-- l. 69 --><p class='indent'>   Advantages: </p>
-     <ul class='itemize1'>
-     <li class='itemize'>Minimal pipeline delay.
-     </li>
-     <li class='itemize'>Minimal buffering.
-     </li>
-     <li class='itemize'>No error propagation.
-                                                                  
-
-                                                                  
-     </li>
-     <li class='itemize'>Maximum temporal scalability.</li></ul>
-<!-- l. 77 --><p class='indent'>   Disadvantages:
-     </p><ol class='enumerate1'>
-<li class='enumerate' id='x1-4001x3'>Low compression ratios.</li></ol>
-<!-- l. 82 --><p class='indent'>   Mainly used in video edition.
-</p><!-- l. 84 --><p class='noindent'>
-</p>
-   <h3 class='sectionHead' id='lowdelay-coding-ipp'><span class='titlemark'>4   </span> <a id='x1-50004'></a>Low-delay coding (IPP...)</h3>
-<!-- l. 86 --><p class='noindent'>In the low-delay coding mode (see Fig. <a href='#x1-13003r10'>10<!-- tex4ht:ref: fig:CBR  --></a>), only the first frame is intra-coded and
-the rest, prediction-coded using unidirectional motion compensation.
-</p><!-- l. 96 --><p class='indent'>   Advantages: </p>
-     <ul class='itemize1'>
-     <li class='itemize'>Low pipeline delay (one frame-time).
-     </li>
-     <li class='itemize'>Usually, only one frame buffering.
-     </li>
-     <li class='itemize'>Medium-high compression ratios.</li></ul>
-<!-- l. 103 --><p class='indent'>   Disadvantages:
-     </p><ol class='enumerate1'>
-<li class='enumerate' id='x1-5001x4'>Error propagation sequentially, until the next GOF.
-     </li>
-<li class='enumerate' id='x1-5002x4'>Low temporal scalability.</li></ol>
-<!-- l. 109 --><p class='indent'>   Mainly used in video surveillance.
-                                                                  
-
-                                                                  
-</p><!-- l. 111 --><p class='noindent'>
-</p>
-   <h3 class='sectionHead' id='randomaccess-mode-ibpb'><span class='titlemark'>5   </span> <a id='x1-60005'></a>“Random”-access mode (IBPB...)</h3>
-   <figure class='figure'> 
-
-                                                                  
-
-                                                                  
-                                                                  
-
-                                                                  
-<!-- l. 116 --><p class='noindent' id='-th-randomaccess-mode-'><div style='text-align:center;'> <img src='graphics/GOPs.svg' /> </div>  <a id='x1-6001r2'></a>
-<a id='x1-6002'></a>
-</p>
-<figcaption class='caption'><span class='id'>Figure 2: </span><span class='content'>Th random-access mode.                                     </span></figcaption><!-- tex4ht:label?: x1-6001r5  -->
-                                                                  
-
-                                                                  
-   </figure>
-<!-- l. 121 --><p class='indent'>   In the random-access mode (see Fig. <a href='#x1-6001r2'>2<!-- tex4ht:ref: fig:random_mode  --></a>) it is allowed to use B-type frames.
-Notice that. by definition, the low-delay coding mode is also a random-access
-mode.
-</p><!-- l. 131 --><p class='indent'>   Advantages: </p>
-     <ul class='itemize1'>
-     <li class='itemize'>The highest compression ratio.</li></ul>
-<!-- l. 136 --><p class='indent'>   Disadvantages:
-     </p><ol class='enumerate1'>
-<li class='enumerate' id='x1-6003x5'>High pipeline delay (up to GOF-time).
-     </li>
-<li class='enumerate' id='x1-6004x5'>Error propagation (depending on the block-type decisions), until the next
-     GOF.
-     </li>
-<li class='enumerate' id='x1-6005x5'>Low temporal scalability.</li></ol>
-   <h3 class='sectionHead' id='hybrid-video-coding'><span class='titlemark'>6   </span> <a id='x1-70006'></a>Hybrid video coding</h3>
-   <figure class='figure'> 
-
-                                                                  
-
-                                                                  
-                                                                  
-
-                                                                  
-<!-- l. 149 --><p class='noindent' id='-hybrid-video-coding-'><div style='text-align:center;'> <img src='graphics/hybrid_coding.svg' /> </div>  <a id='x1-7001r3'></a>
-<a id='x1-7002'></a>
-</p>
-<figcaption class='caption'><span class='id'>Figure 3: </span><span class='content'>Hybrid video coding.
-</span></figcaption><!-- tex4ht:label?: x1-7001r6  -->
-                                                                  
-
-                                                                  
-   </figure>
-<!-- l. 154 --><p class='indent'>   See the Fig. <a href='#x1-7001r3'>3<!-- tex4ht:ref: fig:hybrid_coding  --></a>.
-</p>
-     <ul class='itemize1'>
-     <li class='itemize'>Used in all the video compression standards.
-     </li>
-     <li class='itemize'>Intracoded images are transformed (\(T\)) and quantized (\(Q\)).
-     </li>
-     <li class='itemize'>Intercoded images are also motion compensated (\(P\)).
-     </li>
-     <li class='itemize'>The encoder incorporates a decoder to avoid the drift error.</li></ul>
-   <h4 class='subsectionHead' id='codec'><span class='titlemark'>6.1   </span> <a id='x1-80006.1'></a>Codec</h4>
-   <figure class='figure'> 
-
-                                                                  
-
-                                                                  
-                                                                  
-
-                                                                  
-<!-- l. 173 --><p class='noindent' id='-a-interintra-video-codec-'><div style='text-align:center;'> <img src='graphics/codec.svg' /> </div>  <a id='x1-8001r4'></a>
-<a id='x1-8002'></a>
-</p>
-<figcaption class='caption'><span class='id'>Figure 4: </span><span class='content'>A inter/intra video codec.                                    </span></figcaption><!-- tex4ht:label?: x1-8001r6  -->
-                                                                  
-
-                                                                  
-   </figure>
-<!-- l. 178 --><p class='indent'>   The Figure <a href='#x1-9001r5'>5<!-- tex4ht:ref: fig:IPP_codec  --></a> describes an inter/intra video codec, that corresponds
-to:
-</p><!-- l. 184 --><p class='indent'>   \begin {equation}  {\mathbf W}_k = \text {color-T}({\mathbf V}_k), \tag {a}  \end {equation}
-
-</p><!-- l. 189 --><p class='indent'>   \begin {equation}  {\mathbf W}_{k-1} = Z^{-1}({\mathbf W}, k-1), \tag {b}  \end {equation}
-and by definition, \(Z^{-1}({\mathbf W}, -1) = {\mathbf 0}\),
-</p><!-- l. 195 --><p class='indent'>   \begin {equation}  \overset {(k-1)\rightarrow k}{\mathbf M} = \text {ME}({\mathbf W}_{k-1}, {\mathbf W}_k), \tag {c}  \end {equation}
-where ME stands for Motion Estimation, and by definition, \(\overset {(-1)\rightarrow 0}{{\mathbf M}} = {\mathbf 0}\),
-</p><!-- l. 202 --><p class='indent'>   \begin {equation}  \overset {(k-1)\rightarrow k}{\mathbf M} = \overset {(k-1)\rightarrow k}{\mathbf M} \text {(lossless~coding)}, \tag {d}  \end {equation}
-
-</p><!-- l. 207 --><p class='indent'>   \begin {equation}  \overset {(k-1)\rightarrow k}{\mathbf M} = \overset {(k-1)\rightarrow k}{\mathbf M} \text {(lossless~decoding)}, \tag {e}  \end {equation}
-
-</p><!-- l. 212 --><p class='indent'>   \begin {equation}  {\mathbf E}_k = {\mathbf W}_k - \overset {\wedge }{{\mathbf W}}_k, \tag {f}  \end {equation}
-where the symbol \(-\) represents to the pixel-wise substraction,
-</p><!-- l. 218 --><p class='indent'>   \begin {equation}  \overset {\sim }{{\mathbf E}_k} = \text {QE}({\mathbf E}_k), \tag {g}  \end {equation}
-where QE\((\cdot )\) represents the lossy compression of the prediction error texture
-data,
-</p><!-- l. 225 --><p class='indent'>   \begin {equation}  \overset {\sim }{\mathbf E}_k = \text {DQ}^{-1}(\overset {\sim }{\mathbf E}_k), \tag {h}  \end {equation}
-where DQ\(^{-1}(\cdot )\) represents the decompression of the prediction error texture data,
-</p><!-- l. 232 --><p class='indent'>   \begin {equation}  \overset {\sim }{\mathbf W}_k \leftarrow \overset {\sim }{\mathbf E}_k + \overset {\wedge }{\mathbf W}_k, \tag {i}  \end {equation}
-and notice that if \(\overset {\wedge }{\mathbf W}_k = {\mathbf 0}\), then \(\overset {\sim }{\mathbf E}_k = \overset {\sim }{\mathbf W}_k\),
-</p><!-- l. 239 --><p class='indent'>   \begin {equation}  \overset {\wedge }{\mathbf W}_k = \text {P}(\overset {\sim }{\mathbf W}_{k-1}, \overset {(k-1)\rightarrow k}{\mathbf M}), \tag {j}  \end {equation}
-where P\((\cdot ,\cdot )\) is a motion compensated predictor, and
-</p><!-- l. 245 --><p class='indent'>   \begin {equation}  \overset {\wedge }{\mathbf W}_{k-1} = Z^{-1}(\overset {\wedge }{\mathbf W}, k-1), \tag {k}  \end {equation}
-where by definition, \(Z^{-1}(\overset {\wedge }{\mathbf W}, -1) = 0\), and
-</p><!-- l. 251 --><p class='indent'>   \begin {equation}  {\mathbf V} = \text {color-T}^{-1}({\mathbf W}_k), \tag {l}  \end {equation}
-is the inverse color transform.
-</p><!-- l. 254 --><p class='indent'>   Notice that if \(\overset {\wedge }{{\mathbf W}}_k\) is similar to \({\mathbf W}_k\), then \({\mathbf E}_k\) will be approximately zero, and therefore,
-easely compressed. Another interesting aspect to highlight is that the encoder
-replicates de decoder in order to use the reconstructed images as reference and avoid
-the drift error.
-</p>
-   <h4 class='subsectionHead' id='a-block-diagram-of-the-step-codec'><span class='titlemark'>6.2   </span> <a id='x1-90006.2'></a>A block diagram of the step codec</h4>
-<!-- l. 262 --><p class='noindent'>It’s time to test the performance of the ME/MC process previously described, in the
-image domain. We encode a sequence of frames \(\{W_k\}\) using the pattern IPP... which means
-that the first frame will be intra-coded (I-type frame) and the rest of frames of the
-GOF (Group Of (<a href='https://en.wikipedia.org/wiki/Group_of_pictures'>Frames</a>) will be predicted-coded (P-type frame), respect to the
-previous one.
-</p>
-   <figure class='figure'> 
-
-                                                                  
-
-                                                                  
-                                                                  
-
-                                                                  
-<!-- l. 272 --><p class='noindent' id='-a-simple-ipp-image-codec-'><div style='text-align:center;'> <img src='graphics/codec2.svg' /> </div>  <a id='x1-9001r5'></a>
-<a id='x1-9002'></a>
-</p>
-<figcaption class='caption'><span class='id'>Figure 5: </span><span class='content'>A simple IPP... image codec.                                 </span></figcaption><!-- tex4ht:label?: x1-9001r6  -->
-                                                                  
-
-                                                                  
-   </figure>
-<!-- l. 277 --><p class='indent'>   The IPP... coding can be done by the codec shown in the Fig. <a href='#x1-9001r5'>5<!-- tex4ht:ref: fig:IPP_codec  --></a>, where:
-</p><!-- l. 293 --><p class='indent'>   \begin {equation}  V_k \leftarrow \text {C}(W_k) = \begin {bmatrix} \frac {1}{4} &amp; \frac {1}{2} &amp; \frac {1}{4} \\ \frac {1}{2} &amp; 0 &amp; -\frac {1}{2} \\ -\frac {1}{4} &amp; \frac {1}{2} &amp; -\frac {1}{4} \end {bmatrix} \begin {bmatrix} W_k.\text {R} \\ W_k.\text {G} \\ W_k.\text {B} \end {bmatrix} , \tag {a}  \end {equation}
-
-</p><!-- l. 298 --><p class='indent'>   \begin {equation}  Z^{-1}(V_k) = V_{k-1}, \tag {b}  \end {equation}
-and by definition, \(Z^{-1}(V_{-1}) = 0\),
-</p><!-- l. 304 --><p class='indent'>   \begin {equation}  \overset {k\rightarrow k-1}{V} \leftarrow \text {M}(V_k, V_{k-1}), \tag {c}  \end {equation}
-where M stands for Motion Estimation, and by definition, \(\overset {0\rightarrow (-1)}{V}=0\),
-</p><!-- l. 311 --><p class='indent'>   \begin {equation}  \overset {\sim }{\overset {k\rightarrow k-1}{V}} \leftarrow \text {E}_{\overset {\rightarrow }{V}}(\overset {k\rightarrow k-1}{V}), \tag {d}  \end {equation}
-where E\(_{\overset {\rightarrow }{V}}(\cdot )\) represents the lossy compression of the motion data,
-</p><!-- l. 318 --><p class='indent'>   \begin {equation}  \overset {\sim }{\overset {k\rightarrow k-1}{V}} \leftarrow \text {D}_{\overset {\rightarrow }{V}}(\overset {\sim }{\overset {k\rightarrow k-1}{V}}), \tag {e}  \end {equation}
-where D\(_{\overset {\rightarrow }{V}}(\cdot )\) represents the decompression of the motion data,
-</p><!-- l. 325 --><p class='indent'>   \begin {equation}  E_k \leftarrow V_k - \overset {\wedge }{{V}}_k, \tag {f}  \end {equation}
-where the symbol \(-\) represents to the pixel-wise substraction,
-</p><!-- l. 331 --><p class='indent'>   \begin {equation}  \overset {\sim }{E_k} \leftarrow \text {E}_{E}(E_k), \tag {g}  \end {equation}
-where E\(_{E}(\cdot )\) represents the lossy compression of the prediction error texture
-data,
-</p><!-- l. 338 --><p class='indent'>   \begin {equation}  \overset {\sim }{E}_k \leftarrow \text {D}_{E}(\overset {\sim }{E}_k), \tag {h}  \end {equation}
-where D\(_{E}(\cdot )\) represents the decompression of the prediction error texture data,
-</p><!-- l. 345 --><p class='indent'>   \begin {equation}  \overset {\sim }{V}_k \leftarrow \overset {\sim }{E}_k + \overset {\wedge }{V}_k, \tag {i}  \end {equation}
-and notice that if \(\overset {\wedge }{V}_k=0\), then \(\overset {\sim }{E}_k = \overset {\sim }{V}_k\),
-</p><!-- l. 352 --><p class='indent'>   \begin {equation}  \overset {\wedge }{V}_k \leftarrow \text {P}(\overset {\sim }{\overset {k\rightarrow k-1}{V}}, \overset {\sim }{V}_{k-1}), \tag {j}  \end {equation}
-where P\((\cdot ,\cdot )\) is a motion compensated predictor.
-</p><!-- l. 355 --><p class='indent'>   Notice that if \(\overset {\wedge }{{V}}_k\) is similar to \(V_k\), then \(E_k\) will be approximately zero, and therefore,
-easely compressed. Another interesting aspect to highlight is that the encoder
-replicates de decoder in order to use the reconstructed images as reference and avoid
-the drift error.
-</p>
-   <h3 class='sectionHead' id='the-gop-group-of-pictures-concept'><span class='titlemark'>7   </span> <a id='x1-100007'></a>The GOP (Group Of Pictures) concept</h3>
-     <ul class='itemize1'>
-     <li class='itemize'>The temporal redundancy is exploited by blocks of images called GOPs.
-     This means that a GOP can be decoded independently of the rest of GOPs
-     (see the Fig. <span class='ecbx-1000'>??</span>).</li></ul>
-   <figure class='figure' id='-a-gop-'> 
-
-                                                                  
-
-                                                                  
-                                                                  
-
-                                                                  
-<a id='x1-10001r6'></a>
-<a id='x1-10002'></a>
-<figcaption class='caption'><span class='id'>Figure 6: </span><span class='content'>A GOP.
-</span></figcaption><!-- tex4ht:label?: x1-10001r7  -->
-                                                                  
-
-                                                                  
-   </figure>
-   <h3 class='sectionHead' id='hybrid-coding-alternatives'><span class='titlemark'>8   </span> <a id='x1-110008'></a>Hybrid coding alternatives</h3>
+   <h3 class='sectionHead' id='hybrid-coding-alternatives'><span class='titlemark'>2   </span> <a id='x1-30002'></a>Hybrid coding alternatives</h3>
      <ul class='itemize1'>
      <li class='itemize'><span class='ecbx-1000'>t+2d</span>: The sequence of images is decorrelated first along the time (t) and
      the residue images are compressed, exploiting the remaining spatial (2d)
@@ -342,7 +74,7 @@ the drift error.
      <li class='itemize'><span class='ecbx-1000'>2d+t+2d</span>:  The  fist  step  creates  a  Laplacian  Pyramid  (2d),  which
      is  invariant  to  the  displacement.  Next,  each  level  of  the  pyramid
      is  decorrelated  along  the  time  (t)  and  finally,  the  remaining  spatial
-     redundancy is removed (2d). The Fig <a href='#x1-11001r7'>7<!-- tex4ht:ref: fig:H264-S-SVC  --></a> show an example for H.264/SVC.</li></ul>
+     redundancy is removed (2d). The Fig <a href='#x1-3001r1'>1<!-- tex4ht:ref: fig:H264-S-SVC  --></a> show an example for H.264/SVC.</li></ul>
    <figure class='figure'> 
 
                                                                   
@@ -351,20 +83,40 @@ the drift error.
                                                                   
 
                                                                   
-<!-- l. 397 --><p class='noindent' id='-svc-scheme-in-h-'><div style='text-align:center;'> <img src='graphics/H264-S-SVC.svg' /> </div>  <a id='x1-11001r7'></a>
-<a id='x1-11002'></a>
+<!-- l. 45 --><p class='noindent' id='-svc-scheme-in-h-'><div style='text-align:center;'> <img src='graphics/H264-S-SVC.svg' /> </div>  <a id='x1-3001r1'></a>
+<a id='x1-3002'></a>
 </p>
-<figcaption class='caption'><span class='id'>Figure 7: </span><span class='content'>SVC scheme in H.264.
-</span></figcaption><!-- tex4ht:label?: x1-11001r8  -->
+<figcaption class='caption'><span class='id'>Figure 1: </span><span class='content'>SVC scheme in H.264.
+</span></figcaption><!-- tex4ht:label?: x1-3001r2  -->
                                                                   
 
                                                                   
    </figure>
-   <h3 class='sectionHead' id='deblocking-filtering'><span class='titlemark'>9   </span> <a id='x1-120009'></a>Deblocking filtering</h3>
-     <ul class='itemize1'>
-     <li class='itemize'>If   any   other   block-overlaping   techniques   have   not   been   applied,
-     block-based video encoders improve their performance if a deblocking filter
-     in used to create the quantized prediction predictions (see the Fig. <a href='#x1-12001r8'>8<!-- tex4ht:ref: fig:350px-Deblock1  --></a>).</li></ul>
+   <h3 class='sectionHead' id='decision-mode-and-rdo'><span class='titlemark'>3   </span> <a id='x1-40003'></a>Decision mode and RDO</h3>
+<!-- l. 53 --><p class='noindent'>Most video coding standards operate at the block level. For each block,
+the decision mode (run only by the compressor) determines the “type of
+block”:
+</p><!-- l. 57 --><p class='indent'>
+     </p><ol class='enumerate1'>
+<li class='enumerate' id='x1-4002x1'><span class='ecbx-1000'>I-type (intra)</span>, when the block is encoded without considering any other
+     external  reference  information.  In  this  case,  no  resudue  is  generated),
+     and a I-type block represents only texture. RDO selects this mode when
+     the compression of residue block generates more bits than the original
+     (predicted) one.
+     </li>
+<li class='enumerate' id='x1-4004x2'><span class='ecbx-1000'>P-type (predicted)</span>, if there is one reference (block) for the (predicted)
+     block, which belongs to a previous frame. Now we encode a block with
+     residual texture and a motion vector per block. P-type blocks require less
+     data than I-type blocks (this is guaranteed by the RDO).
+     </li>
+<li class='enumerate' id='x1-4006x3'><span class='ecbx-1000'>B-type (bidirectionally-predicted)</span>, if there are two or more references
+     for the block, anterior (past) and posterior (future). By definition (RDO),
+     it is more RD-advantageous to use B-type blocks compared to P-type
+     blocks,  because  the  entropy  of  the  residual  texture  decreases  (even
+     considering that now we need one motion vector per reference).
+     </li>
+<li class='enumerate' id='x1-4008x4'><span class='ecbx-1000'>S-type (skipped)</span>, if the residue is so small that it is more beneficial to
+     consider that it is zero. Consequently, the block is a copy of the reference.</li></ol>
    <figure class='figure'> 
 
                                                                   
@@ -373,59 +125,319 @@ the drift error.
                                                                   
 
                                                                   
-<!-- l. 413 --><p class='noindent' id='-deblocking-filetering-effect-'><div style='text-align:center;'> <img src='graphics/350px-Deblock1.jpg' /> </div>  800 <a id='x1-12001r8'></a>
+<!-- l. 81 --><p class='noindent' id='-types-of-macroblocks-'><div style='text-align:center;'> <img src='graphics/macroblocks.svg' /> </div>  <a id='x1-4009r2'></a>
+<a id='x1-4010'></a>
+</p>
+<figcaption class='caption'><span class='id'>Figure 2: </span><span class='content'>Types of macro-blocks                                       </span></figcaption><!-- tex4ht:label?: x1-4009r3  -->
+.
+                                                                  
+
+                                                                  
+   </figure>
+<!-- l. 86 --><p class='indent'>   The type of the blocks is signaled in the code-stream. An visual example of the
+decision of the type of the macro-blocks is shown in the Figure <a href='#x1-4009r2'>2<!-- tex4ht:ref: fig:macroblocks  --></a>.
+</p>
+   <h3 class='sectionHead' id='itype-frames-ptype-frames-and-btype-frames'><span class='titlemark'>4   </span> <a id='x1-50004'></a>I-type frames, P-type frames and B-type frames</h3>
+<!-- l. 95 --><p class='noindent'>Frames can be:
+</p><!-- l. 97 --><p class='indent'>
+     </p><ol class='enumerate1'>
+<li class='enumerate' id='x1-5002x1'>I-type (or simly a I-frame), if only uses I-type blocks.
+     </li>
+<li class='enumerate' id='x1-5004x2'>P-type frame (P-frame), that can use I, P, and S-type blocks.
+     </li>
+<li class='enumerate' id='x1-5006x3'>B-type frame (B-frame), if I, P, S and B-type blocks can be used.</li></ol>
+<!-- l. 104 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='intra-coding-iii'><span class='titlemark'>5   </span> <a id='x1-60005'></a>Intra coding (III...)</h3>
+<!-- l. 106 --><p class='noindent'>In the intra coding mode, all frames are encoded as independent images (no MC
+has been used at all, and therefore, all blocks in the frames are I-type).
+Intra-coded frames are also called keyframes. See the notebook <a href='https://github.com/vicente-gonzalez-ruiz/motion_compensation/blob/master/III_compression.ipynb'>III... video
+compression</a>.
+</p><!-- l. 113 --><p class='indent'>   Advantages: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>Minimal pipeline delay.
+     </li>
+     <li class='itemize'>Minimal buffering.
+                                                                  
+
+                                                                  
+     </li>
+     <li class='itemize'>No error propagation.
+     </li>
+     <li class='itemize'>Maximum temporal scalability.</li></ul>
+<!-- l. 121 --><p class='indent'>   Disadvantages:
+     </p><ol class='enumerate1'>
+<li class='enumerate' id='x1-6001x5'>Low compression ratios.</li></ol>
+<!-- l. 126 --><p class='indent'>   Mainly used in video edition.
+</p><!-- l. 128 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='lowdelay-coding-ipp'><span class='titlemark'>6   </span> <a id='x1-70006'></a>Low-delay coding (IPP...)</h3>
+<!-- l. 130 --><p class='noindent'>In the low-delay coding mode (see Fig. <a href='#x1-14003r10'>10<!-- tex4ht:ref: fig:CBR  --></a>), only the first frame is intra-coded and
+the rest, prediction-coded using unidirectional motion compensation. See the
+notebook <a href='https://github.com/vicente-gonzalez-ruiz/motion_compensation/blob/master/introducing_IPPP.ipynb'>Introducing the Low-delay (IPP...) Mode</a>.
+</p><!-- l. 142 --><p class='indent'>   Advantages: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>Low pipeline delay (one frame-time).
+     </li>
+     <li class='itemize'>Usually, only one frame buffering.
+     </li>
+     <li class='itemize'>Medium-high compression ratios.</li></ul>
+<!-- l. 149 --><p class='indent'>   Disadvantages:
+     </p><ol class='enumerate1'>
+<li class='enumerate' id='x1-7001x6'>Error propagation sequentially, until the next GOF.
+                                                                  
+
+                                                                  
+     </li>
+<li class='enumerate' id='x1-7002x6'>Low temporal scalability.</li></ol>
+<!-- l. 155 --><p class='indent'>   Mainly used in video surveillance.
+</p><!-- l. 157 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='randomaccess-mode-ibpb'><span class='titlemark'>7   </span> <a id='x1-80007'></a>“Random”-access mode (IBPB...)</h3>
+   <figure class='figure'> 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+                                                                  
+<!-- l. 162 --><p class='noindent' id='-th-randomaccess-mode-'><div style='text-align:center;'> <img src='graphics/GOPs.svg' /> </div>  <a id='x1-8001r3'></a>
+<a id='x1-8002'></a>
+</p>
+<figcaption class='caption'><span class='id'>Figure 3: </span><span class='content'>Th random-access mode.                                     </span></figcaption><!-- tex4ht:label?: x1-8001r7  -->
+                                                                  
+
+                                                                  
+   </figure>
+<!-- l. 167 --><p class='indent'>   In the random-access mode (see Fig. <a href='#x1-8001r3'>3<!-- tex4ht:ref: fig:random_mode  --></a>) it is allowed to use B-type frames.
+Notice that. by definition, the low-delay coding mode is also a random-access
+mode.
+</p><!-- l. 177 --><p class='indent'>   Advantages: </p>
+     <ul class='itemize1'>
+     <li class='itemize'>The highest compression ratio.</li></ul>
+<!-- l. 182 --><p class='indent'>   Disadvantages:
+     </p><ol class='enumerate1'>
+<li class='enumerate' id='x1-8003x7'>High pipeline delay (up to GOF-time).
+     </li>
+<li class='enumerate' id='x1-8004x7'>Error propagation (depending on the block-type decisions), until the next
+     GOF.
+     </li>
+<li class='enumerate' id='x1-8005x7'>Low temporal scalability.</li></ol>
+   <h3 class='sectionHead' id='hybrid-video-coding'><span class='titlemark'>8   </span> <a id='x1-90008'></a>Hybrid video coding</h3>
+   <figure class='figure'> 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+                                                                  
+<!-- l. 195 --><p class='noindent' id='-hybrid-video-coding-'><div style='text-align:center;'> <img src='graphics/hybrid_coding.svg' /> </div>  <a id='x1-9001r4'></a>
+<a id='x1-9002'></a>
+</p>
+<figcaption class='caption'><span class='id'>Figure 4: </span><span class='content'>Hybrid video coding.
+</span></figcaption><!-- tex4ht:label?: x1-9001r8  -->
+                                                                  
+
+                                                                  
+   </figure>
+<!-- l. 200 --><p class='indent'>   See the Fig. <a href='#x1-9001r4'>4<!-- tex4ht:ref: fig:hybrid_coding  --></a>.
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'>Used in all the video compression standards.
+     </li>
+     <li class='itemize'>Intracoded images are transformed (\(T\)) and quantized (\(Q\)).
+     </li>
+     <li class='itemize'>Intercoded images are also motion compensated (\(P\)).
+     </li>
+     <li class='itemize'>The encoder incorporates a decoder to avoid the drift error.</li></ul>
+   <h4 class='subsectionHead' id='codec'><span class='titlemark'>8.1   </span> <a id='x1-100008.1'></a>Codec</h4>
+   <figure class='figure'> 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+                                                                  
+<!-- l. 219 --><p class='noindent' id='-a-interintra-video-codec-'><div style='text-align:center;'> <img src='graphics/codec.svg' /> </div>  <a id='x1-10001r5'></a>
+<a id='x1-10002'></a>
+</p>
+<figcaption class='caption'><span class='id'>Figure 5: </span><span class='content'>A inter/intra video codec.                                    </span></figcaption><!-- tex4ht:label?: x1-10001r8  -->
+                                                                  
+
+                                                                  
+   </figure>
+<!-- l. 224 --><p class='indent'>   The Figure <a href='#x1-11001r6'>6<!-- tex4ht:ref: fig:IPP_codec  --></a> describes an inter/intra video codec, that corresponds
+to:
+</p><!-- l. 230 --><p class='indent'>   \begin {equation}  {\mathbf W}_k = \text {color-T}({\mathbf V}_k), \tag {a}  \end {equation}
+
+</p><!-- l. 235 --><p class='indent'>   \begin {equation}  {\mathbf W}_{k-1} = Z^{-1}({\mathbf W}, k-1), \tag {b}  \end {equation}
+and by definition, \(Z^{-1}({\mathbf W}, -1) = {\mathbf 0}\),
+</p><!-- l. 241 --><p class='indent'>   \begin {equation}  \overset {(k-1)\rightarrow k}{\mathbf M} = \text {ME}({\mathbf W}_{k-1}, {\mathbf W}_k), \tag {c}  \end {equation}
+where ME stands for Motion Estimation, and by definition, \(\overset {(-1)\rightarrow 0}{{\mathbf M}} = {\mathbf 0}\),
+</p><!-- l. 248 --><p class='indent'>   \begin {equation}  \overset {(k-1)\rightarrow k}{\mathbf M} = \overset {(k-1)\rightarrow k}{\mathbf M} \text {(lossless~coding)}, \tag {d}  \end {equation}
+
+</p><!-- l. 253 --><p class='indent'>   \begin {equation}  \overset {(k-1)\rightarrow k}{\mathbf M} = \overset {(k-1)\rightarrow k}{\mathbf M} \text {(lossless~decoding)}, \tag {e}  \end {equation}
+
+</p><!-- l. 258 --><p class='indent'>   \begin {equation}  {\mathbf E}_k = {\mathbf W}_k - \overset {\wedge }{{\mathbf W}}_k, \tag {f}  \end {equation}
+where the symbol \(-\) represents to the pixel-wise substraction,
+</p><!-- l. 264 --><p class='indent'>   \begin {equation}  \overset {\sim }{{\mathbf E}_k} = \text {QE}({\mathbf E}_k), \tag {g}  \end {equation}
+where QE\((\cdot )\) represents the lossy compression of the prediction error texture
+data,
+</p><!-- l. 271 --><p class='indent'>   \begin {equation}  \overset {\sim }{\mathbf E}_k = \text {DQ}^{-1}(\overset {\sim }{\mathbf E}_k), \tag {h}  \end {equation}
+where DQ\(^{-1}(\cdot )\) represents the decompression of the prediction error texture data,
+</p><!-- l. 278 --><p class='indent'>   \begin {equation}  \overset {\sim }{\mathbf W}_k \leftarrow \overset {\sim }{\mathbf E}_k + \overset {\wedge }{\mathbf W}_k, \tag {i}  \end {equation}
+and notice that if \(\overset {\wedge }{\mathbf W}_k = {\mathbf 0}\), then \(\overset {\sim }{\mathbf E}_k = \overset {\sim }{\mathbf W}_k\),
+</p><!-- l. 285 --><p class='indent'>   \begin {equation}  \overset {\wedge }{\mathbf W}_k = \text {P}(\overset {\sim }{\mathbf W}_{k-1}, \overset {(k-1)\rightarrow k}{\mathbf M}), \tag {j}  \end {equation}
+where P\((\cdot ,\cdot )\) is a motion compensated predictor, and
+</p><!-- l. 291 --><p class='indent'>   \begin {equation}  \overset {\wedge }{\mathbf W}_{k-1} = Z^{-1}(\overset {\wedge }{\mathbf W}, k-1), \tag {k}  \end {equation}
+where by definition, \(Z^{-1}(\overset {\wedge }{\mathbf W}, -1) = 0\), and
+</p><!-- l. 297 --><p class='indent'>   \begin {equation}  {\mathbf V} = \text {color-T}^{-1}({\mathbf W}_k), \tag {l}  \end {equation}
+is the inverse color transform.
+</p><!-- l. 300 --><p class='indent'>   Notice that if \(\overset {\wedge }{{\mathbf W}}_k\) is similar to \({\mathbf W}_k\), then \({\mathbf E}_k\) will be approximately zero, and therefore,
+easely compressed. Another interesting aspect to highlight is that the encoder
+replicates de decoder in order to use the reconstructed images as reference and avoid
+the drift error.
+</p>
+   <h4 class='subsectionHead' id='a-block-diagram-of-the-step-codec'><span class='titlemark'>8.2   </span> <a id='x1-110008.2'></a>A block diagram of the step codec</h4>
+<!-- l. 308 --><p class='noindent'>It’s time to test the performance of the ME/MC process previously described, in the
+image domain. We encode a sequence of frames \(\{W_k\}\) using the pattern IPP... which means
+that the first frame will be intra-coded (I-type frame) and the rest of frames of the
+GOF (Group Of (<a href='https://en.wikipedia.org/wiki/Group_of_pictures'>Frames</a>) will be predicted-coded (P-type frame), respect to the
+previous one.
+</p>
+   <figure class='figure'> 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+                                                                  
+<!-- l. 318 --><p class='noindent' id='-a-simple-ipp-image-codec-'><div style='text-align:center;'> <img src='graphics/codec2.svg' /> </div>  <a id='x1-11001r6'></a>
+<a id='x1-11002'></a>
+</p>
+<figcaption class='caption'><span class='id'>Figure 6: </span><span class='content'>A simple IPP... image codec.                                 </span></figcaption><!-- tex4ht:label?: x1-11001r8  -->
+                                                                  
+
+                                                                  
+   </figure>
+<!-- l. 323 --><p class='indent'>   The IPP... coding can be done by the codec shown in the Fig. <a href='#x1-11001r6'>6<!-- tex4ht:ref: fig:IPP_codec  --></a>, where:
+</p><!-- l. 339 --><p class='indent'>   \begin {equation}  V_k \leftarrow \text {C}(W_k) = \begin {bmatrix} \frac {1}{4} &amp; \frac {1}{2} &amp; \frac {1}{4} \\ \frac {1}{2} &amp; 0 &amp; -\frac {1}{2} \\ -\frac {1}{4} &amp; \frac {1}{2} &amp; -\frac {1}{4} \end {bmatrix} \begin {bmatrix} W_k.\text {R} \\ W_k.\text {G} \\ W_k.\text {B} \end {bmatrix} , \tag {a}  \end {equation}
+
+</p><!-- l. 344 --><p class='indent'>   \begin {equation}  Z^{-1}(V_k) = V_{k-1}, \tag {b}  \end {equation}
+and by definition, \(Z^{-1}(V_{-1}) = 0\),
+</p><!-- l. 350 --><p class='indent'>   \begin {equation}  \overset {k\rightarrow k-1}{V} \leftarrow \text {M}(V_k, V_{k-1}), \tag {c}  \end {equation}
+where M stands for Motion Estimation, and by definition, \(\overset {0\rightarrow (-1)}{V}=0\),
+</p><!-- l. 357 --><p class='indent'>   \begin {equation}  \overset {\sim }{\overset {k\rightarrow k-1}{V}} \leftarrow \text {E}_{\overset {\rightarrow }{V}}(\overset {k\rightarrow k-1}{V}), \tag {d}  \end {equation}
+where E\(_{\overset {\rightarrow }{V}}(\cdot )\) represents the lossy compression of the motion data,
+</p><!-- l. 364 --><p class='indent'>   \begin {equation}  \overset {\sim }{\overset {k\rightarrow k-1}{V}} \leftarrow \text {D}_{\overset {\rightarrow }{V}}(\overset {\sim }{\overset {k\rightarrow k-1}{V}}), \tag {e}  \end {equation}
+where D\(_{\overset {\rightarrow }{V}}(\cdot )\) represents the decompression of the motion data,
+</p><!-- l. 371 --><p class='indent'>   \begin {equation}  E_k \leftarrow V_k - \overset {\wedge }{{V}}_k, \tag {f}  \end {equation}
+where the symbol \(-\) represents to the pixel-wise substraction,
+</p><!-- l. 377 --><p class='indent'>   \begin {equation}  \overset {\sim }{E_k} \leftarrow \text {E}_{E}(E_k), \tag {g}  \end {equation}
+where E\(_{E}(\cdot )\) represents the lossy compression of the prediction error texture
+data,
+</p><!-- l. 384 --><p class='indent'>   \begin {equation}  \overset {\sim }{E}_k \leftarrow \text {D}_{E}(\overset {\sim }{E}_k), \tag {h}  \end {equation}
+where D\(_{E}(\cdot )\) represents the decompression of the prediction error texture data,
+</p><!-- l. 391 --><p class='indent'>   \begin {equation}  \overset {\sim }{V}_k \leftarrow \overset {\sim }{E}_k + \overset {\wedge }{V}_k, \tag {i}  \end {equation}
+and notice that if \(\overset {\wedge }{V}_k=0\), then \(\overset {\sim }{E}_k = \overset {\sim }{V}_k\),
+</p><!-- l. 398 --><p class='indent'>   \begin {equation}  \overset {\wedge }{V}_k \leftarrow \text {P}(\overset {\sim }{\overset {k\rightarrow k-1}{V}}, \overset {\sim }{V}_{k-1}), \tag {j}  \end {equation}
+where P\((\cdot ,\cdot )\) is a motion compensated predictor.
+</p><!-- l. 401 --><p class='indent'>   Notice that if \(\overset {\wedge }{{V}}_k\) is similar to \(V_k\), then \(E_k\) will be approximately zero, and therefore,
+easely compressed. Another interesting aspect to highlight is that the encoder
+replicates de decoder in order to use the reconstructed images as reference and avoid
+the drift error.
+</p>
+   <h3 class='sectionHead' id='the-gop-group-of-pictures-concept'><span class='titlemark'>9   </span> <a id='x1-120009'></a>The GOP (Group Of Pictures) concept</h3>
+     <ul class='itemize1'>
+     <li class='itemize'>The temporal redundancy is exploited by blocks of images called GOPs.
+     This means that a GOP can be decoded independently of the rest of GOPs
+     (see the Fig. <span class='ecbx-1000'>??</span>).</li></ul>
+   <figure class='figure' id='-a-gop-'> 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+                                                                  
+<a id='x1-12001r7'></a>
 <a id='x1-12002'></a>
+<figcaption class='caption'><span class='id'>Figure 7: </span><span class='content'>A GOP.
+</span></figcaption><!-- tex4ht:label?: x1-12001r9  -->
+                                                                  
+
+                                                                  
+   </figure>
+   <h3 class='sectionHead' id='deblocking-filtering'><span class='titlemark'>10   </span> <a id='x1-1300010'></a>Deblocking filtering</h3>
+     <ul class='itemize1'>
+     <li class='itemize'>If   any   other   block-overlaping   techniques   have   not   been   applied,
+     block-based video encoders improve their performance if a deblocking filter
+     in used to create the quantized prediction predictions (see the Fig. <a href='#x1-13001r8'>8<!-- tex4ht:ref: fig:350px-Deblock1  --></a>).</li></ul>
+   <figure class='figure'> 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+                                                                  
+<!-- l. 432 --><p class='noindent' id='-deblocking-filetering-effect-'><div style='text-align:center;'> <img src='graphics/350px-Deblock1.jpg' /> </div>  800 <a id='x1-13001r8'></a>
+<a id='x1-13002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Figure 8: </span><span class='content'>Deblocking filetering effect.
-</span></figcaption><!-- tex4ht:label?: x1-12001r9  -->
+</span></figcaption><!-- tex4ht:label?: x1-13001r10  -->
                                                                   
 
                                                                   
    </figure>
      <ul class='itemize1'>
      <li class='itemize'>The low-pass filter is applied only on the block boundaries.</li></ul>
-   <h3 class='sectionHead' id='bitrate-allocation'><span class='titlemark'>10   </span> <a id='x1-1300010'></a>Bit-rate allocation</h3>
+   <h3 class='sectionHead' id='bitrate-allocation'><span class='titlemark'>11   </span> <a id='x1-1400011'></a>Bit-rate allocation</h3>
      <ul class='itemize1'>
      <li class='itemize'>
-     <!-- l. 427 --><p class='noindent'>VBR: Under a constant quantization level (constant video quality), the
+     <!-- l. 446 --><p class='noindent'>VBR: Under a constant quantization level (constant video quality), the
      number of bits that each compressed image needs depends on the image
-     content (Variable Bit-Rate). In the Fig. <a href='#x1-13001r9'>9<!-- tex4ht:ref: fig:closed-loop-1_ir  --></a> there is an example. </p><figure class='figure' id='-example-of-variable-bitallocation-'> 
-<div style='text-align:center;'> <img src='graphics/closed-loop-1_ir.svg' /> </div>   <a id='x1-13001r9'></a>
-<a id='x1-13002'></a>
+     content (Variable Bit-Rate). In the Fig. <a href='#x1-14001r9'>9<!-- tex4ht:ref: fig:closed-loop-1_ir  --></a> there is an example. </p><figure class='figure' id='-example-of-variable-bitallocation-'> 
+<div style='text-align:center;'> <img src='graphics/closed-loop-1_ir.svg' /> </div>   <a id='x1-14001r9'></a>
+<a id='x1-14002'></a>
 <figcaption class='caption'><span class='id'>Figure 9: </span><span class='content'>Example of variable bit-allocation.
-</span></figcaption><!-- tex4ht:label?: x1-13001r10  -->
+</span></figcaption><!-- tex4ht:label?: x1-14001r11  -->
      </figure>
      </li>
      <li class='itemize'>
-     <!-- l. 439 --><p class='noindent'>CBR: Using a Constant Bit-Rate strategy, all frames need the same space.
-     In the Fig. <a href='#x1-13003r10'>10<!-- tex4ht:ref: fig:CBR  --></a> there is an example. </p><figure class='figure' id='-example-of-constant-bitallocation-'> 
-<div style='text-align:center;'> <img src='graphics/CBR.svg' /> </div>   <a id='x1-13003r10'></a>
-<a id='x1-13004'></a>
+     <!-- l. 458 --><p class='noindent'>CBR: Using a Constant Bit-Rate strategy, all frames need the same space.
+     In the Fig. <a href='#x1-14003r10'>10<!-- tex4ht:ref: fig:CBR  --></a> there is an example. </p><figure class='figure' id='-example-of-constant-bitallocation-'> 
+<div style='text-align:center;'> <img src='graphics/CBR.svg' /> </div>   <a id='x1-14003r10'></a>
+<a id='x1-14004'></a>
 <figcaption class='caption'><span class='id'>Figure 10: </span><span class='content'>Example of constant bit-allocation.
-</span></figcaption><!-- tex4ht:label?: x1-13003r10  -->
+</span></figcaption><!-- tex4ht:label?: x1-14003r11  -->
      </figure>
      </li></ul>
-<!-- l. 450 --><p class='noindent'>
+<!-- l. 469 --><p class='noindent'>
 </p>
-   <h3 class='sectionHead' id='coding-in-the-transform-domain'><span class='titlemark'>11   </span> <a id='x1-1400011'></a>Coding in the Transform Domain</h3>
-<!-- l. 452 --><p class='noindent'>
+   <h3 class='sectionHead' id='coding-in-the-transform-domain'><span class='titlemark'>12   </span> <a id='x1-1500012'></a>Coding in the Transform Domain</h3>
+<!-- l. 471 --><p class='noindent'>
 </p>
-   <h4 class='subsectionHead' id='the-ipp-decorrelation-pattern'><span class='titlemark'>11.1   </span> <a id='x1-1500011.1'></a>The IPP... decorrelation pattern</h4>
+   <h4 class='subsectionHead' id='the-ipp-decorrelation-pattern'><span class='titlemark'>12.1   </span> <a id='x1-1600012.1'></a>The IPP... decorrelation pattern</h4>
                                                                   
 
                                                                   
-<!-- l. 453 --><p class='noindent'>It’s time to put together all the “tools” that we have developed for encoding a
+<!-- l. 472 --><p class='noindent'>It’s time to put together all the “tools” that we have developed for encoding a
 sequence of frames \(\{V_k\}\). First, the sequence will be splitted into GOFs (<a href='https://en.wikipedia.org/wiki/Group_of_pictures'>Group Of
 Frames</a>), and the structure of each GOF will be IPP... <span class='cite'>[<a href='#Xle1991mpeg'>1</a>]</span>, which means that
 the first frame of each GOF will be intra-coded (I-type), and the rest of
 frames of the GOF will be predicted-coded (P-type), respect to the previous
-one<span class='footnote-mark'><a href='#fn1x0' id='fn1x0-bk'><sup class='textsuperscript'>1</sup></a></span><a id='x1-15001f1'></a>.
+one<span class='footnote-mark'><a href='#fn1x0' id='fn1x0-bk'><sup class='textsuperscript'>1</sup></a></span><a id='x1-16001f1'></a>.
 Notice that in an I-type frame all the coefficients (<span class='ecti-1000'>coeffs </span>in short, remember that we
 are compensating the motion in the DWT domain) will be I-type coeffs, and in a
 P-type frame, the different coeffs will be I-type or P-type.
-</p><!-- l. 467 --><p class='noindent'>
+</p><!-- l. 486 --><p class='noindent'>
 </p>
-   <h4 class='subsectionHead' id='a-block-diagram-of-the-step-codec1'><span class='titlemark'>11.2   </span> <a id='x1-1600011.2'></a>A block diagram of the step codec</h4>
+   <h4 class='subsectionHead' id='a-block-diagram-of-the-step-codec1'><span class='titlemark'>12.2   </span> <a id='x1-1700012.2'></a>A block diagram of the step codec</h4>
    <figure class='figure'> 
 
                                                                   
@@ -434,90 +446,90 @@ P-type frame, the different coeffs will be I-type or P-type.
                                                                   
 
                                                                   
-<!-- l. 471 --><p class='noindent' id='-the-ipp-mrvc-step-codec-notice-that-the-input-to-the-step-encoder-is-a-dwt-transformed-sequence-of-frames-'><div style='text-align:center;'> <img src='graphics/codec4.svg' /> </div>  <a id='x1-16001r11'></a>
-<a id='x1-16002'></a>
+<!-- l. 490 --><p class='noindent' id='-the-ipp-mrvc-step-codec-notice-that-the-input-to-the-step-encoder-is-a-dwt-transformed-sequence-of-frames-'><div style='text-align:center;'> <img src='graphics/codec4.svg' /> </div>  <a id='x1-17001r11'></a>
+<a id='x1-17002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Figure 11: </span><span class='content'>The IPP... MRVC step codec. Notice that the input to the (step)
-encoder is a DWT transformed sequence of frames.                       </span></figcaption><!-- tex4ht:label?: x1-16001r11  -->
+encoder is a DWT transformed sequence of frames.                       </span></figcaption><!-- tex4ht:label?: x1-17001r12  -->
                                                                   
 
                                                                   
    </figure>
-<!-- l. 477 --><p class='indent'>   The MRVC IPP... step (one resolution level) codec has been described in the
-Fig. <a href='#x1-16001r11'>11<!-- tex4ht:ref: fig:codec  --></a>. The equations that describe this system are:
-</p><!-- l. 483 --><p class='indent'>   \begin {equation}  (V_k.L, V_k.H) \leftarrow \text {DWT}(V_k), \tag {a}  \end {equation}
+<!-- l. 496 --><p class='indent'>   The MRVC IPP... step (one resolution level) codec has been described in the
+Fig. <a href='#x1-17001r11'>11<!-- tex4ht:ref: fig:codec  --></a>. The equations that describe this system are:
+</p><!-- l. 502 --><p class='indent'>   \begin {equation}  (V_k.L, V_k.H) \leftarrow \text {DWT}(V_k), \tag {a}  \end {equation}
 where \(\leftarrow \) denotes the <a href='https://en.wikipedia.org/wiki/Assignment_(computer_science)'>assignment</a> operator, and \(V_k\) is the \(k\)-th frame of the sequence,
-</p><!-- l. 491 --><p class='indent'>   \begin {equation}  [V_k.L] \leftarrow \text {DWT}^{-1}(V_k.L, 0), \tag {E.a}  \end {equation}
+</p><!-- l. 510 --><p class='indent'>   \begin {equation}  [V_k.L] \leftarrow \text {DWT}^{-1}(V_k.L, 0), \tag {E.a}  \end {equation}
 
-</p><!-- l. 496 --><p class='indent'>   \begin {equation}  Z^{-1}([V_k.L]) = [V_{k-1}.L], \tag {E.b}  \end {equation}
+</p><!-- l. 515 --><p class='indent'>   \begin {equation}  Z^{-1}([V_k.L]) = [V_{k-1}.L], \tag {E.b}  \end {equation}
 and by definition, \(Z^{-1}([V_{-1}.L]) = 0\),
-</p><!-- l. 502 --><p class='indent'>   \begin {equation}  \overset {k\rightarrow k-1}{V} \leftarrow \text {M}([V_k.L], [V_{k-1}.L]), \tag {E.c}  \end {equation}
+</p><!-- l. 521 --><p class='indent'>   \begin {equation}  \overset {k\rightarrow k-1}{V} \leftarrow \text {M}([V_k.L], [V_{k-1}.L]), \tag {E.c}  \end {equation}
 where M stands for Motion estimation, and by definition, \(\overset {0\rightarrow (-1)}{V}=0\),
-</p><!-- l. 509 --><p class='indent'>   \begin {equation}  [\hat {V}_k.L] \leftarrow \text {P}(\overset {k\rightarrow k-1}{V}, [V_{k-1}.L]), \tag {E.d}  \end {equation}
+</p><!-- l. 528 --><p class='indent'>   \begin {equation}  [\hat {V}_k.L] \leftarrow \text {P}(\overset {k\rightarrow k-1}{V}, [V_{k-1}.L]), \tag {E.d}  \end {equation}
 where P stands for motion compensated Prediction,
-</p><!-- l. 515 --><p class='indent'>   \begin {equation}  [E_k.L] \leftarrow [V_k.L] - [\hat {V}_k.L], \tag {E.e}  \end {equation}
+</p><!-- l. 534 --><p class='indent'>   \begin {equation}  [E_k.L] \leftarrow [V_k.L] - [\hat {V}_k.L], \tag {E.e}  \end {equation}
 
-</p><!-- l. 520 --><p class='indent'>   \begin {equation}  \{[M_k],[S_k]\} \leftarrow \text {EW-min}([V_k.L], [E_k.L]) \tag {E.f}  \end {equation}
+</p><!-- l. 539 --><p class='indent'>   \begin {equation}  \{[M_k],[S_k]\} \leftarrow \text {EW-min}([V_k.L], [E_k.L]) \tag {E.f}  \end {equation}
 where \begin {equation}  [M_k]_{i,j}=\text {min}([V_k.L]_{i,j}, [E_k.L]_{i,j}),  \end {equation}
 and \([S_k]\) is a binary matrix defined by \begin {equation}  [S_k]_{i,j} = \left \{ \begin {array}{lll} 0 &amp; \text {if}~[V_k.L]_{i,j} &lt; [E_k.L]_{i,j} &amp; \text {(I-type coeff)} \\ 1 &amp; \text {otherwise} &amp; \text {(P-type coeff)}, \end {array} \right . \label {eq:matrix}  \end {equation}
 (notice that \([M_k]\), that contains the element-wise minimum of both matrices, is
 discarded)
-</p><!-- l. 541 --><p class='indent'>   \begin {equation}  [V_k.H] \leftarrow \text {DWT}^{-1}(0, V_k.H), \tag {b}  \end {equation}
+</p><!-- l. 560 --><p class='indent'>   \begin {equation}  [V_k.H] \leftarrow \text {DWT}^{-1}(0, V_k.H), \tag {b}  \end {equation}
 
-</p><!-- l. 546 --><p class='indent'>   \begin {equation}  [E_k.H] \leftarrow [V_k.H] - [\hat {V}_k.H], \tag {c}  \end {equation}
+</p><!-- l. 565 --><p class='indent'>   \begin {equation}  [E_k.H] \leftarrow [V_k.H] - [\hat {V}_k.H], \tag {c}  \end {equation}
 where, notice that \begin {equation}  [E_k.H]_{i,j} = \left \{ \begin {array}{ll} {[}V_k.H{]}_{i,j} &amp; \text {if}~{[}\hat {V}'_k.H{]}_{i,j} = 0~\text {(I-type coeff)} \\ {[}V_k.H{]}_{i,j} - [\hat {V}'_k.H]_{i,j} &amp; \text {otherwise}~\text {(P-type coeff)}, \end {array} \right .  \end {equation}
 
-</p><!-- l. 560 --><p class='indent'>   \begin {equation}  [\tilde {E}_k.H] \leftarrow \text {Q}([E_K.H]), \tag {d}  \end {equation}
+</p><!-- l. 579 --><p class='indent'>   \begin {equation}  [\tilde {E}_k.H] \leftarrow \text {Q}([E_K.H]), \tag {d}  \end {equation}
 
-</p><!-- l. 565 --><p class='indent'>   \begin {equation}  [\tilde {E}_k.H] \leftarrow \text {Q}^{-1}([\tilde {E}_K.H]), \tag {E.g}  \end {equation}
+</p><!-- l. 584 --><p class='indent'>   \begin {equation}  [\tilde {E}_k.H] \leftarrow \text {Q}^{-1}([\tilde {E}_K.H]), \tag {E.g}  \end {equation}
 
-</p><!-- l. 570 --><p class='indent'>   \begin {equation}  [\tilde {V}_k.H] \leftarrow [\tilde {E}_k.H] + [\hat {V}'_k.H], \tag {E.h}  \end {equation}
+</p><!-- l. 589 --><p class='indent'>   \begin {equation}  [\tilde {V}_k.H] \leftarrow [\tilde {E}_k.H] + [\hat {V}'_k.H], \tag {E.h}  \end {equation}
 and notice that if \([\hat {V}_k.H]=0\), then \([\tilde {V}_k.H] = [\tilde {E}_k.H]\),
-</p><!-- l. 577 --><p class='indent'>   \begin {equation}  Z^{-1}([\tilde {V}_k.H]) = [V_{k-1}.H], \tag {E.i}  \end {equation}
+</p><!-- l. 596 --><p class='indent'>   \begin {equation}  Z^{-1}([\tilde {V}_k.H]) = [V_{k-1}.H], \tag {E.i}  \end {equation}
 and by definition, \(Z^{-1}([V_{-1}.H]) = 0\),
-</p><!-- l. 583 --><p class='indent'>   \begin {equation}  [\hat {V}_k.H] \leftarrow \text {P}(\overset {k\rightarrow k-1}{V}, [\overset {\sim }{V}_{k-1}.H]), \tag {E.j}  \end {equation}
+</p><!-- l. 602 --><p class='indent'>   \begin {equation}  [\hat {V}_k.H] \leftarrow \text {P}(\overset {k\rightarrow k-1}{V}, [\overset {\sim }{V}_{k-1}.H]), \tag {E.j}  \end {equation}
 
-</p><!-- l. 593 --><p class='indent'>   \begin {equation}  [\hat {V}'_k.H]_{i,j} \leftarrow \left \{ \begin {array}{ll} {[}\hat {V}_k.H{]}_{i,j} &amp; \text {if}~{[}E_k.L{]}_{i,j} &lt; {[}V_k.L{]}_{i,j} \text {(P-type coeff)} \\ 0 &amp; \text {otherwise (I-type coeff)}, \end {array} \right . \tag {E.k}  \end {equation}
+</p><!-- l. 612 --><p class='indent'>   \begin {equation}  [\hat {V}'_k.H]_{i,j} \leftarrow \left \{ \begin {array}{ll} {[}\hat {V}_k.H{]}_{i,j} &amp; \text {if}~{[}E_k.L{]}_{i,j} &lt; {[}V_k.L{]}_{i,j} \text {(P-type coeff)} \\ 0 &amp; \text {otherwise (I-type coeff)}, \end {array} \right . \tag {E.k}  \end {equation}
 
-</p><!-- l. 598 --><p class='indent'>   \begin {equation}  (0, \tilde {E}_k.H) \leftarrow \text {DWT}([\tilde {E}_k.H]), \tag {f}  \end {equation}
+</p><!-- l. 617 --><p class='indent'>   \begin {equation}  (0, \tilde {E}_k.H) \leftarrow \text {DWT}([\tilde {E}_k.H]), \tag {f}  \end {equation}
 
-</p><!-- l. 603 --><p class='indent'>   \begin {equation}  \{V_k.L, \tilde {E}_k.H\} \leftarrow \text {E}(V_k.L, \tilde {E}_k.H), \tag {g}  \end {equation}
+</p><!-- l. 622 --><p class='indent'>   \begin {equation}  \{V_k.L, \tilde {E}_k.H\} \leftarrow \text {E}(V_k.L, \tilde {E}_k.H), \tag {g}  \end {equation}
 where E represents the entropy coding of both data sources, in two different
 code-streams,
-</p><!-- l. 610 --><p class='indent'>   \begin {equation}  (V_k.L, \tilde {E}_k.H) \leftarrow \text {E}^{-1}(\{V_k.L, \tilde {E}_k.H\}), \tag {h}  \end {equation}
+</p><!-- l. 629 --><p class='indent'>   \begin {equation}  (V_k.L, \tilde {E}_k.H) \leftarrow \text {E}^{-1}(\{V_k.L, \tilde {E}_k.H\}), \tag {h}  \end {equation}
 
-</p><!-- l. 615 --><p class='indent'>   \begin {equation}  [\tilde {E}_k.H] \leftarrow \text {DWT}^{-1}(0, \tilde {E}_k.H), \tag {i}  \end {equation}
-
-                                                                  
+</p><!-- l. 634 --><p class='indent'>   \begin {equation}  [\tilde {E}_k.H] \leftarrow \text {DWT}^{-1}(0, \tilde {E}_k.H), \tag {i}  \end {equation}
 
                                                                   
-</p><!-- l. 620 --><p class='indent'>   \begin {equation}  (0, \tilde {V}_k.H) \leftarrow \text {DWT}(0, [\tilde {V}_k.H]), \tag {j}  \end {equation}
-</p><!-- l. 622 --><p class='indent'>   and
-</p><!-- l. 627 --><p class='indent'>   \begin {equation}  \tilde {V}_k \leftarrow \text {DWT}^{-1}(V_k.L, \tilde {V}_k.H). \tag {k}  \end {equation}
-</p><!-- l. 629 --><p class='indent'>   The IPP... codec is inspired in Differential Pulse Code Moldulation. This
+
+                                                                  
+</p><!-- l. 639 --><p class='indent'>   \begin {equation}  (0, \tilde {V}_k.H) \leftarrow \text {DWT}(0, [\tilde {V}_k.H]), \tag {j}  \end {equation}
+</p><!-- l. 641 --><p class='indent'>   and
+</p><!-- l. 646 --><p class='indent'>   \begin {equation}  \tilde {V}_k \leftarrow \text {DWT}^{-1}(V_k.L, \tilde {V}_k.H). \tag {k}  \end {equation}
+</p><!-- l. 648 --><p class='indent'>   The IPP... codec is inspired in Differential Pulse Code Moldulation. This
 <a href='https://github.com/Sistemas-Multimedia/Sistemas-Multimedia.github.io/blob/master/milestones/12-IPP_coding/DPCM.ipynb'>notebook</a> shows how to implement a simple DPCM codec.
 </p>
-   <h4 class='subsectionHead' id='spatial-multiresolution'><span class='titlemark'>11.3   </span> <a id='x1-1700011.3'></a>Spatial multiresolution</h4>
-<!-- l. 635 --><p class='noindent'>As it can be seen in the previous section, in each IPP... iteration of the step encoder,
+   <h4 class='subsectionHead' id='spatial-multiresolution'><span class='titlemark'>12.3   </span> <a id='x1-1800012.3'></a>Spatial multiresolution</h4>
+<!-- l. 654 --><p class='noindent'>As it can be seen in the previous section, in each IPP... iteration of the step encoder,
 only the high-frequency information of the sequence of frames is decorrelated (\(H\)
 subbands) considering the information provided by the low-frequences (\(L\) subband),
 which are losslessly transmitted between the encoder and the decoder. Notice also
 that if the \(L\) data cannot be transmitted to the decoder, a drift error will occur
 because the matrix \(S_k\) will be different in the encoder and the decoder for the same
 frame \(k\).
-</p><!-- l. 644 --><p class='indent'>   Obviously (and unfortunately), the lossless transmission of the \(L\)’s bounds the
+</p><!-- l. 663 --><p class='indent'>   Obviously (and unfortunately), the lossless transmission of the \(L\)’s bounds the
 compression ratio that we will get. One solution is to perform more (than 1) levels at
 the DWT stage (see Eq. (a)) and to apply the IPP... MRVC step encoder by spatial
 resolutions, starting at the lowest, as the decoder will do at decompression time. If we
 represent the Spatial Resolution Level (SRL) with an superindex, being 0 the original
-SRL, we can express the operation of the codec described in the Fig. <a href='#x1-16001r11'>11<!-- tex4ht:ref: fig:codec  --></a> by
+SRL, we can express the operation of the codec described in the Fig. <a href='#x1-17001r11'>11<!-- tex4ht:ref: fig:codec  --></a> by
 \begin {equation}  \left \{ \begin {array}{l} \text {SE}(V^0_k) = \{V^0_k.L, \tilde {E}^0_k.H\} = \{V^1_k, \tilde {E}^0_k.H\} \\ \text {SD}(\{V^1_k, \tilde {E}^0_k.H\}) = \tilde {V}^0_k, \end {array} \right . \label {eq:codec_1l}  \end {equation}
 where \(\text {SE}(\cdot )\) represents to the operation of the IPP... step encoder and \(\text {SD}(\cdot )\) to the operation of
 the IPP... step decoder. As it can be seen, Eq. <span class='ecbx-1000'>??</span> is only valid when only one level of
 the DWT has been applied.
-</p><!-- l. 666 --><p class='indent'>   In general, for \(s\) levels of the DWT, we have that \begin {equation}  \left \{ \begin {array}{l} \text {SE}(V^{s-1}_k) = \{V^s_k, \tilde {E}^{s-1}_k.H\} \\ \text {SD}(\{V^s_k, \tilde {E}^{s-1}_k.H\}) = \tilde {V}^{s-1}_k, \end {array} \right . \label {eq:codec_sl}  \end {equation}
+</p><!-- l. 685 --><p class='indent'>   In general, for \(s\) levels of the DWT, we have that \begin {equation}  \left \{ \begin {array}{l} \text {SE}(V^{s-1}_k) = \{V^s_k, \tilde {E}^{s-1}_k.H\} \\ \text {SD}(\{V^s_k, \tilde {E}^{s-1}_k.H\}) = \tilde {V}^{s-1}_k, \end {array} \right . \label {eq:codec_sl}  \end {equation}
 where \(\tilde {V}^{s-1}\) is the \((s-1)\)-th SRL of the reconstructed sequence \(\tilde {V}\).
-</p><!-- l. 679 --><p class='indent'>   The next SRL (\(s-2\)), \(\tilde {V}^{s-2}\), is determined by \begin {equation}  \left \{ \begin {array}{l} \text {SE}(\tilde {V}^{s-2}_k) = \{\tilde {V}^{s-1}_k, \tilde {E}^{s-2}_k.H\} \\ \text {SD}(\{\tilde {V}^{s-1}_k, \tilde {E}^{s-2}_k.H\}) = \tilde {V}^{s-2}_k, \end {array} \right . \label {eq:codec_s1l}  \end {equation}
+</p><!-- l. 698 --><p class='indent'>   The next SRL (\(s-2\)), \(\tilde {V}^{s-2}\), is determined by \begin {equation}  \left \{ \begin {array}{l} \text {SE}(\tilde {V}^{s-2}_k) = \{\tilde {V}^{s-1}_k, \tilde {E}^{s-2}_k.H\} \\ \text {SD}(\{\tilde {V}^{s-1}_k, \tilde {E}^{s-2}_k.H\}) = \tilde {V}^{s-2}_k, \end {array} \right . \label {eq:codec_s1l}  \end {equation}
 and finally, for the highest SRL, we get \(\tilde {V}^0\) defined by Eq. <span class='ecbx-1000'>??</span>.
 </p>
    <figure class='figure'> 
@@ -528,19 +540,19 @@ and finally, for the highest SRL, we get \(\tilde {V}^0\) defined by Eq. <span 
                                                                   
 
                                                                   
-<!-- l. 703 --><p class='noindent' id='-the-ipp-mrvc-encoder-'><div style='text-align:center;'> <img src='graphics/encoder.svg' /> </div>  <a id='x1-17001r12'></a>
-<a id='x1-17002'></a>
+<!-- l. 722 --><p class='noindent' id='-the-ipp-mrvc-encoder-'><div style='text-align:center;'> <img src='graphics/encoder.svg' /> </div>  <a id='x1-18001r12'></a>
+<a id='x1-18002'></a>
 </p>
-<figcaption class='caption'><span class='id'>Figure 12: </span><span class='content'>The IPP... MRVC encoder.                                  </span></figcaption><!-- tex4ht:label?: x1-17001r11  -->
+<figcaption class='caption'><span class='id'>Figure 12: </span><span class='content'>The IPP... MRVC encoder.                                  </span></figcaption><!-- tex4ht:label?: x1-18001r12  -->
                                                                   
 
                                                                   
    </figure>
-<!-- l. 708 --><p class='indent'>   So, only the lowest SRL of \(\tilde {V}\), \(\tilde {V}^s\) is an III... pure sequence of small frames, losslessly
-encoded. This multiresolution (multistage) scheme has been described in the Fig. <a href='#x1-17001r12'>12<!-- tex4ht:ref: fig:encoder  --></a>.
+<!-- l. 727 --><p class='indent'>   So, only the lowest SRL of \(\tilde {V}\), \(\tilde {V}^s\) is an III... pure sequence of small frames, losslessly
+encoded. This multiresolution (multistage) scheme has been described in the Fig. <a href='#x1-18001r12'>12<!-- tex4ht:ref: fig:encoder  --></a>.
 The output of an IPP... encoder will be refered as “spatial-layers”, or simply as
 “S-layers”.
-</p><!-- l. 714 --><p class='indent'>   The Fig. <a href='#x1-17003r13'>13<!-- tex4ht:ref: fig:decoder  --></a> shows the decoder. It inputs the collection of subbands generated by
+</p><!-- l. 733 --><p class='indent'>   The Fig. <a href='#x1-18003r13'>13<!-- tex4ht:ref: fig:decoder  --></a> shows the decoder. It inputs the collection of subbands generated by
 the encoder and for each one, a video with a different spatial resolution is
 obtained.
 </p>
@@ -552,34 +564,34 @@ obtained.
                                                                   
 
                                                                   
-<!-- l. 720 --><p class='noindent' id='-the-ipp-mrvc-decoder-'><div style='text-align:center;'> <img src='graphics/decoder.svg' /> </div>  <a id='x1-17003r13'></a>
-<a id='x1-17004'></a>
+<!-- l. 739 --><p class='noindent' id='-the-ipp-mrvc-decoder-'><div style='text-align:center;'> <img src='graphics/decoder.svg' /> </div>  <a id='x1-18003r13'></a>
+<a id='x1-18004'></a>
 </p>
-<figcaption class='caption'><span class='id'>Figure 13: </span><span class='content'>The IPP... MRVC decoder.                                  </span></figcaption><!-- tex4ht:label?: x1-17003r11  -->
+<figcaption class='caption'><span class='id'>Figure 13: </span><span class='content'>The IPP... MRVC decoder.                                  </span></figcaption><!-- tex4ht:label?: x1-18003r12  -->
                                                                   
 
                                                                   
    </figure>
-   <h4 class='subsectionHead' id='sq-layers-progression-next-milestone'><span class='titlemark'>11.4   </span> <a id='x1-1800011.4'></a>SQ (layers) progression (next milestone?)</h4>
-<!-- l. 726 --><p class='noindent'>The logical order of the S-layers in the code-stream is the one that allows, when the
+   <h4 class='subsectionHead' id='sq-layers-progression'><span class='titlemark'>12.4   </span> <a id='x1-1900012.4'></a>SQ (layers) progression</h4>
+<!-- l. 745 --><p class='noindent'>The logical order of the S-layers in the code-stream is the one that allows, when the
 code-stream is decoded sequentially, the progressive increase of the spatial resolution
 of the video. For example, if \(s\) is the number of levels of the DWT, the generated
 code-stream has \((s+1)\) S-layers \begin {equation*}  \{V^s,\tilde {E}^{s-1}.H,\tilde {E}^{s-2}.H,\cdots ,\tilde {E}^0.H\},  \end {equation*}
 which are able to generate \((s+1)\) progressive reconstructions \begin {equation*}  \{V^s,\tilde {V}^{s-1},\tilde {V}^{s-2},\cdots ,\tilde {V}^0\}.  \end {equation*}
-</p><!-- l. 740 --><p class='indent'>   Moreover, Quality (Q-progression) scalability in each SRL can be also achieved in
+</p><!-- l. 759 --><p class='indent'>   Moreover, Quality (Q-progression) scalability in each SRL can be also achieved in
 the high-frequency textures if a quality-scalable image codec such as JPEG2000 <span class='cite'>[<a href='#Xtaubman2002jpeg2000'>2</a>]</span>
 replaces the PNG compressor, generating a number \(q\) of quality-layers (“Q-layers”) by
 each motion compensated high-frequency subband. A SQ-progression is defined
 considering both forms of scalability (spatial and quality), with a higher number of
 layers. For example, if \(s=3\) (2 IPP...-type iterations) and \(q=2\), the progression of layers would
 be \begin {equation*}  \{V^s[1],V^s[0],\tilde {E}^{s-1}.H[1],\tilde {E}^{s-1}.H[0],\tilde {E}^{s-2}.H[1],\tilde {E}^{s-2}.H[0],\cdots ,\tilde {E}^0.H[1],\tilde {E}^0.H[0]\}.  \end {equation*}
-</p><!-- l. 772 --><p class='indent'>   The use of quality scalability boosts the possibilities in real-time streaming scenarios
+</p><!-- l. 791 --><p class='indent'>   The use of quality scalability boosts the possibilities in real-time streaming scenarios
 where the transmission bit-rate can be variable (sending more or less Q-layers of a given
 spatial resolution depending on the bit-rate). Notice that the SQ-progression is free of
-drift-error.<span class='footnote-mark'><a href='#fn2x0' id='fn2x0-bk'><sup class='textsuperscript'>2</sup></a></span><a id='x1-18001f2'></a>
-</p><!-- l. 790 --><p class='noindent'>
+drift-error.<span class='footnote-mark'><a href='#fn2x0' id='fn2x0-bk'><sup class='textsuperscript'>2</sup></a></span><a id='x1-19001f2'></a>
+</p><!-- l. 809 --><p class='noindent'>
 </p>
-   <h3 class='sectionHead' id='linear-frame-interpolation-using-blockbased-motion-compensation'><span class='titlemark'>12   </span> <a id='x1-1900012'></a>Linear frame interpolation using block-based motion compensation</h3>
+   <h3 class='sectionHead' id='linear-frame-interpolation-using-blockbased-motion-compensation'><span class='titlemark'>13   </span> <a id='x1-2000013'></a>Linear frame interpolation using block-based motion compensation</h3>
    <figure class='figure'> 
 
                                                                   
@@ -588,16 +600,16 @@ drift-error.<span class='footnote-mark'><a href='#fn2x0' id='fn2x0-bk'><sup clas
                                                                   
 
                                                                   
-<!-- l. 793 --><p class='noindent' id='-frame-interpolation-'><div style='text-align:center;'> <img src='graphics/frame_interpolation.svg' /> </div>  <a id='x1-19001r14'></a>
-<a id='x1-19002'></a>
+<!-- l. 812 --><p class='noindent' id='-frame-interpolation-'><div style='text-align:center;'> <img src='graphics/frame_interpolation.svg' /> </div>  <a id='x1-20001r14'></a>
+<a id='x1-20002'></a>
 </p>
 <figcaption class='caption'><span class='id'>Figure 14: </span><span class='content'>Frame interpolation.
-</span></figcaption><!-- tex4ht:label?: x1-19001r12  -->
+</span></figcaption><!-- tex4ht:label?: x1-20001r13  -->
                                                                   
 
                                                                   
    </figure>
-   <h4 class='likesubsectionHead' id='input'><a id='x1-2000012'></a>Input</h4>
+   <h4 class='likesubsectionHead' id='input'><a id='x1-2100013'></a>Input</h4>
      <ul class='itemize1'>
      <li class='itemize'>\(R\): square search area, in pixels.
      </li>
@@ -609,9 +621,9 @@ drift-error.<span class='footnote-mark'><a href='#fn2x0' id='fn2x0-bk'><sup clas
      \(X\times Y\).
      </li>
      <li class='itemize'>\(A\): \(\frac {1}{2^A}\) subpixel accuracy.</li></ul>
-<!-- l. 814 --><p class='noindent'>
+<!-- l. 833 --><p class='noindent'>
 </p>
-   <h4 class='likesubsectionHead' id='output'><a id='x1-2100012'></a>Output</h4>
+   <h4 class='likesubsectionHead' id='output'><a id='x1-2200013'></a>Output</h4>
      <ul class='itemize1'>
      <li class='itemize'>\(\hat {s}_j\): a prediction for frame \(s_j\).
      </li>
@@ -619,106 +631,106 @@ drift-error.<span class='footnote-mark'><a href='#fn2x0' id='fn2x0-bk'><sup clas
      </li>
      <li class='itemize'>\(e\):  a  matrix  with  \(\lceil X/B\rceil \times \lceil Y/B\rceil \)  bidirectional  Root  Mean  Square  matching  Wrrors
      (RMSE).</li></ul>
-<!-- l. 827 --><p class='noindent'>
+<!-- l. 846 --><p class='noindent'>
 </p>
-   <h4 class='likesubsectionHead' id='algorithm'><a id='x1-2200012'></a>Algorithm</h4>
-<!-- l. 828 --><p class='noindent'>
+   <h4 class='likesubsectionHead' id='algorithm'><a id='x1-2300013'></a>Algorithm</h4>
+<!-- l. 847 --><p class='noindent'>
                                                                   
 
                                                                   
      </p><ol class='enumerate1'>
-<li class='enumerate' id='x1-22002x1'>
-     <!-- l. 832 --><p class='noindent'>Compute the DWT\(^l\), where \(l=\lfloor \log _2(R)\rfloor -1\) levels, of the predicted frame \(s_j\) and the two reference
+<li class='enumerate' id='x1-23002x1'>
+     <!-- l. 851 --><p class='noindent'>Compute the DWT\(^l\), where \(l=\lfloor \log _2(R)\rfloor -1\) levels, of the predicted frame \(s_j\) and the two reference
      frames \(s_i\) and \(s_k\). </p>
      <div class='center'>
-<!-- l. 835 --><p class='noindent'>
-</p><!-- l. 836 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/frame_interpolation_step_1.svg' /> </div>  </p></div>
+<!-- l. 854 --><p class='noindent'>
+</p><!-- l. 855 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/frame_interpolation_step_1.svg' /> </div>  </p></div>
      </li>
-<li class='enumerate' id='x1-22004x2'>
-     <!-- l. 840 --><p class='noindent'>\(LL^l(m)\leftarrow 0\), or any other precomputed values (for example, from a previous ME in
+<li class='enumerate' id='x1-23004x2'>
+     <!-- l. 859 --><p class='noindent'>\(LL^l(m)\leftarrow 0\), or any other precomputed values (for example, from a previous ME in
      neighbor frames). </p>
      <div class='center'>
-<!-- l. 842 --><p class='noindent'>
-</p><!-- l. 843 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/frame_interpolation_step_2.svg' /> </div>  </p></div>
+<!-- l. 861 --><p class='noindent'>
+</p><!-- l. 862 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/frame_interpolation_step_2.svg' /> </div>  </p></div>
      </li>
-<li class='enumerate' id='x1-22006x3'>
-     <!-- l. 847 --><p class='noindent'>Divide the subband \(LL^l(s_j)\) into blocks of size \(B\times B\) pixels, and \(\pm 1\)-spiral-search them in the
+<li class='enumerate' id='x1-23006x3'>
+     <!-- l. 866 --><p class='noindent'>Divide the subband \(LL^l(s_j)\) into blocks of size \(B\times B\) pixels, and \(\pm 1\)-spiral-search them in the
      subbands \(LL^l(s_i)\) and \(LL^l(s_k)\), calculating a low-resolution \(LL^l(m)=\{LL^l(\overleftarrow {m}), LL^l(\overrightarrow {m})\}\) bi-directional motion vector field.
      </p>
      <div class='center'>
-<!-- l. 852 --><p class='noindent'>
-</p><!-- l. 853 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/frame_interpolation_step_3A.svg' /> </div>  <div style='text-align:center;'> <img src='graphics/frame_interpolation_step_3A_bis.svg' /> </div>  </p></div>
+<!-- l. 871 --><p class='noindent'>
+</p><!-- l. 872 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/frame_interpolation_step_3A.svg' /> </div>  <div style='text-align:center;'> <img src='graphics/frame_interpolation_step_3A_bis.svg' /> </div>  </p></div>
      </li>
-<li class='enumerate' id='x1-22008x4'>
-     <!-- l. 858 --><p class='noindent'>While \(l&gt;0\):
-     </p><!-- l. 860 --><p class='noindent'>
+<li class='enumerate' id='x1-23008x4'>
+     <!-- l. 877 --><p class='noindent'>While \(l&gt;0\):
+     </p><!-- l. 879 --><p class='noindent'>
          </p><ol class='enumerate2'>
-<li class='enumerate' id='x1-22010x1'>
-         <!-- l. 863 --><p class='noindent'>Synthesize \(LL^{l-1}(m)\), \(LL^{l-1}(s_j)\), \(LL^{l-1}(s_i)\) and \(LL^{l-1}(s_k)\), by computing the 1-level DWT\(^{-1}\). </p>
+<li class='enumerate' id='x1-23010x1'>
+         <!-- l. 882 --><p class='noindent'>Synthesize \(LL^{l-1}(m)\), \(LL^{l-1}(s_j)\), \(LL^{l-1}(s_i)\) and \(LL^{l-1}(s_k)\), by computing the 1-level DWT\(^{-1}\). </p>
          <div class='center'>
-<!-- l. 865 --><p class='noindent'>
-</p><!-- l. 866 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/frame_interpolation_step_4A.svg' /> </div>  <div style='text-align:center;'> <img src='graphics/frame_interpolation_step_4A_bis.svg' /> </div>  </p></div>
+<!-- l. 884 --><p class='noindent'>
+</p><!-- l. 885 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/frame_interpolation_step_4A.svg' /> </div>  <div style='text-align:center;'> <img src='graphics/frame_interpolation_step_4A_bis.svg' /> </div>  </p></div>
                                                                   
 
                                                                   
          </li>
-<li class='enumerate' id='x1-22012x2'>
-         <!-- l. 871 --><p class='noindent'>\(LL^{l-1}(M)\leftarrow LL^{l-1}(M)\times 2\). </p>
+<li class='enumerate' id='x1-23012x2'>
+         <!-- l. 890 --><p class='noindent'>\(LL^{l-1}(M)\leftarrow LL^{l-1}(M)\times 2\). </p>
          <div class='center'>
-<!-- l. 872 --><p class='noindent'>
-</p><!-- l. 873 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/frame_interpolation_step_4B.svg' /> </div>  </p></div>
+<!-- l. 891 --><p class='noindent'>
+</p><!-- l. 892 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/frame_interpolation_step_4B.svg' /> </div>  </p></div>
          </li>
-<li class='enumerate' id='x1-22014x3'>
-         <!-- l. 877 --><p class='noindent'>Refine \(LL^{l-1}(m)\) using \(\pm 1\)-spiral-search. </p>
+<li class='enumerate' id='x1-23014x3'>
+         <!-- l. 896 --><p class='noindent'>Refine \(LL^{l-1}(m)\) using \(\pm 1\)-spiral-search. </p>
          <div class='center'>
-<!-- l. 878 --><p class='noindent'>
-</p><!-- l. 879 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/frame_interpolation_step_4C.svg' /> </div>  </p></div>
+<!-- l. 897 --><p class='noindent'>
+</p><!-- l. 898 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/frame_interpolation_step_4C.svg' /> </div>  </p></div>
          </li>
-<li class='enumerate' id='x1-22016x4'>\(l\leftarrow l-1\). (When \(l=0\), the motion vectors field \(m\) has the structure:)
+<li class='enumerate' id='x1-23016x4'>\(l\leftarrow l-1\). (When \(l=0\), the motion vectors field \(m\) has the structure:)
 </li></ol>
      <div class='center'>
-<!-- l. 888 --><p class='noindent'>
-</p><!-- l. 889 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/motion_vectors.svg' /> </div>  </p></div>
+<!-- l. 907 --><p class='noindent'>
+</p><!-- l. 908 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/motion_vectors.svg' /> </div>  </p></div>
      </li>
-<li class='enumerate' id='x1-22018x5'>
-     <!-- l. 893 --><p class='noindent'>While \(l&lt;A\) (in the first iteration, \(l=0\), and \(LL^0(M):=M\)):
-     </p><!-- l. 895 --><p class='noindent'>
+<li class='enumerate' id='x1-23018x5'>
+     <!-- l. 912 --><p class='noindent'>While \(l&lt;A\) (in the first iteration, \(l=0\), and \(LL^0(M):=M\)):
+     </p><!-- l. 914 --><p class='noindent'>
          </p><ol class='enumerate2'>
-<li class='enumerate' id='x1-22020x1'>\(l\leftarrow l+1\).
+<li class='enumerate' id='x1-23020x1'>\(l\leftarrow l+1\).
          </li>
-<li class='enumerate' id='x1-22022x2'>
-         <!-- l. 900 --><p class='noindent'>Synthesize \(LL^{-l}(s_j)\), \(LL^{-l}(s_i)\) and \(LL^{-l}(s_k)\), computing the 1-level DWT\(^{-1}\) (high-frequency subbands
+<li class='enumerate' id='x1-23022x2'>
+         <!-- l. 919 --><p class='noindent'>Synthesize \(LL^{-l}(s_j)\), \(LL^{-l}(s_i)\) and \(LL^{-l}(s_k)\), computing the 1-level DWT\(^{-1}\) (high-frequency subbands
          are \(0\)). This performs a zoom-in in these frames using \(1/2\)-subpixel accuracy.
          </p>
                                                                   
 
                                                                   
          <div class='center'>
-<!-- l. 904 --><p class='noindent'>
-</p><!-- l. 905 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/frame_interpolation_step_5B.svg' /> </div>  </p></div>
+<!-- l. 923 --><p class='noindent'>
+</p><!-- l. 924 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/frame_interpolation_step_5B.svg' /> </div>  </p></div>
          </li>
-<li class='enumerate' id='x1-22024x3'>
-         <!-- l. 909 --><p class='noindent'>\(m\leftarrow m\times 2\).
+<li class='enumerate' id='x1-23024x3'>
+         <!-- l. 928 --><p class='noindent'>\(m\leftarrow m\times 2\).
 </p>
          <div class='center'>
-<!-- l. 911 --><p class='noindent'>
-</p><!-- l. 912 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/motion_vectors_by_2.svg' /> </div>  </p></div>
+<!-- l. 930 --><p class='noindent'>
+</p><!-- l. 931 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/motion_vectors_by_2.svg' /> </div>  </p></div>
          </li>
-<li class='enumerate' id='x1-22026x4'>\(B\leftarrow B\times 2\).
+<li class='enumerate' id='x1-23026x4'>\(B\leftarrow B\times 2\).
          </li>
-<li class='enumerate' id='x1-22028x5'>
-         <!-- l. 919 --><p class='noindent'>Divide the subband \(LL^{-l}(s_j)\) into blocks of \(B\times B\) pixels and \(\pm 1\)-spiral-search them into the
+<li class='enumerate' id='x1-23028x5'>
+         <!-- l. 938 --><p class='noindent'>Divide the subband \(LL^{-l}(s_j)\) into blocks of \(B\times B\) pixels and \(\pm 1\)-spiral-search them into the
          subbands \(LL^{-l}(s_i)\) and \(LL^{-l}(s_k)\), calculating a \(1/2^l\) sub-pixel accuracy \(m\) bi-directional motion
          vector field. </p>
          <div class='center'>
-<!-- l. 923 --><p class='noindent'>
-</p><!-- l. 924 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/motion_vectors_definitive.svg' /> </div>  </p></div>
+<!-- l. 942 --><p class='noindent'>
+</p><!-- l. 943 --><p class='noindent'><div style='text-align:center;'> <img src='graphics/motion_vectors_definitive.svg' /> </div>  </p></div>
          </li>
-<li class='enumerate' id='x1-22030x6'>Frame prediction. For each block \(b\):
+<li class='enumerate' id='x1-23030x6'>Frame prediction. For each block \(b\):
          </li>
-<li class='enumerate' id='x1-22032x7'>
-         <!-- l. 931 --><p class='noindent'>Compute \begin {equation}  \hat {b}\leftarrow \frac {b_i\big (\overleftarrow {e}_{\text {max}}-\overleftarrow {e}(b)\big ) + b_k\big (\overrightarrow {e}_{\text {max}}-\overrightarrow {e}(b)\big )}{\big (\overleftarrow {e}_{\text {max}}-\overleftarrow {e}(b)\big ) + \big (\overrightarrow {e}_{\text {max}}-\overrightarrow {e}(b)\big )},  \end {equation}
-         </p><!-- l. 936 --><p class='noindent'>where \(\overleftarrow {e}(b)\) is the (minimum) distortion of the best backward matching for
+<li class='enumerate' id='x1-23032x7'>
+         <!-- l. 950 --><p class='noindent'>Compute \begin {equation}  \hat {b}\leftarrow \frac {b_i\big (\overleftarrow {e}_{\text {max}}-\overleftarrow {e}(b)\big ) + b_k\big (\overrightarrow {e}_{\text {max}}-\overrightarrow {e}(b)\big )}{\big (\overleftarrow {e}_{\text {max}}-\overleftarrow {e}(b)\big ) + \big (\overrightarrow {e}_{\text {max}}-\overrightarrow {e}(b)\big )},  \end {equation}
+         </p><!-- l. 955 --><p class='noindent'>where \(\overleftarrow {e}(b)\) is the (minimum) distortion of the best backward matching for
          block \(b\), \(\overrightarrow {e}(b)\) the (minimum) distortion of the best forward matching for block \(b\), \(\overleftarrow {e}_{\text {max}}=\overrightarrow {e}_{\text {max}}\)
          are the backward and forward maximum matching distortions, \(b_i\) is the
          (backward) block found (as the most similar to \(b\)) in frame \(s_i\) and \(b_k\) is the
@@ -730,9 +742,9 @@ drift-error.<span class='footnote-mark'><a href='#fn2x0' id='fn2x0-bk'><sup clas
          and if \(\overleftarrow {e}(b)=0\), \begin {equation}  \hat {b} = b_k,  \end {equation}
          and viceversa.</p></li></ol>
      </li></ol>
-<!-- l. 957 --><p class='noindent'>
+<!-- l. 976 --><p class='noindent'>
 </p>
-   <h3 class='sectionHead' id='a-problem'><span class='titlemark'>13   </span> <a id='x1-2300013'></a>A problem</h3>
+   <h3 class='sectionHead' id='a-problem'><span class='titlemark'>14   </span> <a id='x1-2400014'></a>A problem</h3>
    <figure class='figure'> 
 
                                                                   
@@ -741,18 +753,18 @@ drift-error.<span class='footnote-mark'><a href='#fn2x0' id='fn2x0-bk'><sup clas
                                                                   
 
                                                                   
-<!-- l. 960 --><p class='noindent' id='-basic-encoding-problem-'><div style='text-align:center;'> <img src='graphics/problem.svg' /> </div>  <a id='x1-23001r15'></a>
-<a id='x1-23002'></a>
+<!-- l. 979 --><p class='noindent' id='-basic-encoding-problem-'><div style='text-align:center;'> <img src='graphics/problem.svg' /> </div>  <a id='x1-24001r15'></a>
+<a id='x1-24002'></a>
 </p>
-<figcaption class='caption'><span class='id'>Figure 15: </span><span class='content'>Basic encoding problem.                                    </span></figcaption><!-- tex4ht:label?: x1-23001r13  -->
+<figcaption class='caption'><span class='id'>Figure 15: </span><span class='content'>Basic encoding problem.                                    </span></figcaption><!-- tex4ht:label?: x1-24001r14  -->
                                                                   
 
                                                                   
    </figure>
-<!-- l. 965 --><p class='indent'>   Using the encoding system described in the Figure <a href='#x1-23001r15'>15<!-- tex4ht:ref: fig:problem  --></a>, and defined by
+<!-- l. 984 --><p class='indent'>   Using the encoding system described in the Figure <a href='#x1-24001r15'>15<!-- tex4ht:ref: fig:problem  --></a>, and defined by
 \begin {equation}  \left \{\\begin {array}{l} \tilde {\mathbf R} = \text {Q}_{\mathbf R}({\mathbf R}) \\ \tilde {\mathbf E} = \text {Q}_{\mathbf E}\big ({\mathbf P}-\overset {{\mathbf R}\rightarrow {\mathbf P}}{\mathbf M}(\tilde {\mathbf R})\big ) \end {array} \right . \label {eq:forward}  \end {equation}
 and \begin {equation}  \begin {array}{l} \tilde {\mathbf P} = \tilde {\mathbf E} + \overset {{\mathbf R}\rightarrow {\mathbf P}}{\mathbf M}(\tilde {\mathbf R}), \end {array} \label {eq:backward}  \end {equation}
-</p><!-- l. 983 --><p class='indent'>   find \(\text {Q}_{\mathbf {R}}\) and \(\text {Q}_{\mathbf {E}}\) that minimize in the RD domain (the RD curve of) \begin {equation}  \text {MSE}(\{\mathbf {R},\mathbf {P}\},\{\hat {\mathbf {R}},\hat {\mathbf {P}}\}) = \frac {\text {MSE}({\mathbf R},\hat {\mathbf R}) + \text {MSE}({\mathbf P},\hat {\mathbf P})}{2},  \end {equation}
+</p><!-- l. 1002 --><p class='indent'>   find \(\text {Q}_{\mathbf {R}}\) and \(\text {Q}_{\mathbf {E}}\) that minimize in the RD domain (the RD curve of) \begin {equation}  \text {MSE}(\{\mathbf {R},\mathbf {P}\},\{\hat {\mathbf {R}},\hat {\mathbf {P}}\}) = \frac {\text {MSE}({\mathbf R},\hat {\mathbf R}) + \text {MSE}({\mathbf P},\hat {\mathbf P})}{2},  \end {equation}
 set that \begin {equation}  \text {MSE}({\mathbf R},\tilde {\mathbf R}) = \text {MSE}({\mathbf P},\tilde {\mathbf P}). \label {eq:constant_quality}  \end {equation}
 Equation <span class='ecbx-1000'>??</span> indicates that all the decoded frames should have the same distortion
 (from a human perception point of view). Notice that the transform defined by the
@@ -760,7 +772,7 @@ Equations  <span class='ecbx-1000'>??</span> and <span class='ecbx-1000'>??</sp
 independent. It can be seen that \(\text {Q}_{\mathbf R}\) affects to the selection of \(\text {Q}_{\mathbf E}\), because \(\tilde {\mathbf R}\) is used as
 reference for finding \(\mathbf E\).
 </p>
-   <h3 class='sectionHead' id='references'><span class='titlemark'>14   </span> <a id='x1-2400014'></a>References</h3>
+   <h3 class='sectionHead' id='references'><span class='titlemark'>15   </span> <a id='x1-2500015'></a>References</h3>
    <div class='thebibliography'>
    <p class='bibitem'><span class='biblabel'>
  [1]<span class='bibsp'>   </span></span><a id='Xle1991mpeg'></a>D. Le Gall.   <a href='https://dl.acm.org/doi/pdf/10.1145/103085.103090'>MPEG: A Video Compression Standard for Multimedia
@@ -771,8 +783,8 @@ reference for finding \(\mathbf E\).
    </span><span class='ecti-1000'>Fundamentals, Standards and Practice</span></a>. Kluwer Academic Publishers, 2002.
 </p>
    </div>
-   <div class='footnotes'><!-- l. 462 --><p class='indent'>     <span class='footnote-mark'><a href='#fn1x0-bk' id='fn1x0'><sup class='textsuperscript'>1</sup></a></span><span class='ecrm-0800'>A P-type frame except for the second one, that always has a I-frame as reference.</span></p>
-<!-- l. 779 --><p class='indent'>     <span class='footnote-mark'><a href='#fn2x0-bk' id='fn2x0'><sup class='textsuperscript'>2</sup></a></span><span class='ecrm-0800'>Other progressions such as the QS-progression should generate drift because the decoder at
+   <div class='footnotes'><!-- l. 481 --><p class='indent'>     <span class='footnote-mark'><a href='#fn1x0-bk' id='fn1x0'><sup class='textsuperscript'>1</sup></a></span><span class='ecrm-0800'>A P-type frame except for the second one, that always has a I-frame as reference.</span></p>
+<!-- l. 798 --><p class='indent'>     <span class='footnote-mark'><a href='#fn2x0-bk' id='fn2x0'><sup class='textsuperscript'>2</sup></a></span><span class='ecrm-0800'>Other progressions such as the QS-progression should generate drift because the decoder at
 </span><span class='ecrm-0800'>some truncation points of the code-stream would use a low-frequency information with a different
 </span><span class='ecrm-0800'>quality than the encoderd used.</span></p>                                                                                </div>
  

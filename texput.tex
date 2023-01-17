@@ -6,6 +6,20 @@
 \maketitle
 \tableofcontents
 
+\section{Motion Mompensation (MC)}
+
+MC is the process of generating the residue frames through
+substracting to the predicted (anchor) frame a prediction frame
+generated with one or more motion field to project one or more
+reference frames.
+
+Most of video coding standards use block-based MC techniques.
+
+%\section{Mesh-based MC}
+
+If blocks can be deformed when they are projected (to create the
+prediction frame) we are using a mesh-based MC.
+
 \section{Hybrid coding alternatives}
 \begin{itemize}
 \item
@@ -727,7 +741,7 @@ different spatial resolution is obtained.
   \label{fig:decoder}
 \end{figure}
 
-\subsection{SQ (layers) progression (next milestone?)}
+\subsection{SQ (layers) progression}
 The logical order of the S-layers in the code-stream is the one that
 allows, when the code-stream is decoded sequentially, the progressive
 increase of the spatial resolution of the video. For example, if
