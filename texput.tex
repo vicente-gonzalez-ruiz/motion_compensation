@@ -91,7 +91,10 @@ Frames can be:
 
 In the intra coding mode, all frames are encoded as independent images
 (no MC has been used at all, and therefore, all blocks in the frames
-are I-type). Intra-coded frames are also called keyframes.
+are I-type). Intra-coded frames are also called keyframes. See the
+notebook
+\href{https://github.com/vicente-gonzalez-ruiz/motion_compensation/blob/master/III_compression.ipynb}{
+III... video compression}.
 
 Advantages:
 \begin{itemize}
@@ -112,7 +115,9 @@ Mainly used in video edition.
 
 In the low-delay coding mode (see Fig.~\ref{fig:CBR}), only the first
 frame is intra-coded and the rest, prediction-coded using
-unidirectional motion compensation.
+unidirectional motion compensation. See the notebook
+\href{https://github.com/vicente-gonzalez-ruiz/motion_compensation/blob/master/introducing_IPPP.ipynb}{Introducing
+the Low-delay (IPP...) Mode}.
 % In a P-frame, blocks can be (depending on RDO) of:
 % \begin{enumerate}
 % \item I-type, if the block is intra-coded.
