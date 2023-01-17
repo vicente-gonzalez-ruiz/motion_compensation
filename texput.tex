@@ -1,8 +1,37 @@
+% Emacs, this is -*-latex-*-
+
 \title{Motion Compensation}
 %\title{Hybrid Video Coding}
 \author{Vicente González Ruiz}
 \maketitle
 \tableofcontents
+
+\section{Hybrid coding alternatives}
+\begin{itemize}
+\item
+  \textbf{t+2d}: The sequence of images is decorrelated first along the
+  time (t) and the residue images are compressed, exploiting the
+  remaining spatial (2d) redundancy. Examples: MPEG* and H.26* codecs
+  (except H.264/SVC).
+\item
+  \textbf{2d+t}: The spatial (2d) redudancy is explited first (using
+  typically the DWT) and after that, the coefficients are decorrelated
+  along the time (t). For now, this has only been an experimental setup
+  because most DWT transformed domains are not invariant to the
+  displacement, and therefore, ME/MC can not be directly applied.
+\item
+  \textbf{2d+t+2d}: The fist step creates a Laplacian Pyramid (2d),
+  which is invariant to the displacement. Next, each level of the
+  pyramid is decorrelated along the time (t) and finally, the
+  remaining spatial redundancy is removed (2d). The
+  Fig~\ref{fig:H264-S-SVC} show an example for H.264/SVC.
+\end{itemize}
+
+\begin{figure}
+  \svg{graphics/H264-S-SVC}{500}
+  \caption{SVC scheme in H.264.}
+  \label{fig:H264-S-SVC}
+\end{figure}
 
 \section{Decision mode and RDO}
 %{{{ 
@@ -36,7 +65,7 @@ block, the decision mode (run only by the compressor) determines the
 \begin{figure}
   \centering
   \myfig{graphics/macroblocks}{6cm}{600}
-  \caption{Types of macro-blocks.}
+  \caption{Types of macro-blocks}.
   \label{fig:macroblocks}
 \end{figure}
 
@@ -60,9 +89,9 @@ Frames can be:
 
 \section{Intra coding (III...)}
 
-In the intra coding mode, all frames are encoded as independent
-images (no MC has been used at all, and therefore, all blocks in the
-frames are I-type). Intra-coded frames are also called keyframes.
+In the intra coding mode, all frames are encoded as independent images
+(no MC has been used at all, and therefore, all blocks in the frames
+are I-type). Intra-coded frames are also called keyframes.
 
 Advantages:
 \begin{itemize}
@@ -81,9 +110,9 @@ Mainly used in video edition.
 
 \section{Low-delay coding (IPP...)}
 
-In the low-delay coding mode, only the first frame is intra-coded and
-the rest, prediction-coded using unidirectional motion
-compensation.
+In the low-delay coding mode (see Fig.~\ref{fig:CBR}), only the first
+frame is intra-coded and the rest, prediction-coded using
+unidirectional motion compensation.
 % In a P-frame, blocks can be (depending on RDO) of:
 % \begin{enumerate}
 % \item I-type, if the block is intra-coded.
@@ -109,7 +138,15 @@ Mainly used in video surveillance.
 \section{``Random''-access mode (IBPB...)}
 \label{sec:random}
 
-In the random-access mode it is allowed to use B-type frames.
+\begin{figure}
+  \centering
+      \svg{graphics/GOPs}{500}
+  \caption{Th random-access mode.}
+  \label{fig:random_mode}
+\end{figure}
+
+In the random-access mode (see Fig.~\ref{fig:random_mode}) it is
+allowed to use B-type frames.
 %, some or all the residue frames can be P or
 %B-type. In a B-type frame, blocks can be (depending on RDO) of B-type,
 %which means that at leas two blocks, one of them in a past frame and
@@ -354,40 +391,12 @@ as reference and avoid the drift error.
 \item
   The temporal redundancy is exploited by blocks of images called GOPs.
   This means that a GOP can be decoded independently of the rest of
-  GOPs (see the Fig.~\ref{fig:GOPs}).
+  GOPs (see the Fig.~\ref{fig:ramdom-mode}).
 \end{itemize}
 
 \begin{figure}
-  \svg{graphics/GOPs}{500}
   \caption{A GOP.}
   \label{fig:GOPs}
-\end{figure}
-
-\section{Hybrid coding alternatives}
-\begin{itemize}
-\item
-  \textbf{t+2d}: The sequence of images is decorrelated first along the
-  time (t) and the residue images are compressed, exploiting the
-  remaining spatial (2d) redundancy. Examples: MPEG* and H.26* codecs
-  (except H.264/SVC).
-\item
-  \textbf{2d+t}: The spatial (2d) redudancy is explited first (using
-  typically the DWT) and after that, the coefficients are decorrelated
-  along the time (t). For now, this has only been an experimental setup
-  because most DWT transformed domains are not invariant to the
-  displacement, and therefore, ME/MC can not be directly applied.
-\item
-  \textbf{2d+t+2d}: The fist step creates a Laplacian Pyramid (2d),
-  which is invariant to the displacement. Next, each level of the
-  pyramid is decorrelated along the time (t) and finally, the
-  remaining spatial redundancy is removed (2d). The
-  Fig~\ref{fig:H264-S-SVC} show an example for H.264/SVC.
-\end{itemize}
-
-\begin{figure}
-  \svg{graphics/H264-S-SVC}{500}
-  \caption{SVC scheme in H.264.}
-  \label{fig:H264-S-SVC}
 \end{figure}
 
 \section{Deblocking filtering}
@@ -434,7 +443,7 @@ as reference and avoid the drift error.
   \begin{figure}
     \svg{graphics/CBR}{500}
     \caption{Example of constant bit-allocation.}
-    \label{CBR}
+    \label{fig:CBR}
   \end{figure}
 \end{itemize}
 
@@ -823,12 +832,16 @@ drift-error.\footnote{Other progressions such as the QS-progression
   Compute the DWT$^l$, where $l=\lfloor\log_2(R)\rfloor-1$ levels,
   of the predicted frame $s_j$ and the two reference frames $s_i$
   and $s_k$.
-  \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_1.svg}{Example}.
+  \begin{center}
+  \svg{graphics/frame_interpolation_step_1}{500}
+  \end{center}
 
 \item
   $LL^l(m)\leftarrow 0$, or any other precomputed values (for example,
   from a previous ME in neighbor frames).
-  \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_2.svg}{Example}.
+  \begin{center}
+  \svg{graphics/frame_interpolation_step_2}{500}
+  \end{center}
 
 \item
   Divide the subband $LL^l(s_j)$ into blocks of size $B\times B$
@@ -836,8 +849,11 @@ drift-error.\footnote{Other progressions such as the QS-progression
   and $LL^l(s_k)$, calculating a low-resolution
   $LL^l(m)=\{LL^l(\overleftarrow{m}), LL^l(\overrightarrow{m})\}$
   bi-directional motion vector field. 
-  \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_3A.svg}{Example}.
-  \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_3A_bis.svg}{Example}.
+  \begin{center}
+  \svg{graphics/frame_interpolation_step_3A}{500}
+  \svg{graphics/frame_interpolation_step_3A_bis}{500}
+  \end{center}
+
 \item
   While $l>0$:
   
@@ -846,16 +862,22 @@ drift-error.\footnote{Other progressions such as the QS-progression
   \item
     Synthesize $LL^{l-1}(m)$, $LL^{l-1}(s_j)$, $LL^{l-1}(s_i)$
     and $LL^{l-1}(s_k)$, by computing the 1-level DWT$^{-1}$.
-    \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_4A.svg}{Example}.
-    \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_4A_bis.svg}{Example}
+  \begin{center}
+  \svg{graphics/frame_interpolation_step_4A}{500}
+  \svg{graphics/frame_interpolation_step_4A_bis}{500}
+  \end{center}
 
   \item
     $LL^{l-1}(M)\leftarrow LL^{l-1}(M)\times 2$.
-    \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_4B.svg}{Example}.
+  \begin{center}
+  \svg{graphics/frame_interpolation_step_4B}{500}
+  \end{center}
   
   \item
     Refine $LL^{l-1}(m)$ using $\pm 1$-spiral-search.
-    \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_4C.svg}{Example}.
+  \begin{center}
+  \svg{graphics/frame_interpolation_step_4C}{500}
+  \end{center}
   
   \item
   $l\leftarrow l-1$. (When $l=0$, the motion vectors field $m$
@@ -863,7 +885,9 @@ drift-error.\footnote{Other progressions such as the QS-progression
   
   \end{enumerate}
   
-  \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/motion_vectors.svg}{Example}.
+  \begin{center}
+  \svg{graphics/motion_vectors}{500}
+  \end{center}
   
 \item
   While $l<A$ (in the first iteration, $l=0$, and $LL^0(M):=M$):
@@ -877,13 +901,16 @@ drift-error.\footnote{Other progressions such as the QS-progression
     computing the 1-level DWT$^{-1}$ (high-frequency subbands are
     $0$). This performs a zoom-in in these frames using $1/2$-subpixel
     accuracy. 
-    
-    \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/frame_interpolation_step_5B.svg}{Example}.
+  \begin{center}
+  \svg{graphics/frame_interpolation_step_5B}{500}
+  \end{center}
     
   \item
     $m\leftarrow m\times 2$.
     
-    \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/motion_vectors_by_2.svg}{Example}.
+  \begin{center}
+  \svg{graphics/motion_vectors_by_2}{500}
+  \end{center}
     
   \item
     $B\leftarrow B\times 2$.
@@ -893,7 +920,9 @@ drift-error.\footnote{Other progressions such as the QS-progression
     pixels and $\pm 1$-spiral-search them into the subbands
     $LL^{-l}(s_i)$ and $LL^{-l}(s_k)$, calculating a $1/2^l$
     sub-pixel accuracy $m$ bi-directional motion vector field. 
-    \href{https://vicente-gonzalez-ruiz.github.io/video_compression/graphics/motion_vectors_definitive.svg}{Example}.
+  \begin{center}
+  \svg{graphics/motion_vectors_definitive}{500}
+  \end{center}
     
   \item
     Frame prediction. For each block $b$:
